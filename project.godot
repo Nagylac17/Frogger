@@ -12,9 +12,22 @@ config_version=5
 
 config/name="Frogger"
 run/main_scene="res://Main.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+boot_splash/show_image=false
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
 project/assembly_name="Frogger"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
