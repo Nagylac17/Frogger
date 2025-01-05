@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dggd6bjbq3rhv"]
+[gd_scene load_steps=5 format=3 uid="uid://dggd6bjbq3rhv"]
 
 [ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/FrogUp.png" id="1_5nf0l"]
 [ext_resource type="Script" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
 [ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/FrogSound.ogg" id="3_hq86x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jwok"]
+radius = 9.06
 
 [node name="Frog" type="Sprite2D"]
 z_index = 1
@@ -13,3 +16,8 @@ script = ExtResource("2_q3ki3")
 
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hq86x")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_8jwok")

@@ -6,6 +6,8 @@ public partial class PlayerControll : Sprite2D
 	Sprite2D player;
 	TileMap map;
 	AudioStreamPlayer2D frogRibbit;
+	DeathHandler deathHandler = new DeathHandler();
+	bool walkablePath = true;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -56,9 +58,19 @@ public partial class PlayerControll : Sprite2D
 			current_tile.X + (int)direction.X,
 			current_tile.Y + (int)direction.Y
 			);
+		var tile_data = map.GetCellTileData(0, target_tile);
+		
+		if (tile_data == null)
+		{ return;}
+
+        deathHandler.GetCurrentTile(tile_data);
+
+		if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false )
+		{return;}
 
 		GlobalPosition = map.MapToLocal(target_tile);
 		frogRibbit.Play();
+        deathHandler.PlayerDeathCheck();
 
     }
 
