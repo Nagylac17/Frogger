@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuu1s87seo0c2"]
+[gd_scene load_steps=6 format=3 uid="uid://cuu1s87seo0c2"]
 
 [ext_resource type="Texture2D" uid="uid://dr75dmid1b7as" path="res://Assets/TileMap.png" id="1_wdesh"]
 [ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/FrogUp.png" id="2_oipsv"]
@@ -27,6 +27,9 @@ custom_data_layer_0/type = 1
 custom_data_layer_1/name = "drowning"
 custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_r8r6d")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtd2l"]
+size = Vector2(639.5, 112)
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_e7y63")
@@ -67,3 +70,12 @@ texture = ExtResource("2_oipsv")
 [node name="FrogLive3" type="Sprite2D" parent="."]
 position = Vector2(86, 348)
 texture = ExtResource("2_oipsv")
+
+[node name="Water" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+collision_priority = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(320.25, 72)
+shape = SubResource("RectangleShape2D_rtd2l")

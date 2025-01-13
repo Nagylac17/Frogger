@@ -1,34 +1,49 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
- public partial class DeathHandler : Node
+public partial class DeathHandler : Node
 {
     private TileMap map;
-    private TileData tileData;
+    private TileData tileData;    
     private Sprite2D player;
+    private Vector2 playerOriginalPoz;
 
-    public DeathHandler()  
+    public DeathHandler(Sprite2D _player,TileMap _tilemap)  
     {
-        map = (TileMap)GetNode("/root/Node2D/TileMap");
-        player = (Sprite2D)GetNode("/root/Node2D/frog");
-        
+        player = _player;
+        map = _tilemap;
+        playerOriginalPoz = player.GlobalPosition;
     }
 
     public  void GetCurrentTile(TileData _tileData)
 	{
         tileData = _tileData;
     }
-
-    public void PlayerDeathCheck()
+    public void GetPlayer(Sprite2D _player)
     {
-        if ((bool)tileData.GetCustomData("drowning") == true)
+        
+    }
+
+    public void GetMap(TileMap _tilemap)
+    {
+        map = _tilemap;
+    }
+
+    public void PlayerDeathCheck(List<string> area)
+    {
+        if (area.Any(x => x != "Water") || area.Count == 0)
+        {
+        }
+        else
         {
             LifeLoss();
         }
     }
     private void LifeLoss()
     {
-        player.QueueFree();
+        player.GlobalPosition = playerOriginalPoz;
     }
 
 }

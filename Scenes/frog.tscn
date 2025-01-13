@@ -4,12 +4,11 @@
 [ext_resource type="Script" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
 [ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/FrogSound.ogg" id="3_hq86x"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8jwok"]
-radius = 9.06
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koa7v"]
+size = Vector2(15.296, 15.817)
 
 [node name="Frog" type="Sprite2D"]
 z_index = 1
-position = Vector2(328.5, 328)
 scale = Vector2(0.9375, 1)
 texture = ExtResource("1_5nf0l")
 script = ExtResource("2_q3ki3")
@@ -17,7 +16,14 @@ script = ExtResource("2_q3ki3")
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hq86x")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_8jwok")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5.96046e-08)
+scale = Vector2(0.917987, 0.921124)
+shape = SubResource("RectangleShape2D_koa7v")
+
+[connection signal="area_entered" from="Area2D" to="." method="Area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="Area_Exited"]

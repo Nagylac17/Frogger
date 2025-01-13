@@ -1,13 +1,17 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 public partial class PlayerControll : Sprite2D
 {
 	Sprite2D player;
 	TileMap map;
 	AudioStreamPlayer2D frogRibbit;
-	DeathHandler deathHandler = new DeathHandler();
-	bool walkablePath = true;
+	DeathHandler deathHandler;
+	private Area2D haha = new Area2D();
+	public List<string> areaTest = new List<string>();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -15,12 +19,16 @@ public partial class PlayerControll : Sprite2D
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
+		haha = GetChild<Area2D>(1);
+		
+        deathHandler = new DeathHandler(player, map);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("up"))
+
+        if (Input.IsActionJustPressed("up"))
 		{
 			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
 			ChangeFrogTexture("Up");
@@ -45,10 +53,7 @@ public partial class PlayerControll : Sprite2D
 			ChangeFrogTexture("Right");
 			Move(Vector2.Right);
 		}
-		else 
-		{
-			
-		}
+        deathHandler.PlayerDeathCheck(areaTest);
     }
 
 	private void Move(Vector2 direction)
@@ -65,16 +70,26 @@ public partial class PlayerControll : Sprite2D
 
         deathHandler.GetCurrentTile(tile_data);
 
-		if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false )
-		{return;}
+		//if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
+		//{return;}
 
 		GlobalPosition = map.MapToLocal(target_tile);
 		frogRibbit.Play();
-        deathHandler.PlayerDeathCheck();
+		//deathHandler.PlayerDeathCheck(areaTest);		
+    }
+	public void Area_entered(Area2D area)
+	{
+		areaTest.Add(area.Name);
+        //GD.Print(player.GetChild<Area2D>(1).CollisionMask);
 
     }
+    public void Area_Exited(Area2D area)
+	{
+		areaTest.Remove(area.Name);
+        //player.GetChild<Area2D>(1).Monitoring = true;         
+    }
 
-	private void ChangeFrogTexture(string path)
+    private void ChangeFrogTexture(string path)
 	{
 		player.Texture = (Texture2D)GD.Load("res://Assets/Frog"+path+".png");
     }

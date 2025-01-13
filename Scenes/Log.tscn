@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbvqlgi58y8gi"]
+
+[ext_resource type="Texture2D" uid="uid://chftflop7566p" path="res://Assets/SmalLog.png" id="1_3e81n"]
+[ext_resource type="Script" path="res://Script/Log.cs" id="2_sg2qk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwtcb"]
+size = Vector2(73.9534, 20.9912)
+
+[node name="Log" type="Sprite2D"]
+texture = ExtResource("1_3e81n")
+script = ExtResource("2_sg2qk")
+
+[node name="Log" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Log"]
+position = Vector2(5.36442e-07, -1.19209e-07)
+scale = Vector2(0.432705, 0.762224)
+shape = SubResource("RectangleShape2D_kwtcb")
