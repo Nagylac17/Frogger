@@ -12,6 +12,6 @@ public partial class Log : Sprite2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//this.GlobalPosition = new Vector2(GlobalPosition.X - velocity,GlobalPosition.Y);
+		this.GlobalPosition = new Vector2(GlobalPosition.X - velocity,GlobalPosition.Y);
 	}
 }

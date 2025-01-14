@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=6 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_p0sj4"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/frog.tscn" id="2_16neb"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/leaf.tscn" id="3_xb2w5"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="4_mhpsp"]
+[ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/spawner.tscn" id="5_3b0cs"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,3 +36,9 @@ position = Vector2(346, 120)
 
 [node name="Log2" parent="." instance=ExtResource("4_mhpsp")]
 position = Vector2(346, 104)
+
+[node name="Spawner" parent="." instance=ExtResource("5_3b0cs")]
+position = Vector2(663, 122)
+
+[node name="Spawner2" parent="." instance=ExtResource("5_3b0cs")]
+position = Vector2(670, 68)
