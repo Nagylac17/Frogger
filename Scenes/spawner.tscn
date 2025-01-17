@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cenuejx8dbvoh"]
+[gd_scene load_steps=4 format=3 uid="uid://cenuejx8dbvoh"]
 
 [ext_resource type="Script" path="res://Script/Spawner.cs" id="1_qrhwe"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="2_4tpuc"]
+[ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="3_sr1ho"]
 
 [node name="Spawner" type="Marker2D"]
 script = ExtResource("1_qrhwe")
 Assets = {
+"BlueCar": ExtResource("3_sr1ho"),
 "Log": ExtResource("2_4tpuc")
 }
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="OnTimeout"]

@@ -39,52 +39,69 @@ position = Vector2(346, 120)
 position = Vector2(346, 104)
 
 [node name="WaterSpawner1" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 120)
+position = Vector2(-42, 120)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner2" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 104)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner3" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 88)
+position = Vector2(-42, 88)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner4" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 72)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner5" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 56)
+position = Vector2(-42, 56)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner6" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 40)
+SpawnLocation = "Water"
 
 [node name="WaterSpawner7" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 24)
+position = Vector2(-42, 24)
+SpawnLocation = "Water"
 
 [node name="RoadSpawner1" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 296)
+position = Vector2(-42, 296)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner2" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 280)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner3" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 264)
+position = Vector2(-42, 264)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner4" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 248)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner5" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 232)
+position = Vector2(-42, 232)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner6" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 216)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner7" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(680, 200)
+position = Vector2(-42, 200)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner8" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(584, 184)
+position = Vector2(680, 184)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner9" parent="." instance=ExtResource("5_3b0cs")]
-position = Vector2(584, 168)
+position = Vector2(-42, 168)
+SpawnLocation = "Road"
 
 [node name="RoadSpawner10" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 152)
+SpawnLocation = "Road"
