@@ -32,27 +32,31 @@ public partial class PlayerControll : Sprite2D
         if (Input.IsActionJustPressed("up"))
 		{
 			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
-			ChangeFrogTexture("Up");
+			//ChangeFrogTexture("Up");
+			player.RotationDegrees = 360;
 			Move(Vector2.Up);
 
 		}
 		else if (Input.IsActionJustPressed("down"))
 		{
 			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y + 1);
-			ChangeFrogTexture("Down");
+			//ChangeFrogTexture("Down");
+			player.RotationDegrees = 180;
 			Move(Vector2.Down);
 		}
 		else if (Input.IsActionJustPressed("left"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X - 1, player.GlobalPosition.Y);
-			ChangeFrogTexture("Left");
-			Move(Vector2.Left);
+            //player.GlobalPosition = new Vector2(player.GlobalPosition.X - 1, player.GlobalPosition.Y);
+            //ChangeFrogTexture("Left");
+            player.RotationDegrees = -90;
+            Move(Vector2.Left);
 		}
 		else if (Input.IsActionJustPressed("right"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X + 1, player.GlobalPosition.Y);
-			ChangeFrogTexture("Right");
-			Move(Vector2.Right);
+            //player.GlobalPosition = new Vector2(player.GlobalPosition.X + 1, player.GlobalPosition.Y);
+            //ChangeFrogTexture("Right");
+            player.RotationDegrees = 90;
+            Move(Vector2.Right);
 		}
         deathHandler.PlayerDeathCheck(ActiveMonitoredAreas);
     }

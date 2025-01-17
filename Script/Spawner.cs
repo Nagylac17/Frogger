@@ -34,8 +34,13 @@ public partial class Spawner : Marker2D
 	private void TimerSetup()
 	{
         spawnTimer = GetChild<Timer>(0);
-        spawnTimer.WaitTime = rnd.Next(1, 6);
+		SpawnTime();
         spawnTimer.Start();
+    }
+
+	private void SpawnTime()
+	{
+        spawnTimer.WaitTime = rnd.Next(1, 6); // spawn ido valtoztatas
     }
 
 	private void OnTimeout()
@@ -44,11 +49,14 @@ public partial class Spawner : Marker2D
 		{
 			case "Log" :
 				{
-					AddLog();
+					SpawnTime();
+
+                    AddLog();
 					break;
 				}
 			case "BlueCar" :
 				{
+					SpawnTime();
                     AddBlueCar();
 					break;
 				}
