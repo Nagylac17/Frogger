@@ -14,4 +14,5 @@ public partial class Log : Sprite2D
 	{
 		this.GlobalPosition = new Vector2(GlobalPosition.X - velocity,GlobalPosition.Y);
 	}
+
 }

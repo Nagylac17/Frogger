@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 public partial class PlayerControll : Sprite2D
@@ -9,8 +10,8 @@ public partial class PlayerControll : Sprite2D
 	TileMap map;
 	AudioStreamPlayer2D frogRibbit;
 	DeathHandler deathHandler;
-	private Area2D haha = new Area2D();
-	public List<string> areaTest = new List<string>();
+	public List<string> ActiveMonitoredAreas = new List<string>();
+	Node OriginalParent;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,7 +20,7 @@ public partial class PlayerControll : Sprite2D
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
-		haha = GetChild<Area2D>(1);
+		OriginalParent = GetParent();
 		
         deathHandler = new DeathHandler(player, map);
     }
@@ -53,16 +54,24 @@ public partial class PlayerControll : Sprite2D
 			ChangeFrogTexture("Right");
 			Move(Vector2.Right);
 		}
-        deathHandler.PlayerDeathCheck(areaTest);
+        deathHandler.PlayerDeathCheck(ActiveMonitoredAreas);
     }
+
+	Vector2I TargetTile(Vector2 direction, Vector2I current_tile)
+	{
+		Vector2I targetTile = new Vector2I(
+            current_tile.X + (int)direction.X,
+            current_tile.Y + (int)direction.Y
+            );
+
+        return targetTile;
+	}
 
 	private void Move(Vector2 direction)
 	{
+		GD.Print(this.OriginalParent);
 		Vector2I current_tile = (Vector2I)map.LocalToMap(GlobalPosition);
-		Vector2I target_tile = new Vector2I(
-			current_tile.X + (int)direction.X,
-			current_tile.Y + (int)direction.Y
-			);
+		Vector2I target_tile = TargetTile(direction, current_tile);
 		var tile_data = map.GetCellTileData(0, target_tile);
 		
 		if (tile_data == null)
@@ -79,14 +88,11 @@ public partial class PlayerControll : Sprite2D
     }
 	public void Area_entered(Area2D area)
 	{
-		areaTest.Add(area.Name);
-        //GD.Print(player.GetChild<Area2D>(1).CollisionMask);
-
+		ActiveMonitoredAreas.Add(area.Name);
     }
     public void Area_Exited(Area2D area)
 	{
-		areaTest.Remove(area.Name);
-        //player.GetChild<Area2D>(1).Monitoring = true;         
+		ActiveMonitoredAreas.Remove(area.Name); 
     }
 
     private void ChangeFrogTexture(string path)
