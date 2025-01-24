@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-public partial class Car : Sprite2D
+public partial class Car : AnimatedSprite2D
 {
     public float Direction = -1;
-    private float velocity;
+    public float velocity;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
@@ -13,6 +13,7 @@ public partial class Car : Sprite2D
         {
             this.RotationDegrees = 180;
         }
+        this.Play();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

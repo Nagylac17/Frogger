@@ -11,7 +11,8 @@ public partial class Spawner : Marker2D
 	[ExportGroup("Spwaned object")]
 	[Export]
 	public Godot.Collections.Dictionary<string, PackedScene> Assets { get; set; }
-	private string[] stringarray = new string[7] { "Log", "LargeLog", "BlueCar", "RedCar", "WhiteCar", "Turtle", "Aligator" };
+	private string[] RoadSpawnAssets = new string[3] {"BlueCar", "RedCar", "WhiteCar"};
+	private string[] WaterSpawnAssets = new string[4] { "Log", "LargeLog","Turtle", "Aligator" };
 
 	[Export]
 	string SpawnLocation;
@@ -60,6 +61,18 @@ public partial class Spawner : Marker2D
                     AddBlueCar();
 					break;
 				}
+			case "RedCar" :
+				{
+					SpawnTime();
+                    AddRedCar();
+					break;
+				}
+			case "WhiteCar" :
+				{
+					SpawnTime();
+                    AddWhiteCar();
+					break;
+				}
 		}
 	}
 
@@ -76,7 +89,7 @@ public partial class Spawner : Marker2D
 				}
 			case "Road":
 				{
-					asset = "BlueCar"; // Itt kell megadni melyik tombbol szedje az adatokat
+					asset = RoadSpawnAssets[rnd.Next(0,3)]; // Itt kell megadni melyik tombbol szedje az adatokat
 					break;
 				}
 	
@@ -99,6 +112,25 @@ public partial class Spawner : Marker2D
 		//log = (Log)Assets[0].Instantiate();
 		car = (Car)Assets["BlueCar"].Instantiate();
 		car.GlobalPosition = this.GlobalPosition;
+		car.velocity = 0.3f;
+		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		tileMap.AddChild(car);
+	}
+    void AddRedCar()
+	{
+		//log = (Log)Assets[0].Instantiate();
+		car = (Car)Assets["RedCar"].Instantiate();
+		car.GlobalPosition = this.GlobalPosition;
+		car.velocity = 0.5f;
+		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		tileMap.AddChild(car);
+	}
+    void AddWhiteCar()
+	{
+		//log = (Log)Assets[0].Instantiate();
+		car = (Car)Assets["WhiteCar"].Instantiate();
+		car.GlobalPosition = this.GlobalPosition;
+		car.velocity = 0.1f;
 		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
 		tileMap.AddChild(car);
 	}

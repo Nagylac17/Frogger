@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3767j5elpe0j"]
+
+[ext_resource type="Texture2D" uid="uid://mj6wscmgpk64" path="res://Assets/RedCar.png" id="1_6qvh8"]
+[ext_resource type="Script" path="res://Script/Car.cs" id="2_sw6k0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdtb2"]
+atlas = ExtResource("1_6qvh8")
+region = Rect2(16, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4cb3"]
+atlas = ExtResource("1_6qvh8")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkvbv"]
+atlas = ExtResource("1_6qvh8")
+region = Rect2(32, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srrgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdtb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4cb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkvbv")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boq5h"]
+size = Vector2(15.2464, 23.4527)
+
+[node name="RedCar" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_srrgt")
+animation = &"Move"
+frame_progress = 0.412595
+script = ExtResource("2_sw6k0")
+
+[node name="RedCar" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedCar"]
+position = Vector2(0, -2.98023e-07)
+scale = Vector2(0.983841, 0.682225)
+shape = SubResource("RectangleShape2D_boq5h")

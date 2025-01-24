@@ -1,19 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdpcje4uluqrd"]
+[gd_scene load_steps=8 format=3 uid="uid://bdpcje4uluqrd"]
 
 [ext_resource type="Texture2D" uid="uid://y4tm4mjd7pwt" path="res://Assets/BlueCar.png" id="1_myms1"]
 [ext_resource type="Script" path="res://Script/Car.cs" id="2_jdiya"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgdu6"]
+atlas = ExtResource("1_myms1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wscc"]
+atlas = ExtResource("1_myms1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq8nw"]
+atlas = ExtResource("1_myms1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s12kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgdu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wscc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq8nw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko27o"]
 size = Vector2(14, 14.73)
 
-[node name="BlueCar" type="Sprite2D"]
-texture = ExtResource("1_myms1")
-region_enabled = true
-region_rect = Rect2(0.836887, 0.918102, 14.3238, 14.1887)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_s12kd")
 script = ExtResource("2_jdiya")
 
-[node name="BlueCar" type="Area2D" parent="."]
+[node name="BlueCar2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueCar"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueCar2"]
 scale = Vector2(1.00106, 0.951039)
 shape = SubResource("RectangleShape2D_ko27o")

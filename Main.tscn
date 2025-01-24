@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=9 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_p0sj4"]
-[ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/frog.tscn" id="2_16neb"]
-[ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/leaf.tscn" id="3_xb2w5"]
+[ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_16neb"]
+[ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_xb2w5"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="4_mhpsp"]
-[ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/spawner.tscn" id="5_3b0cs"]
+[ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/Spawner.tscn" id="5_3b0cs"]
+[ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="6_qbqw2"]
+[ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="7_sxuh3"]
+[ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="8_3dofb"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-1, 0)
@@ -68,40 +71,90 @@ SpawnLocation = "Water"
 
 [node name="RoadSpawner1" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 296)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner2" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 280)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner3" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 264)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner4" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 248)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner5" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 232)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner6" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 216)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner7" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 200)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner8" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 184)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner9" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 168)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
 
 [node name="RoadSpawner10" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(680, 152)
+Assets = {
+"BlueCar": ExtResource("6_qbqw2"),
+"RedCar": ExtResource("7_sxuh3"),
+"WhiteCar": ExtResource("8_3dofb")
+}
 SpawnLocation = "Road"
