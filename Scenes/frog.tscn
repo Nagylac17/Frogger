@@ -16,14 +16,14 @@ script = ExtResource("2_q3ki3")
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hq86x")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+[node name="Frog" type="Area2D" parent="."]
+collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frog"]
 position = Vector2(0, 5.96046e-08)
 scale = Vector2(0.917987, 0.921124)
 shape = SubResource("RectangleShape2D_koa7v")
 
-[connection signal="area_entered" from="Area2D" to="." method="Area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="Area_Exited"]
+[connection signal="area_entered" from="Frog" to="." method="Area_entered"]
+[connection signal="area_exited" from="Frog" to="." method="Area_Exited"]

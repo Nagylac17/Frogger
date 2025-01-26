@@ -4,7 +4,8 @@ using System;
 public partial class Log : Sprite2D
 {
     public float Direction = -1;
-    private float velocity;
+    public float velocity;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
@@ -19,6 +20,7 @@ public partial class Log : Sprite2D
 	public override void _Process(double delta)
 	{
 		this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+
 	}
 
 }

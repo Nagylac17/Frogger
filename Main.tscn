@@ -15,7 +15,7 @@ position = Vector2(-1, 0)
 [node name="TileMap" parent="." instance=ExtResource("1_p0sj4")]
 
 [node name="Frog" parent="." instance=ExtResource("2_16neb")]
-position = Vector2(344, 136)
+position = Vector2(360, 136)
 
 [node name="Leaf" parent="." instance=ExtResource("3_xb2w5")]
 position = Vector2(88, 10)
@@ -36,10 +36,10 @@ position = Vector2(456, 10)
 position = Vector2(552, 10)
 
 [node name="Log" parent="." instance=ExtResource("4_mhpsp")]
-position = Vector2(346, 120)
+position = Vector2(289, 120)
 
 [node name="Log2" parent="." instance=ExtResource("4_mhpsp")]
-position = Vector2(346, 104)
+position = Vector2(289, 104)
 
 [node name="WaterSpawner1" parent="." instance=ExtResource("5_3b0cs")]
 position = Vector2(-42, 120)

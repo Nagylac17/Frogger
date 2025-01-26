@@ -11,7 +11,9 @@ public partial class PlayerControll : Sprite2D
 	AudioStreamPlayer2D frogRibbit;
 	DeathHandler deathHandler;
 	public List<string> ActiveMonitoredAreas = new List<string>();
-	Node OriginalParent;
+	public float direction;
+	public float velocity;
+	private bool IsOnePlatform = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,16 +22,17 @@ public partial class PlayerControll : Sprite2D
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
-		OriginalParent = GetParent();
-		
-        deathHandler = new DeathHandler(player, map);
-    }
+		deathHandler = new DeathHandler(player, map);
+
+		velocity = 0;
+
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 
-        if (Input.IsActionJustPressed("up"))
+		if (Input.IsActionJustPressed("up"))
 		{
 			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
 			//ChangeFrogTexture("Up");
@@ -46,42 +49,47 @@ public partial class PlayerControll : Sprite2D
 		}
 		else if (Input.IsActionJustPressed("left"))
 		{
-            //player.GlobalPosition = new Vector2(player.GlobalPosition.X - 1, player.GlobalPosition.Y);
-            //ChangeFrogTexture("Left");
-            player.RotationDegrees = -90;
-            Move(Vector2.Left);
+			//player.GlobalPosition = new Vector2(player.GlobalPosition.X - 1, player.GlobalPosition.Y);
+			//ChangeFrogTexture("Left");
+			player.RotationDegrees = -90;
+			Move(Vector2.Left);
 		}
 		else if (Input.IsActionJustPressed("right"))
 		{
-            //player.GlobalPosition = new Vector2(player.GlobalPosition.X + 1, player.GlobalPosition.Y);
-            //ChangeFrogTexture("Right");
-            player.RotationDegrees = 90;
-            Move(Vector2.Right);
+			//player.GlobalPosition = new Vector2(player.GlobalPosition.X + 1, player.GlobalPosition.Y);
+			//ChangeFrogTexture("Right");
+			player.RotationDegrees = 90;
+			Move(Vector2.Right);
 		}
-        deathHandler.PlayerDeathCheck(ActiveMonitoredAreas);
-    }
+
+		if (IsOnePlatform)
+		{
+			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity , GlobalPosition.Y);
+		}
+		deathHandler.PlayerDeathCheck(ActiveMonitoredAreas);
+
+	}
 
 	Vector2I TargetTile(Vector2 direction, Vector2I current_tile)
 	{
 		Vector2I targetTile = new Vector2I(
-            current_tile.X + (int)direction.X,
-            current_tile.Y + (int)direction.Y
-            );
+			current_tile.X + (int)direction.X,
+			current_tile.Y + (int)direction.Y
+			);
 
-        return targetTile;
+		return targetTile;
 	}
 
 	private void Move(Vector2 direction)
 	{
-		GD.Print(this.OriginalParent);
 		Vector2I current_tile = (Vector2I)map.LocalToMap(GlobalPosition);
 		Vector2I target_tile = TargetTile(direction, current_tile);
 		var tile_data = map.GetCellTileData(0, target_tile);
-		
-		if (tile_data == null)
-		{ return;}
 
-        deathHandler.GetCurrentTile(tile_data);
+		if (tile_data == null)
+		{ return; }
+
+		deathHandler.GetCurrentTile(tile_data);
 
 		//if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
 		//{return;}
@@ -89,18 +97,40 @@ public partial class PlayerControll : Sprite2D
 		GlobalPosition = map.MapToLocal(target_tile);
 		frogRibbit.Play();
 		//deathHandler.PlayerDeathCheck(areaTest);		
-    }
+	}
 	public void Area_entered(Area2D area)
 	{
+		if (area.Name == "Log") //interface-el egy platform osszegzest
+		{ 
+			SetFrogVelocity(area.GetParent());
+			SetFrogDirection(area.GetParent());
+		}
+		IsOnePlatform = true;
 		ActiveMonitoredAreas.Add(area.Name);
-    }
-    public void Area_Exited(Area2D area)
+	}
+	public void Area_Exited(Area2D area)
 	{
-		ActiveMonitoredAreas.Remove(area.Name); 
-    }
+		velocity = 0;
+		direction = 0;
+		IsOnePlatform = false;
+		ActiveMonitoredAreas.Remove(area.Name);
 
-    private void ChangeFrogTexture(string path)
+	}
+
+	private void ChangeFrogTexture(string path)
 	{
-		player.Texture = (Texture2D)GD.Load("res://Assets/Frog"+path+".png");
-    }
+		player.Texture = (Texture2D)GD.Load("res://Assets/Frog" + path + ".png");
+	}
+
+	private void SetFrogVelocity(Node node)
+	{
+			Log Log = (Log)node;
+			this.velocity = Log.velocity;	
+	}
+
+	private void SetFrogDirection(Node node)
+	{
+			Log Log = (Log)node;
+			this.direction = Log.Direction;
+	}
 }
