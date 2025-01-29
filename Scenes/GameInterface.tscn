@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://55e3rlqediw5"]
+
+[ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/FrogUp.png" id="1_4im7d"]
+[ext_resource type="Script" path="res://Script/GameInterface.cs" id="1_eg1qt"]
+
+[node name="GameInterface" type="Node2D"]
+script = ExtResource("1_eg1qt")
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_top = 336.0
+offset_right = 46.0
+offset_bottom = 359.0
+text = "Lives:"
+uppercase = true
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 547.0
+offset_top = 337.0
+offset_right = 590.0
+offset_bottom = 360.0
+text = "Time:
+"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 258.0
+offset_top = 337.0
+offset_right = 306.0
+offset_bottom = 360.0
+text = "Score:
+"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 307.0
+offset_top = 339.0
+offset_right = 347.0
+offset_bottom = 362.0
+text = "0"
+
+[node name="FrogLive1" type="Sprite2D" parent="."]
+position = Vector2(56, 348)
+texture = ExtResource("1_4im7d")
+
+[node name="FrogLive2" type="Sprite2D" parent="."]
+position = Vector2(71, 348)
+texture = ExtResource("1_4im7d")
+
+[node name="FrogLive3" type="Sprite2D" parent="."]
+position = Vector2(86, 348)
+texture = ExtResource("1_4im7d")

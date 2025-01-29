@@ -47,3 +47,5 @@ script = ExtResource("2_sw6k0")
 position = Vector2(0, -2.98023e-07)
 scale = Vector2(0.983841, 0.682225)
 shape = SubResource("RectangleShape2D_boq5h")
+
+[connection signal="area_entered" from="RedCar" to="." method="AreaEntered"]

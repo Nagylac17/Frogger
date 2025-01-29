@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwuhckxygy8pi"]
+[gd_scene load_steps=5 format=3 uid="uid://cwuhckxygy8pi"]
 
 [ext_resource type="Texture2D" uid="uid://by82aw1o5f47r" path="res://Assets/Leaf.png" id="1_4c8e2"]
+[ext_resource type="Script" path="res://Script/Leaf.cs" id="2_a70uu"]
+[ext_resource type="Texture2D" uid="uid://dp5hqamgmh2w2" path="res://Assets/WinFrog.png" id="3_ctck7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_584pk"]
+size = Vector2(16, 14)
 
 [node name="Leaf" type="Sprite2D"]
 texture = ExtResource("1_4c8e2")
+script = ExtResource("2_a70uu")
+
+[node name="Leaf" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leaf"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_584pk")
+
+[node name="WFrog" type="Sprite2D" parent="."]
+texture = ExtResource("3_ctck7")
+
+[connection signal="area_entered" from="Leaf" to="." method="AreaEntered"]

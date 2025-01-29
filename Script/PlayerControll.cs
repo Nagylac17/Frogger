@@ -11,9 +11,10 @@ public partial class PlayerControll : Sprite2D
 	AudioStreamPlayer2D frogRibbit;
 	DeathHandler deathHandler;
 	public List<string> ActiveMonitoredAreas = new List<string>();
-	public float direction;
-	public float velocity;
+	private float direction;//Ez itt lehet publicra kell
+    private float velocity; //Ez itt lehet publicra kell
 	private bool IsOnePlatform = false;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,10 +35,11 @@ public partial class PlayerControll : Sprite2D
 
 		if (Input.IsActionJustPressed("up"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
-			//ChangeFrogTexture("Up");
-			player.RotationDegrees = 360;
-			Move(Vector2.Up);
+            //player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
+            //ChangeFrogTexture("Up");
+            player.RotationDegrees = 360;
+            Move(Vector2.Up);
+            GameInterface.AddScore(10);
 
 		}
 		else if (Input.IsActionJustPressed("down"))
@@ -46,6 +48,7 @@ public partial class PlayerControll : Sprite2D
 			//ChangeFrogTexture("Down");
 			player.RotationDegrees = 180;
 			Move(Vector2.Down);
+            GameInterface.Subtract(10);
 		}
 		else if (Input.IsActionJustPressed("left"))
 		{
@@ -62,11 +65,11 @@ public partial class PlayerControll : Sprite2D
 			Move(Vector2.Right);
 		}
 
-		if (IsOnePlatform)
+		if (IsOnePlatform && (GlobalPosition.X < 630 && GlobalPosition.X > 5 )) // tilemap two end
 		{
 			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity , GlobalPosition.Y);
 		}
-		deathHandler.PlayerDeathCheck(ActiveMonitoredAreas);
+		
 
 	}
 
@@ -86,15 +89,15 @@ public partial class PlayerControll : Sprite2D
 		Vector2I target_tile = TargetTile(direction, current_tile);
 		var tile_data = map.GetCellTileData(0, target_tile);
 
-		if (tile_data == null)
-		{ return; }
+        if (tile_data == null)
+			{ return; }
+
 
 		deathHandler.GetCurrentTile(tile_data);
 
-		//if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
-		//{return;}
-
-		GlobalPosition = map.MapToLocal(target_tile);
+        //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
+        //{return;}
+        GlobalPosition = map.MapToLocal(target_tile);
 		frogRibbit.Play();
 		//deathHandler.PlayerDeathCheck(areaTest);		
 	}
@@ -104,10 +107,11 @@ public partial class PlayerControll : Sprite2D
 		{ 
 			SetFrogVelocity(area.GetParent());
 			SetFrogDirection(area.GetParent());
+			IsOnePlatform = true;
 		}
-		IsOnePlatform = true;
 		ActiveMonitoredAreas.Add(area.Name);
-	}
+        //deathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); // !!!!!! A Vizes halalt rendesen megcsinalni
+    }
 	public void Area_Exited(Area2D area)
 	{
 		velocity = 0;

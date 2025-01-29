@@ -21,4 +21,12 @@ public partial class Car : AnimatedSprite2D
 	{
         this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
     }
+
+    public void AreaEntered(Area2D area)
+    {
+        if (area.Name == "Frog")
+        {
+             DeathHandler.PositionReset();   
+        }
+    }
 }

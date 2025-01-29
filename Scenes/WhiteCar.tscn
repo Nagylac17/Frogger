@@ -43,3 +43,5 @@ script = ExtResource("2_g1sml")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteCar"]
 scale = Vector2(2.20107, 0.70121)
 shape = SubResource("RectangleShape2D_euyxv")
+
+[connection signal="area_entered" from="WhiteCar" to="." method="AreaEntered"]
