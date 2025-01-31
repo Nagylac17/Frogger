@@ -20,7 +20,15 @@ public partial class Log : Sprite2D
 	public override void _Process(double delta)
 	{
 		this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+        DeSpawner.DeSpawnAsset(this);
+    }
 
-	}
+    //private void Despawn()
+    //{
+    //    if(GlobalPosition.X < -200 || GlobalPosition.X > 750)
+    //    {
+    //        this.QueueFree();
+    //    }
+    //}
 
 }

@@ -51,7 +51,6 @@ public partial class Spawner : Marker2D
 			case "Log" :
 				{
 					SpawnTime();
-
                     AddLog();
 					break;
 				}

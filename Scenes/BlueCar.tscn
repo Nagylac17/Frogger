@@ -35,7 +35,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko27o"]
 size = Vector2(14, 14.73)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="BlueCar" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_s12kd")
 script = ExtResource("2_jdiya")
 

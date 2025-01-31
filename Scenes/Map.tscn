@@ -6,7 +6,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8r6d"]
 texture = ExtResource("1_wdesh")
 1:13/0 = 0
-1:13/0/custom_data_1 = true
+1:13/0/custom_data_0 = true
 2:13/0 = 0
 3:13/0 = 0
 1:14/0 = 0
@@ -24,8 +24,6 @@ texture = ExtResource("1_wdesh")
 navigation_layer_0/layers = 1
 custom_data_layer_0/name = "walkable"
 custom_data_layer_0/type = 1
-custom_data_layer_1/name = "drowning"
-custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_r8r6d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtd2l"]

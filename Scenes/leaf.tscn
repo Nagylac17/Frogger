@@ -19,6 +19,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_584pk")
 
 [node name="WFrog" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_ctck7")
 
 [connection signal="area_entered" from="Leaf" to="." method="AreaEntered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7581x8tfbl0s"]
+
+[ext_resource type="Script" path="res://Script/MainMenuInterface.cs" id="1_josoe"]
+
+[node name="MainMenuInterface" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_josoe")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 104.0
+offset_right = 305.0
+offset_bottom = 135.0
+text = "Play
+"
+
+[connection signal="button_up" from="Button" to="." method="PlayButtonUp"]

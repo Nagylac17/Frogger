@@ -35,13 +35,15 @@ public partial class PlayerControll : Sprite2D
 
 		if (Input.IsActionJustPressed("up"))
 		{
-            //player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
-            //ChangeFrogTexture("Up");
-            player.RotationDegrees = 360;
-            Move(Vector2.Up);
-            GameInterface.AddScore(10);
+			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
+			//ChangeFrogTexture("Up");
+			
+			 
+				player.RotationDegrees = 360;
+				Move(Vector2.Up);
+				GameInterface.AddScore(10);
 
-		}
+        }
 		else if (Input.IsActionJustPressed("down"))
 		{
 			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y + 1);
@@ -69,9 +71,11 @@ public partial class PlayerControll : Sprite2D
 		{
 			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity , GlobalPosition.Y);
 		}
-		
 
-	}
+        DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas);
+
+
+    }
 
 	Vector2I TargetTile(Vector2 direction, Vector2I current_tile)
 	{
@@ -89,11 +93,12 @@ public partial class PlayerControll : Sprite2D
 		Vector2I target_tile = TargetTile(direction, current_tile);
 		var tile_data = map.GetCellTileData(0, target_tile);
 
-        if (tile_data == null)
+        if (tile_data == null || (bool)tile_data.GetCustomData("walkable") == false)
 			{ return; }
 
 
 		deathHandler.GetCurrentTile(tile_data);
+		DeathHandler.lifeLossLimit = 0;
 
         //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
         //{return;}
@@ -110,7 +115,6 @@ public partial class PlayerControll : Sprite2D
 			IsOnePlatform = true;
 		}
 		ActiveMonitoredAreas.Add(area.Name);
-        //deathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); // !!!!!! A Vizes halalt rendesen megcsinalni
     }
 	public void Area_Exited(Area2D area)
 	{

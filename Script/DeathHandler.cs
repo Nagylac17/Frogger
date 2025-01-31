@@ -9,6 +9,7 @@ public partial class DeathHandler : Node
     private TileData tileData;    
     private static Sprite2D player;
     private static Vector2 playerOriginalPoz;
+    public static int lifeLossLimit = 0;
 
     public DeathHandler(Sprite2D _player,TileMap _tilemap)  
     {
@@ -27,21 +28,27 @@ public partial class DeathHandler : Node
         map = _tilemap;
     }
 
-    public void PlayerWaterDeathCheck(List<string> area)
+    public static void PlayerWaterDeathCheck(List<string> area)
     {
-        if (area.Any(x => x != "Water") || area.Count == 0)
-        {
-        }
-        else
+        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1 )
         {
             LifeLoss();
-            PositionReset();
-           
         }
+
     }
-    private void LifeLoss()
+
+    public static void PlayerCarDeath()
     {
-        player.GlobalPosition = playerOriginalPoz;
+        LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
+    }
+    private static void  LifeLoss()
+    {
+        lifeLossLimit++;
+        PositionReset();
+        if (GameInterface.GetRemaningLife() == 1)
+        { 
+            GameOver.NoLifeLeft(player);
+        }
         GameInterface.RemoveLifeSprite();
     }
 

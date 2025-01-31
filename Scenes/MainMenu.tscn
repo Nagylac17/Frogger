@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b35ipqe1vbwa5"]
+
+[ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
+
+[node name="MainMenu" type="Node2D"]
+process_mode = 3
+
+[node name="MainMenuInterface" parent="." instance=ExtResource("1_02o3x")]
+process_mode = 3
+position = Vector2(165, 141)

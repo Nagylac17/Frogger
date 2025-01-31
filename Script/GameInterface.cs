@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 public partial class GameInterface : Node2D
 {
@@ -8,7 +10,8 @@ public partial class GameInterface : Node2D
 	static private Label score;
 	static private int scoreAmount = 0;
 	private static Sprite2D [] FrogLives = new Sprite2D[3];
-
+	private ProgressBar progressBar;
+	private Timer remainingTime;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,7 +20,10 @@ public partial class GameInterface : Node2D
 		FrogLives[1] = GetChild<Sprite2D>(5);
 		FrogLives[2] = GetChild<Sprite2D>(6);
         score = GetChild<Label>(3);
-	}
+        progressBar = GetChild<ProgressBar>(7);
+        remainingTime = progressBar.GetChild<Timer>(0);
+
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -41,7 +47,7 @@ public partial class GameInterface : Node2D
 
 	static public void RemoveLifeSprite()
 	{
-		FrogLives[LifeRemoveHelper()].Visible = false;
+		FrogLives[LifeRemoveHelper()].Visible = false;		
 	}
 	static public void AddLifeSprite()
 	{
@@ -58,5 +64,16 @@ public partial class GameInterface : Node2D
 			}
 		}
 		return 2;
+	}
+
+	public void OnTimerTimeout()
+	{
+		progressBar.Value = (progressBar.Value - 1); 
+    }
+
+	public static int GetRemaningLife()
+	{
+		GD.Print(FrogLives.Count(x => x.Visible == true));
+		return FrogLives.Count(x => x.Visible == true);
 	}
 }
