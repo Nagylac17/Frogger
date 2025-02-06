@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="3_sr1ho"]
 
 [node name="Spawner" type="Marker2D"]
+process_mode = 1
 script = ExtResource("1_qrhwe")
 Assets = {
 "BlueCar": ExtResource("3_sr1ho"),

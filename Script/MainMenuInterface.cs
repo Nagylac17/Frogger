@@ -13,8 +13,20 @@ public partial class MainMenuInterface : Node2D
 	{
 	}
 
-	private void PlayButtonUp()
+    private void PlayButtonUp()
 	{
         GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+    }
+    private void OnOptionsPressed()
+	{
+        
+    }
+    private void OnCreditsPressed()
+	{
+        
+    }
+    private void OnExitPressed()
+    {
+        GetTree().Quit();
     }
 }

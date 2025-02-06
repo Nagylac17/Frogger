@@ -8,6 +8,7 @@
 size = Vector2(15.296, 15.817)
 
 [node name="Frog" type="Sprite2D"]
+process_mode = 1
 z_index = 1
 scale = Vector2(0.9375, 1)
 texture = ExtResource("1_5nf0l")

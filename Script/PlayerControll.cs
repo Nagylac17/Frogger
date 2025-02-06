@@ -24,8 +24,7 @@ public partial class PlayerControll : Sprite2D
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
 		deathHandler = new DeathHandler(player, map);
-
-		velocity = 0;
+        velocity = 0;
 
 	}
 
@@ -35,37 +34,28 @@ public partial class PlayerControll : Sprite2D
 
 		if (Input.IsActionJustPressed("up"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y - 1);
-			//ChangeFrogTexture("Up");
-			
-			 
-				player.RotationDegrees = 360;
-				Move(Vector2.Up);
-				GameInterface.AddScore(10);
+			player.RotationDegrees = 360;
+			Move(Vector2.Up);
+			GameInterface.AddScore(10);
 
-        }
+		}
 		else if (Input.IsActionJustPressed("down"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X, player.GlobalPosition.Y + 1);
-			//ChangeFrogTexture("Down");
 			player.RotationDegrees = 180;
 			Move(Vector2.Down);
-            GameInterface.Subtract(10);
+			GameInterface.Subtract(10);
 		}
 		else if (Input.IsActionJustPressed("left"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X - 1, player.GlobalPosition.Y);
-			//ChangeFrogTexture("Left");
 			player.RotationDegrees = -90;
 			Move(Vector2.Left);
 		}
 		else if (Input.IsActionJustPressed("right"))
 		{
-			//player.GlobalPosition = new Vector2(player.GlobalPosition.X + 1, player.GlobalPosition.Y);
-			//ChangeFrogTexture("Right");
 			player.RotationDegrees = 90;
 			Move(Vector2.Right);
 		}
+
 
 		if (IsOnePlatform && (GlobalPosition.X < 630 && GlobalPosition.X > 5 )) // tilemap two end
 		{

@@ -8,6 +8,7 @@
 size = Vector2(16, 14)
 
 [node name="Leaf" type="Sprite2D"]
+process_mode = 1
 texture = ExtResource("1_4c8e2")
 script = ExtResource("2_a70uu")
 

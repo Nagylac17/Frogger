@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b35ipqe1vbwa5"]
+[gd_scene load_steps=3 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
+[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_8juxq"]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 
 [node name="MainMenuInterface" parent="." instance=ExtResource("1_02o3x")]
-process_mode = 3
-position = Vector2(165, 141)
+z_index = 1
+position = Vector2(320, 100)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_8juxq")
+stretch_mode = 1

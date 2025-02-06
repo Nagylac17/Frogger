@@ -7,6 +7,7 @@
 size = Vector2(64.7092, 15.7434)
 
 [node name="Log" type="Sprite2D"]
+process_mode = 1
 visibility_layer = 3
 texture = ExtResource("1_3e81n")
 script = ExtResource("2_sg2qk")

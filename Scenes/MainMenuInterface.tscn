@@ -4,14 +4,35 @@
 
 [node name="MainMenuInterface" type="Node2D"]
 process_mode = 3
+y_sort_enabled = true
 script = ExtResource("1_josoe")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 264.0
-offset_top = 104.0
-offset_right = 305.0
-offset_bottom = 135.0
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+vertical = true
+
+[node name="Play" type="Button" parent="BoxContainer"]
+layout_mode = 2
 text = "Play
 "
 
-[connection signal="button_up" from="Button" to="." method="PlayButtonUp"]
+[node name="Options" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Option
+"
+
+[node name="Credits" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Credits
+"
+
+[node name="Exit" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[connection signal="button_up" from="BoxContainer/Play" to="." method="PlayButtonUp"]
+[connection signal="pressed" from="BoxContainer/Options" to="." method="OnOptionsPressed"]
+[connection signal="pressed" from="BoxContainer/Credits" to="." method="OnCreditsPressed"]
+[connection signal="pressed" from="BoxContainer/Exit" to="." method="OnExitPressed"]

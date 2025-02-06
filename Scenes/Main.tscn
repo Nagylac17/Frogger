@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=11 format=3 uid="uid://b1iwr37wvf0fw"]
 
+[ext_resource type="Script" path="res://Scenes/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_vlvkp"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_orh7q"]
@@ -8,33 +9,43 @@
 [ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="6_x473b"]
 [ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="7_jcqbj"]
 [ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="8_4d34u"]
+[ext_resource type="PackedScene" uid="uid://6lsgs5hm51ac" path="res://Scenes/PauseMenu.tscn" id="9_qdm2b"]
 
 [node name="Node2D" type="Node2D"]
+process_mode = 3
 position = Vector2(-1, 0)
+script = ExtResource("1_6j4yi")
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_qdm2b")]
+process_priority = 1
+visible = false
+z_index = 1
+position = Vector2(265, 88)
 
 [node name="TileMap" parent="." instance=ExtResource("1_35uto")]
+position = Vector2(1, 0)
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Frog" parent="." instance=ExtResource("2_vlvkp")]
-position = Vector2(360, 328)
+position = Vector2(361, 328)
 
 [node name="Leaf" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(88, 10)
+position = Vector2(89, 10)
 
 [node name="Leaf2" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(184, 10)
+position = Vector2(185, 10)
 
 [node name="Leaf3" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(280, 10)
+position = Vector2(281, 10)
 
 [node name="Leaf4" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(360, 10)
+position = Vector2(361, 10)
 
 [node name="Leaf5" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(456, 10)
+position = Vector2(457, 10)
 
 [node name="Leaf6" parent="." instance=ExtResource("3_orh7q")]
-position = Vector2(552, 10)
+position = Vector2(553, 10)
 
 [node name="Log" parent="." instance=ExtResource("4_hevjg")]
 position = Vector2(289, 120)
