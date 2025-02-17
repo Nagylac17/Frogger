@@ -8,7 +8,7 @@ public partial class Car : AnimatedSprite2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-    velocity = 0.5f * Direction;
+    velocity = (0.5f+Victory.VelocityIncrease()) * Direction;
         if (Direction == -1)
         {
             this.RotationDegrees = 180;

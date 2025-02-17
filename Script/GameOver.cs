@@ -12,6 +12,11 @@ public static partial class GameOver
     {
         node.GetTree().Paused = true;
     }
+
+    public static void ShowGameOver()
+    {
+        EndingScreen.GetInstanceId();
+    }
         
 
 }

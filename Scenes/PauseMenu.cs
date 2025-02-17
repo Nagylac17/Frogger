@@ -11,12 +11,6 @@ public partial class PauseMenu : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//if (Input.IsActionJustPressed("pause") && GetTree().Paused == true)
-		//{ 
-		//	resume();
-		//	//this.Visible = false;
-
-  //      }
 
     }
 
@@ -30,7 +24,8 @@ public partial class PauseMenu : Node2D
     }
 	private void OnReturnTomainMenuPressed()
 	{
-		
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+        GetTree().Paused = false;
     }
 	private void OnExitPressed()
 	{

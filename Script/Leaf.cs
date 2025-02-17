@@ -23,7 +23,13 @@ public partial class Leaf : Sprite2D
 		else
 		{
 			Wfrog.Visible = true;
-			DeathHandler.PositionReset();
+			Victory.AddWFrog(this);
+            DeathHandler.PositionReset();
 		}
+	}
+
+	public void HideWFrog()
+	{
+        Wfrog.Visible = false;
 	}
 }
