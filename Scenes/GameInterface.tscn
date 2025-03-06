@@ -36,6 +36,21 @@ offset_right = 347.0
 offset_bottom = 362.0
 text = "0"
 
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = 414.0
+offset_top = 337.0
+offset_right = 459.0
+offset_bottom = 360.0
+text = "Level:
+"
+
+[node name="Level" type="Label" parent="."]
+offset_left = 469.0
+offset_top = 338.0
+offset_right = 509.0
+offset_bottom = 361.0
+text = "1"
+
 [node name="FrogLive1" type="Sprite2D" parent="."]
 position = Vector2(56, 348)
 texture = ExtResource("1_4im7d")

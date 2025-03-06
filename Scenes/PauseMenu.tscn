@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://6lsgs5hm51ac"]
 
-[ext_resource type="Script" path="res://Scenes/PauseMenu.cs" id="1_lstor"]
+[ext_resource type="Script" path="res://Script/PauseMenu.cs" id="1_wtya2"]
 
 [node name="PauseMenu" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_lstor")
+script = ExtResource("1_wtya2")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 offset_right = 40.0
@@ -15,10 +15,6 @@ vertical = true
 layout_mode = 2
 text = "Resume"
 
-[node name="Options" type="Button" parent="BoxContainer"]
-layout_mode = 2
-text = "Options"
-
 [node name="ReturnToMainMenu" type="Button" parent="BoxContainer"]
 layout_mode = 2
 text = "Return to menu"
@@ -28,6 +24,5 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="BoxContainer/Resume" to="." method="OnResumePressed"]
-[connection signal="pressed" from="BoxContainer/Options" to="." method="OnOptionsPressed"]
 [connection signal="pressed" from="BoxContainer/ReturnToMainMenu" to="." method="OnReturnTomainMenuPressed"]
 [connection signal="pressed" from="BoxContainer/Exit" to="." method="OnExitPressed"]

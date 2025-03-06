@@ -24,7 +24,7 @@ public partial class Victory : Node
 		{
 			Leaf.HideWFrog();
 		}
-
+        GameInterface.AddLevel(1);
         Leaves.Clear();
     }
 

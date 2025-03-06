@@ -8,7 +8,9 @@ public partial class GameInterface : Node2D
 {
 
 	static private Label score;
+	static private Label level;
 	static private int scoreAmount = 0;
+	static private int levelAmount = 1;
 	private static Sprite2D [] FrogLives = new Sprite2D[3];
 	private ProgressBar progressBar;
 	private Timer remainingTime;
@@ -16,11 +18,12 @@ public partial class GameInterface : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		FrogLives[0] = GetChild<Sprite2D>(4);
-		FrogLives[1] = GetChild<Sprite2D>(5);
-		FrogLives[2] = GetChild<Sprite2D>(6);
         score = GetChild<Label>(3);
-        progressBar = GetChild<ProgressBar>(7);
+        level = GetChild<Label>(5);
+		FrogLives[0] = GetChild<Sprite2D>(6);
+		FrogLives[1] = GetChild<Sprite2D>(7);
+		FrogLives[2] = GetChild<Sprite2D>(8);
+        progressBar = GetChild<ProgressBar>(9);
         remainingTime = progressBar.GetChild<Timer>(0);
 
     }
@@ -43,6 +46,12 @@ public partial class GameInterface : Node2D
 			scoreAmount -= amount;
 			score.Text = scoreAmount.ToString();
 		}
+    }
+
+	static public void AddLevel(int amount)
+	{
+        levelAmount += amount;
+        level.Text = levelAmount.ToString();
     }
 
 	static public void RemoveLifeSprite()
@@ -73,7 +82,6 @@ public partial class GameInterface : Node2D
 
 	public static int GetRemaningLife()
 	{
-		GD.Print(FrogLives.Count(x => x.Visible == true));
 		return FrogLives.Count(x => x.Visible == true);
 	}
 }

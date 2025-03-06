@@ -6,16 +6,18 @@ using System.Linq;
 public partial class DeathHandler : Node
 {
     private TileMap map;
-    private TileData tileData;    
+    private TileData tileData;
+    private static Panel gameOverPanel;
     private static Sprite2D player;
     private static Vector2 playerOriginalPoz;
-    public static int lifeLossLimit = 0;
+    public static int lifeLost = 0;
 
-    public DeathHandler(Sprite2D _player,TileMap _tilemap)  
+    public DeathHandler(Sprite2D _player,TileMap _tilemap, Panel _gameOver)  
     {
         player = _player;
         map = _tilemap;
         playerOriginalPoz = player.GlobalPosition;
+        gameOverPanel = _gameOver; 
     }
 
     public  void GetCurrentTile(TileData _tileData)
@@ -30,7 +32,7 @@ public partial class DeathHandler : Node
 
     public static void PlayerWaterDeathCheck(List<string> area)
     {
-        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1 )
+        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLost < 1 )
         {
             LifeLoss();
         }
@@ -43,11 +45,11 @@ public partial class DeathHandler : Node
     }
     private static void  LifeLoss()
     {
-        lifeLossLimit++;
+        lifeLost++;
         PositionReset();
         if (GameInterface.GetRemaningLife() == 1)
-        { 
-            GameOver.NoLifeLeft(player);
+        {
+            gameOverPanel.Visible = true;
         }
         GameInterface.RemoveLifeSprite();
     }

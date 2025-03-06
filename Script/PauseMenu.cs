@@ -3,8 +3,10 @@ using System;
 
 public partial class PauseMenu : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
 	}
 
@@ -18,14 +20,10 @@ public partial class PauseMenu : Node2D
 	{
 		resume();
     }
-	private void OnOptionsPressed()
-	{
-		
-    }
 	private void OnReturnTomainMenuPressed()
 	{
-        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
         GetTree().Paused = false;
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 	private void OnExitPressed()
 	{

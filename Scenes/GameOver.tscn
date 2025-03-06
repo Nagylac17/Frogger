@@ -1,13 +1,70 @@
-[gd_scene format=3 uid="uid://u3d2hgydt00p"]
+[gd_scene load_steps=3 format=3 uid="uid://bx3y4275k7nfo"]
 
-[node name="GameOverPanel" type="PopupPanel"]
-initial_position = 1
-visible = true
+[ext_resource type="Script" path="res://Script/GameOver.cs" id="1_6ee7k"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 96.0
-offset_bottom = 96.0
-text = "GAME OVER
+[sub_resource type="LabelSettings" id="LabelSettings_bnvut"]
+font_size = 45
+font_color = Color(0, 0.45, 0.195, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 11
+shadow_color = Color(0.0742, 0.0884567, 0.14, 1)
+shadow_offset = Vector2(1, 3)
+
+[node name="GameOver" type="Panel"]
+self_modulate = Color(0.605833, 1, 0.45, 0.611765)
+offset_right = 325.0
+offset_bottom = 257.0
+script = ExtResource("1_6ee7k")
+
+[node name="LabelContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 40.5
+offset_right = 284.5
+offset_bottom = 63.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="LabelContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_bnvut")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 76.0
+offset_right = 235.0
+offset_bottom = 196.0
+theme_override_constants/separation = 29
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ReturnToMenu" type="Button" parent="MainContainer/ButtonContainer"]
+layout_mode = 2
+text = "Return To Menu
 "
+
+[node name="ExitGame" type="Button" parent="MainContainer/ButtonContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="ScoreLaberContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="MainContainer/ScoreLaberContainer"]
+layout_mode = 2
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="ScoreAmount" type="Label" parent="MainContainer/ScoreLaberContainer"]
+layout_mode = 2
+text = "123156135135153
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MainContainer/ButtonContainer/ReturnToMenu" to="." method="OnReturnToMenuPressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/ExitGame" to="." method="OnExitGamePressed"]

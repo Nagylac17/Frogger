@@ -19,7 +19,7 @@ public partial class MainMenuInterface : Node2D
     }
     private void OnOptionsPressed()
 	{
-        
+        GetTree().ChangeSceneToFile("res://Scenes/Options.tscn");
     }
     private void OnCreditsPressed()
 	{

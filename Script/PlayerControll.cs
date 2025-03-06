@@ -10,6 +10,7 @@ public partial class PlayerControll : Sprite2D
 	TileMap map;
 	AudioStreamPlayer2D frogRibbit;
 	DeathHandler deathHandler;
+	Panel gameOverPanel;
 	public List<string> ActiveMonitoredAreas = new List<string>();
 	private float direction;//Ez itt lehet publicra kell
     private float velocity; //Ez itt lehet publicra kell
@@ -23,7 +24,8 @@ public partial class PlayerControll : Sprite2D
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
-		deathHandler = new DeathHandler(player, map);
+        gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
+        deathHandler = new DeathHandler(player, map, gameOverPanel);
         velocity = 0;
 
 	}
@@ -88,7 +90,7 @@ public partial class PlayerControll : Sprite2D
 
 
 		deathHandler.GetCurrentTile(tile_data);
-		DeathHandler.lifeLossLimit = 0;
+		DeathHandler.lifeLost = 0;
 
         //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
         //{return;}

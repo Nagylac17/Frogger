@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=12 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="Script" path="res://Script/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_vlvkp"]
+[ext_resource type="PackedScene" uid="uid://bx3y4275k7nfo" path="res://Scenes/GameOver.tscn" id="3_8ks4g"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_orh7q"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="4_hevjg"]
 [ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/Spawner.tscn" id="5_47ohd"]
@@ -21,6 +22,21 @@ process_priority = 1
 visible = false
 z_index = 1
 position = Vector2(265, 88)
+
+[node name="GameOver" parent="." instance=ExtResource("3_8ks4g")]
+visible = false
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -128.5
+offset_right = 162.5
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TileMap" parent="." instance=ExtResource("1_35uto")]
 position = Vector2(1, 0)

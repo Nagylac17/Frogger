@@ -2,21 +2,32 @@ using Godot;
 using System;
 using System.Runtime.CompilerServices;
 
-public static partial class GameOver
+public  partial class GameOver : Panel
 {
-   static PopupPanel EndingScreen;
 
 
+    //Kell ide egy label is ami tartalmazza az elert pontot
+    //Signal kell ide legkozelebb meg kell tanulni hogy kell
 
-    public static void NoLifeLeft(Node node)
+    public override void _Ready()
     {
-        node.GetTree().Paused = true;
+        //NoLifeLeft();
+        this.Visible = true;
     }
 
-    public static void ShowGameOver()
+    public void NoLifeLeft()
     {
-        EndingScreen.GetInstanceId();
+        GetTree().Paused = true;
     }
-        
+    void OnReturnToMenuPressed()
+    {
+        GetTree().Paused = false;
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+    }
+
+    void OnExitGamePressed()
+    {
+        GetTree().Quit();
+    } 
 
 }

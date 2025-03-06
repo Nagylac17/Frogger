@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj8r66hmatn84"]
+
+[ext_resource type="Script" path="res://Script/Options.cs" id="1_j3s81"]
+[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_fp1g5"]
+
+[node name="OptionMenuInterface" type="Node2D"]
+script = ExtResource("1_j3s81")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_fp1g5")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 109.0
+offset_top = 46.0
+offset_right = 557.0
+offset_bottom = 315.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 219.0
+offset_right = 58.0
+offset_bottom = 259.0
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Back" to="." method="OnBackPressed"]
