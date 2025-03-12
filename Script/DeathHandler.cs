@@ -7,20 +7,27 @@ public partial class DeathHandler : Node
 {
     private TileMap map;
     private TileData tileData;
+
+    private static Node2D MainNode;
+    private static PackedScene gameOverScene;
     private static Panel gameOverPanel;
     private static Sprite2D player;
     private static Vector2 playerOriginalPoz;
-    public static int lifeLost = 0;
+    public static int lifeLossLimit = 0;
 
     public DeathHandler(Sprite2D _player,TileMap _tilemap, Panel _gameOver)  
     {
         player = _player;
         map = _tilemap;
         playerOriginalPoz = player.GlobalPosition;
-        gameOverPanel = _gameOver; 
+       // gameOverPanel = _gameOver;
+        gameOverScene = GD.Load<PackedScene>("res://Scenes/GameOver.tscn");
+        MainNode = (Node2D)_player.GetParent();
+        //pauseMenu = (Node2D)GetNode("/root/Node2D/PauseMenu");
+
     }
 
-    public  void GetCurrentTile(TileData _tileData)
+    public void GetCurrentTile(TileData _tileData)
 	{
         tileData = _tileData;
     }
@@ -32,24 +39,33 @@ public partial class DeathHandler : Node
 
     public static void PlayerWaterDeathCheck(List<string> area)
     {
-        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLost < 1 )
+        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1 )
         {
-            LifeLoss();
+           
+             player.GetTree().CreateTimer(0.3);
+            
+            if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1)
+            {
+                 LifeLoss();
+                   // GD.Print("Hiba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+                
         }
 
     }
 
     public static void PlayerCarDeath()
     {
-        LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
+         LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
     }
-    private static void  LifeLoss()
+    private static void LifeLoss()
     {
-        lifeLost++;
+        lifeLossLimit++;
         PositionReset();
         if (GameInterface.GetRemaningLife() == 1)
         {
-            gameOverPanel.Visible = true;
+            setGameOverPanel();
+            MainNode.AddChild(gameOverPanel);
         }
         GameInterface.RemoveLifeSprite();
     }
@@ -57,6 +73,11 @@ public partial class DeathHandler : Node
     public static void PositionReset()
     {
         player.GlobalPosition = playerOriginalPoz;
+    }
+
+    private static void setGameOverPanel()
+    {
+        gameOverPanel = (Panel)gameOverScene.Instantiate();
     }
 
 }

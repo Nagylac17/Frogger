@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=11 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="Script" path="res://Script/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_vlvkp"]
-[ext_resource type="PackedScene" uid="uid://bx3y4275k7nfo" path="res://Scenes/GameOver.tscn" id="3_8ks4g"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_orh7q"]
-[ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="4_hevjg"]
 [ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/Spawner.tscn" id="5_47ohd"]
+[ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="6_6tyi3"]
 [ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="6_x473b"]
 [ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="7_jcqbj"]
 [ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="8_4d34u"]
@@ -23,27 +22,12 @@ visible = false
 z_index = 1
 position = Vector2(265, 88)
 
-[node name="GameOver" parent="." instance=ExtResource("3_8ks4g")]
-visible = false
-top_level = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.5
-offset_top = -128.5
-offset_right = 162.5
-offset_bottom = 128.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="TileMap" parent="." instance=ExtResource("1_35uto")]
 position = Vector2(1, 0)
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Frog" parent="." instance=ExtResource("2_vlvkp")]
-position = Vector2(361, 328)
+position = Vector2(361, 137)
 
 [node name="Leaf" parent="." instance=ExtResource("3_orh7q")]
 position = Vector2(89, 10)
@@ -63,11 +47,17 @@ position = Vector2(457, 10)
 [node name="Leaf6" parent="." instance=ExtResource("3_orh7q")]
 position = Vector2(553, 10)
 
-[node name="Log" parent="." instance=ExtResource("4_hevjg")]
-position = Vector2(289, 120)
+[node name="Log3" parent="." instance=ExtResource("6_6tyi3")]
+position = Vector2(370, 73)
 
-[node name="Log2" parent="." instance=ExtResource("4_hevjg")]
-position = Vector2(289, 104)
+[node name="Log4" parent="." instance=ExtResource("6_6tyi3")]
+position = Vector2(370, 88)
+
+[node name="Log2" parent="." instance=ExtResource("6_6tyi3")]
+position = Vector2(369, 104)
+
+[node name="Log" parent="." instance=ExtResource("6_6tyi3")]
+position = Vector2(369, 119)
 
 [node name="WaterSpawner1" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(-42, 120)

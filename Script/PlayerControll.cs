@@ -15,25 +15,26 @@ public partial class PlayerControll : Sprite2D
 	private float direction;//Ez itt lehet publicra kell
     private float velocity; //Ez itt lehet publicra kell
 	private bool IsOnePlatform = false;
+	int BaluCounter = 0; // Area Enter/Exit bug fix  Need some time to fire enter event after exit if you enter new safe area
 
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
 		var path = this.GetPath();
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
-        gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
+       // gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
         deathHandler = new DeathHandler(player, map, gameOverPanel);
         velocity = 0;
+
+		
 
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-
 		if (Input.IsActionJustPressed("up"))
 		{
 			player.RotationDegrees = 360;
@@ -61,18 +62,28 @@ public partial class PlayerControll : Sprite2D
 
 		if (IsOnePlatform && (GlobalPosition.X < 630 && GlobalPosition.X > 5 )) // tilemap two end
 		{
-			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity , GlobalPosition.Y);
+			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
 		}
 
-       // DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas);
+      
 
 
     }
+    public override void _PhysicsProcess(double delta)
+    {
+			BaluCounter++;
+		if (BaluCounter > 5)
+		{ 
+		    DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); //## talan azt meg lehetne csinalni hogy a ezt a check-et a viz nezi es az mindig a legvegen nezi
+			BaluCounter = 0;
+		}
 
-	Vector2I TargetTile(Vector2 direction, Vector2I current_tile)
+    }
+
+    Vector2I TargetTile(Vector2 direction, Vector2I current_tile) //Talan itt lehet a gond
 	{
 		Vector2I targetTile = new Vector2I(
-			current_tile.X + (int)direction.X,
+			(current_tile.X + (int)velocity) + (int)direction.X,
 			current_tile.Y + (int)direction.Y
 			);
 
@@ -90,7 +101,7 @@ public partial class PlayerControll : Sprite2D
 
 
 		deathHandler.GetCurrentTile(tile_data);
-		DeathHandler.lifeLost = 0;
+		DeathHandler.lifeLossLimit = 0; // Prevent life loss in every frame
 
         //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
         //{return;}
@@ -104,9 +115,11 @@ public partial class PlayerControll : Sprite2D
 		{ 
 			SetFrogVelocity(area.GetParent());
 			SetFrogDirection(area.GetParent());
+			
 			IsOnePlatform = true;
 		}
 		ActiveMonitoredAreas.Add(area.Name);
+		GD.Print(area.Name+" Belepes");
     }
 	public void Area_Exited(Area2D area)
 	{
@@ -115,6 +128,7 @@ public partial class PlayerControll : Sprite2D
 		IsOnePlatform = false;
 		ActiveMonitoredAreas.Remove(area.Name);
 
+		GD.Print(area.Name+" Kilepes");
 	}
 
 	private void ChangeFrogTexture(string path)

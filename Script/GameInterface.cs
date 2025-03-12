@@ -39,6 +39,11 @@ public partial class GameInterface : Node2D
         scoreAmount += amount;
 		score.Text = scoreAmount.ToString();
     }
+
+	static public string GetScore()
+	{
+		return score.Text;
+	}
 	static public void Subtract(int amount)
 	{
 		if (scoreAmount > 0)
