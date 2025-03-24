@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj8r66hmatn84"]
+[gd_scene load_steps=5 format=3 uid="uid://bj8r66hmatn84"]
 
 [ext_resource type="Script" path="res://Script/Options.cs" id="1_j3s81"]
 [ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_fp1g5"]
+[ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/FrogSound.ogg" id="3_lo5au"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oq453"]
+font_size = 10
 
 [node name="OptionMenuInterface" type="Node2D"]
 script = ExtResource("1_j3s81")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 z_as_relative = false
 y_sort_enabled = true
 offset_right = 640.0
@@ -40,4 +45,53 @@ layout_mode = 2
 text = "Back
 "
 
+[node name="SoundContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 102.0
+offset_right = 398.0
+offset_bottom = 142.0
+scale = Vector2(1.10492, 1.01306)
+
+[node name="Master" type="Label" parent="Panel/SoundContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+text = "Master
+"
+label_settings = SubResource("LabelSettings_oq453")
+
+[node name="MasterSlider" type="HSlider" parent="Panel/SoundContainer"]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Panel/SoundContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_oq453")
+
+[node name="SoundSlider" type="HSlider" parent="Panel/SoundContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Panel/SoundContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+text = "Music"
+label_settings = SubResource("LabelSettings_oq453")
+
+[node name="MusicSlider" type="HSlider" parent="Panel/SoundContainer"]
+layout_mode = 2
+
+[node name="TestSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lo5au")
+bus = &"SFX"
+
 [connection signal="pressed" from="Panel/VBoxContainer/Back" to="." method="OnBackPressed"]
+[connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnSFXValueChange"]
+[connection signal="value_changed" from="Panel/SoundContainer/SoundSlider" to="." method="OnSFXValueChange"]
+[connection signal="value_changed" from="Panel/SoundContainer/MusicSlider" to="." method="OnSFXValueChange"]
