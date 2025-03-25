@@ -16,8 +16,7 @@ public partial class Options : Node2D
 	{
 		TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
 
-		SFXSlider = GetNode<Panel>("Panel").GetNode<VBoxContainer>("SoundContainer").GetNode<HSlider>("SoundSlider");
-
+		SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 		SFXSlider.Value = AudioServer.GetBusVolumeDb(SFXBusNumber)+100;
 
     }
