@@ -1,6 +1,8 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public partial class Spawner : Marker2D
 {
@@ -8,7 +10,7 @@ public partial class Spawner : Marker2D
 	Log log = new Log();
 	Car car = new Car();
 
-	[ExportGroup("Spwaned object")]
+	[ExportGroup("Spawned object")]
 	[Export]
 	public Godot.Collections.Dictionary<string, PackedScene> Assets { get; set; }
 	private string[] RoadSpawnAssets = new string[3] {"BlueCar", "RedCar", "WhiteCar"};
@@ -20,12 +22,25 @@ public partial class Spawner : Marker2D
 	Random rnd = new Random();
 	TileMap tileMap;
 	Timer spawnTimer;
+	int[] spawnCounter = new int[500];
+	List<int> UsedSpawnNameNumber = new List<int>(); // Csak LOG objekteket tartalmaz majd ezt kell megcsinalni, hogy minden mast is kezeljen ha kell
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		TimerSetup();
+		SpawnCounterFill();
+        TimerSetup();
         TileMapSetup();
+		
 	}
+
+	private void SpawnCounterFill()
+	{
+        for (int i = 1; i < 501; i++)
+        {
+            spawnCounter[i - 1] = i;
+
+        }
+    }
 
 	private void TileMapSetup()
 	{
@@ -46,7 +61,10 @@ public partial class Spawner : Marker2D
 
 	private void OnTimeout()
 	{
-		switch (ChooseAsset())
+
+
+
+        switch (ChooseAsset())
 		{
 			case "Log" :
 				{
@@ -73,6 +91,27 @@ public partial class Spawner : Marker2D
 					break;
 				}
 		}
+	}
+
+	private string ChooseName()
+	{
+		int pickedNumber;
+		do
+		{
+			pickedNumber = rnd.Next(1, 500);
+		}
+		while (UsedSpawnNameNumber.Contains(pickedNumber));
+
+		UsedSpawnNameNumber.Add(pickedNumber);
+
+        string name = spawnCounter[pickedNumber].ToString();
+
+        return name;
+	}
+
+	private void ClearUsedSpawnNameNumberList()
+	{
+		UsedSpawnNameNumber = UsedSpawnNameNumber.Except(DeSpawner.DeletedAssetNumbers).ToList();
 	}
 
 	private string ChooseAsset()
@@ -104,7 +143,9 @@ public partial class Spawner : Marker2D
 		log = (Log)Assets["Log"].Instantiate();
 		log.GlobalPosition = this.GlobalPosition;
         log.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		log.Name = "Log" + ChooseName();
 		tileMap.AddChild(log);
+		//GD.Print(log.Name);
 	}
     void AddBlueCar()
 	{

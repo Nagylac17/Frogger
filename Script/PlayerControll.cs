@@ -27,7 +27,6 @@ public partial class PlayerControll : Sprite2D
        // gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
         deathHandler = new DeathHandler(player, map, gameOverPanel);
         velocity = 0;
-
 		
 
 	}
@@ -40,7 +39,6 @@ public partial class PlayerControll : Sprite2D
 			player.RotationDegrees = 360;
 			Move(Vector2.Up);
 			GameInterface.AddScore(10);
-
 		}
 		else if (Input.IsActionJustPressed("down"))
 		{
@@ -119,7 +117,6 @@ public partial class PlayerControll : Sprite2D
 			IsOnePlatform = true;
 		}
 		ActiveMonitoredAreas.Add(area.Name);
-		GD.Print(area.Name+" Belepes");
     }
 	public void Area_Exited(Area2D area)
 	{
@@ -128,7 +125,6 @@ public partial class PlayerControll : Sprite2D
 		IsOnePlatform = false;
 		ActiveMonitoredAreas.Remove(area.Name);
 
-		GD.Print(area.Name+" Kilepes");
 	}
 
 	private void ChangeFrogTexture(string path)

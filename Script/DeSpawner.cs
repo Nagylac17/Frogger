@@ -1,13 +1,30 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Xml.Linq;
 
 public static partial class DeSpawner 
 {
-    public static void DeSpawnAsset(Node2D node)
+    public static List<int> DeletedAssetNumbers = new List<int>();
+
+    public static void DeSpawnAsset(Node2D _node)
     {
-        if (node.GlobalPosition.X < -200 || node.GlobalPosition.X > 750)
+        if (_node.GlobalPosition.X < -200 || _node.GlobalPosition.X > 750)
         {
-            node.QueueFree();
+            if (_node.Name.ToString().Contains("Log"))
+            { 
+                getDeletedAssetNumber(_node.Name);
+            }
+            _node.QueueFree();
         }
+    }
+
+    public static void  getDeletedAssetNumber(string _name)
+    {
+        int id;
+        id = Convert.ToInt32(_name.Substring(3));
+
+        DeletedAssetNumbers.Add(id);
     }
 }
