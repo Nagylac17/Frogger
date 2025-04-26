@@ -1,0 +1,67 @@
+using Frogger.Script;
+using Godot;
+using System;
+
+public partial class Turtle :  Sprite2D , IPlatform 
+{
+    // Called when the node enters the scene tree for the first time.
+    AnimationPlayer animPlayer;
+    Area2D area;
+	public bool IsdivingTurtle = true;
+    public float Direction = -1;
+    [Export]
+    public float velocity = 0.5f;
+
+
+    public override void _Ready()
+	{
+        area = GetNode<Area2D>("PlatformArea");
+        animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		SetTurtleDive();
+
+        velocity = (velocity + Victory.VelocityIncrease()) * Direction;
+        if (Direction == -1)
+        {
+            RotationDegrees = 180;
+        }
+
+    }
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+        GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+        DeSpawner.DeSpawnAsset(this);
+    }
+
+	private void SetTurtleDive()
+	{
+		if (IsdivingTurtle)
+		{
+            animPlayer.Play("Dive");
+        }
+	}
+
+
+    public void TurnOffArea2D()
+    {
+        area.Visible = false;
+        area.SetCollisionLayerValue(1, false);
+    }
+
+    public void TurnOnArea2D()
+    {
+        area.Visible = true;
+        area.SetCollisionLayerValue(1, true);
+    }
+
+    public float GetDirection()
+    {
+        return Direction;
+    }
+    public float GetVelocity()
+    {
+        return velocity;
+    }
+
+}

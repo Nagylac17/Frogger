@@ -1,3 +1,4 @@
+using Frogger.Script;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -109,7 +110,7 @@ public partial class PlayerControll : Sprite2D
 	}
 	public void Area_entered(Area2D area)
 	{
-		if (area.Name == "Log") //interface-el egy platform osszegzest
+		if (area.Name == "PlatformArea") //interface-el egy platform osszegzest
 		{ 
 			SetFrogVelocity(area.GetParent());
 			SetFrogDirection(area.GetParent());
@@ -134,13 +135,13 @@ public partial class PlayerControll : Sprite2D
 
 	private void SetFrogVelocity(Node node)
 	{
-			Log Log = (Log)node;
-			this.velocity = Log.velocity;	
+			IPlatform Log = (IPlatform)node;
+			this.velocity = Log.GetVelocity();	
 	}
 
 	private void SetFrogDirection(Node node)
 	{
-			Log Log = (Log)node;
-			this.direction = Log.Direction;
+			IPlatform Log = (IPlatform)node;
+			this.direction = Log.GetDirection();
 	}
 }

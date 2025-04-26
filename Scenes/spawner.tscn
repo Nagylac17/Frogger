@@ -13,5 +13,6 @@ Assets = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 4096.0
 
 [connection signal="timeout" from="Timer" to="." method="OnTimeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=13 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="Script" path="res://Script/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="6_x473b"]
 [ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="7_jcqbj"]
 [ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="8_4d34u"]
+[ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="8_p25bf"]
 [ext_resource type="PackedScene" uid="uid://6lsgs5hm51ac" path="res://Scenes/PauseMenu.tscn" id="9_qdm2b"]
 [ext_resource type="PackedScene" uid="uid://lhl8d2vexdan" path="res://Scenes/Fly.tscn" id="10_5xw0p"]
+[ext_resource type="PackedScene" uid="uid://cqn7gtufsak0f" path="res://Scenes/Turtle.tscn" id="11_knqpj"]
 
 [node name="Node2D" type="Node2D"]
 process_mode = 3
@@ -49,30 +51,65 @@ position = Vector2(553, 10)
 
 [node name="WaterSpawner1" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(-42, 120)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner2" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(680, 104)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner3" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(-42, 88)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner4" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(680, 72)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner5" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(-42, 56)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner6" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(680, 40)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="WaterSpawner7" parent="." instance=ExtResource("5_47ohd")]
 position = Vector2(-42, 24)
+Assets = {
+"BlueCar": ExtResource("6_x473b"),
+"Log": ExtResource("8_p25bf"),
+"Turtle": ExtResource("11_knqpj")
+}
 SpawnLocation = "Water"
 
 [node name="RoadSpawner1" parent="." instance=ExtResource("5_47ohd")]

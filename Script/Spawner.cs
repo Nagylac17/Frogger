@@ -9,12 +9,14 @@ public partial class Spawner : Marker2D
 
 	Log log = new Log();
 	Car car = new Car();
+	Turtle turtle = new Turtle();
+	bool IsThisSpawnerActive = true;
 
 	[ExportGroup("Spawned object")]
 	[Export]
 	public Godot.Collections.Dictionary<string, PackedScene> Assets { get; set; }
-	private string[] RoadSpawnAssets = new string[3] {"BlueCar", "RedCar", "WhiteCar"};
-	private string[] WaterSpawnAssets = new string[4] { "Log", "LargeLog","Turtle", "Aligator" };
+	private string[] RoadSpawnAssets = new string[3] { "BlueCar", "RedCar", "WhiteCar" };
+	private string[] WaterSpawnAssets = new string[4] { "Log", "LargeLog", "Turtle", "Aligator" };
 
 	[Export]
 	string SpawnLocation;
@@ -24,23 +26,23 @@ public partial class Spawner : Marker2D
 	Timer spawnTimer;
 	int[] spawnCounter = new int[500];
 	List<int> UsedSpawnNameNumber = new List<int>(); // Csak LOG objekteket tartalmaz majd ezt kell megcsinalni, hogy minden mast is kezeljen ha kell
-	// Called when the node enters the scene tree for the first time.
+													 // Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		SpawnCounterFill();
-        TimerSetup();
-        TileMapSetup();
-		
+		TimerSetup();
+		TileMapSetup();
+
 	}
 
 	private void SpawnCounterFill()
 	{
-        for (int i = 1; i < 501; i++)
-        {
-            spawnCounter[i - 1] = i;
+		for (int i = 1; i < 501; i++)
+		{
+			spawnCounter[i - 1] = i;
 
-        }
-    }
+		}
+	}
 
 	private void TileMapSetup()
 	{
@@ -49,48 +51,49 @@ public partial class Spawner : Marker2D
 
 	private void TimerSetup()
 	{
-        spawnTimer = GetChild<Timer>(0);
+		spawnTimer = GetNode<Timer>("Timer");
 		SpawnTime();
-        spawnTimer.Start();
-    }
+		spawnTimer.Start();
+	}
 
 	private void SpawnTime()
 	{
-        spawnTimer.WaitTime = rnd.Next(1, 6); // spawn ido valtoztatas
-    }
+		spawnTimer.WaitTime = rnd.Next(1, 6); // spawn ido valtoztatas
+	}
 
 	private void OnTimeout()
 	{
 
-
-
-        switch (ChooseAsset())
+		SpawnTime();
+		switch (ChooseAsset())
 		{
-			case "Log" :
+			case "Log":
 				{
-					SpawnTime();
-                    AddLog();
+					AddLog();
 					break;
 				}
-			case "BlueCar" :
+			case "Turtle":
 				{
-					SpawnTime();
-                    AddBlueCar();
+					AddTurtle(5);
 					break;
 				}
-			case "RedCar" :
+			case "BlueCar":
 				{
-					SpawnTime();
-                    AddRedCar();
+					AddBlueCar();
 					break;
 				}
-			case "WhiteCar" :
+			case "RedCar":
 				{
-					SpawnTime();
-                    AddWhiteCar();
+					AddRedCar();
+					break;
+				}
+			case "WhiteCar":
+				{
+					AddWhiteCar();
 					break;
 				}
 		}
+		
 	}
 
 	private string ChooseName()
@@ -104,9 +107,9 @@ public partial class Spawner : Marker2D
 
 		UsedSpawnNameNumber.Add(pickedNumber);
 
-        string name = spawnCounter[pickedNumber].ToString();
+		string name = spawnCounter[pickedNumber].ToString();
 
-        return name;
+		return name;
 	}
 
 	private void ClearUsedSpawnNameNumberList()
@@ -122,31 +125,56 @@ public partial class Spawner : Marker2D
 		{
 			case "Water":
 				{
-					asset = "Log"; //Ide meg kell variaciot adni
+					if (rnd.Next(1, 3) == 1)
+					{
+						asset = "Turtle"; //Ide meg kell variaciot adni
+					}
+					else
+					{
+						asset = "Log";
+					}
+					
 					break;
 				}
 			case "Road":
 				{
-					asset = RoadSpawnAssets[rnd.Next(0,3)]; // Itt kell megadni melyik tombbol szedje az adatokat
+					asset = RoadSpawnAssets[rnd.Next(0, 3)]; // Itt kell megadni melyik tombbol szedje az adatokat
 					break;
 				}
-	
+
 		}
 
 
 		return asset;
 	}
+    #region AddSpanwableObject
 
+    #region Water
     void AddLog()
 	{
 		//log = (Log)Assets[0].Instantiate();
 		log = (Log)Assets["Log"].Instantiate();
-		log.GlobalPosition = this.GlobalPosition;
-        log.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		log.GlobalPosition = GlobalPosition;
+        log.Direction = GlobalPosition.X < 100 ? -1 : 1;
 		log.Name = "Log" + ChooseName();
 		tileMap.AddChild(log);
 		//GD.Print(log.Name);
 	}
+	void AddTurtle(int amount)
+	{
+		for (int i = 0; i < amount; i++)
+		{
+			turtle = (Turtle)Assets["Turtle"].Instantiate();
+			var texturesize = turtle.Texture.GetWidth()/turtle.Hframes;
+			turtle.GlobalPosition = GlobalPosition + new Vector2(i * texturesize,0);
+			turtle.Direction = GlobalPosition.X < 100 ? -1 : 1;
+			//spawnTimer.WaitTime = 6;
+			tileMap.AddChild(turtle);
+		}
+    }
+
+    #endregion
+    #region Road
     void AddBlueCar()
 	{
 		//log = (Log)Assets[0].Instantiate();
@@ -174,6 +202,9 @@ public partial class Spawner : Marker2D
 		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
 		tileMap.AddChild(car);
 	}
+    #endregion
+
+    #endregion
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	//public override void _Process(double delta)
 	//{

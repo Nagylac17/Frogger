@@ -13,15 +13,21 @@ script = ExtResource("1_o3qlk")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1mw24")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
+[node name="DeSpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_4o6vk")
 
-[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="OnSpawnTimerTimeout"]
+[connection signal="timeout" from="DeSpawnTimer" to="." method="OnDeSpawnTimerTimeout"]
 [connection signal="area_entered" from="Area2D" to="." method="OnAreaEntered"]

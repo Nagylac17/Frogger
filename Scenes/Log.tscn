@@ -12,10 +12,10 @@ visibility_layer = 3
 texture = ExtResource("1_3e81n")
 script = ExtResource("2_sg2qk")
 
-[node name="Log" type="Area2D" parent="."]
+[node name="PlatformArea" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Log"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformArea"]
 position = Vector2(5.96046e-07, -1.19209e-07)
 scale = Vector2(0.432705, 0.762224)
 shape = SubResource("RectangleShape2D_kwtcb")
@@ -28,4 +28,4 @@ position = Vector2(-8, 0)
 
 [node name="MiddlePosMarker" type="Marker2D" parent="."]
 
-[connection signal="area_entered" from="Log" to="." method="OnAreaEntered"]
+[connection signal="area_entered" from="PlatformArea" to="." method="OnAreaEntered"]

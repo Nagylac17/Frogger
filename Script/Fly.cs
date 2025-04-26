@@ -7,6 +7,7 @@ using System.Security.AccessControl;
 public partial class Fly : Node2D
 {
 
+	Timer despawnTimer;
 	Timer spawnTimer;
 	Vector2 originalPos;
 	int Direction;
@@ -21,33 +22,41 @@ public partial class Fly : Node2D
 	{
 		originalPos = GlobalPosition;
 		originalParent = GetParent();
-
-
-    }
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		
+		despawnTimer = GetNode<Timer>("DeSpawnTimer");
+		spawnTimer = GetNode<Timer>("SpawnTimer");
+        //SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 
     }
 
-	private void SpawnOnLog()
-	{
-		if (pickedLog != null)
-		{ 
-			GlobalPosition = pickedLog.GlobalPosition;
-			Reparent(pickedLog);
-		}
-	}
-	private void OnTimerTimeout()
+	private void OnSpawnTimerTimeout()
 	{
 		GetSpwanableLogs();
 		SpawnOnLog();
-;
-	}
 
-	private void GetSpwanableLogs()
+    }
+
+	private void OnDeSpawnTimerTimeout()
+	{
+		SetFlyOriginalState();
+    }
+
+    private void OnAreaEntered(Area2D _area)
+    {
+        SetFlyOriginalState();
+        GameInterface.AddScore(100);
+    }
+    private void SpawnOnLog()
+    {
+        if (pickedLog != null)
+        {
+            GlobalPosition = pickedLog.GlobalPosition;
+            Reparent(pickedLog);
+            despawnTimer.Start();
+            spawnTimer.Stop();
+        }
+    }
+
+    private void GetSpwanableLogs()
 	{
         Random rnd = new Random();
         var tempMap = originalParent.GetNode<TileMap>("TileMap").GetChildren();
@@ -68,8 +77,13 @@ public partial class Fly : Node2D
         }
     }
 
-	private void OnAreaEntered(Area2D _area)
+
+
+	private void SetFlyOriginalState()
 	{
-		GlobalPosition = originalPos; 
-	}
+        CallDeferred("reparent",originalParent);
+        GlobalPosition = originalPos;
+        spawnTimer.Start();
+		despawnTimer.Stop();
+    }
 }

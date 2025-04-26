@@ -1,7 +1,8 @@
+using Frogger.Script;
 using Godot;
 using System;
 
-public partial class Log : Sprite2D
+public partial class Log : Sprite2D, IPlatform
 {
     public float Direction = -1;
     public float velocity;
@@ -12,16 +13,25 @@ public partial class Log : Sprite2D
         velocity = (0.5f+Victory.VelocityIncrease()) * Direction;
         if (Direction == -1)
         {
-            this.RotationDegrees = 180;
+            RotationDegrees = 180;
         }
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+		GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
 
-        DeSpawner.DeSpawnAsset(this);
+       DeSpawner.DeSpawnAsset(this);
+    }
+
+    public float GetVelocity()
+    {
+        return velocity;
+    }
+    public float GetDirection()
+    {
+        return Direction;
     }
 
     //private void Despawn()
