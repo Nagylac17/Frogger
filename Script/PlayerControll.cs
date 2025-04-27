@@ -12,6 +12,7 @@ public partial class PlayerControll : Sprite2D
 	AudioStreamPlayer2D frogRibbit;
 	DeathHandler deathHandler;
 	Panel gameOverPanel;
+	AnimationPlayer animationPlayer;
 	public List<string> ActiveMonitoredAreas = new List<string>();
 	private float direction;//Ez itt lehet publicra kell
     private float velocity; //Ez itt lehet publicra kell
@@ -24,7 +25,8 @@ public partial class PlayerControll : Sprite2D
 		var path = this.GetPath();
 		player = (Sprite2D)GetNode(path);
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
-		frogRibbit = GetChild<AudioStreamPlayer2D>(0);
+		animationPlayer = (AnimationPlayer)player.GetNode("AnimationPlayer");
+        frogRibbit = GetChild<AudioStreamPlayer2D>(0);
        // gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
         deathHandler = new DeathHandler(player, map, gameOverPanel);
         velocity = 0;
@@ -105,7 +107,9 @@ public partial class PlayerControll : Sprite2D
         //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
         //{return;}
         GlobalPosition = map.MapToLocal(target_tile);
-		frogRibbit.Play();
+		animationPlayer.Play("Move");
+
+        frogRibbit.Play();
 		//deathHandler.PlayerDeathCheck(areaTest);		
 	}
 	public void Area_entered(Area2D area)

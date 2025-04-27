@@ -1,17 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://dggd6bjbq3rhv"]
+[gd_scene load_steps=9 format=3 uid="uid://dggd6bjbq3rhv"]
 
-[ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/FrogUp.png" id="1_5nf0l"]
+[ext_resource type="Texture2D" uid="uid://dcxpfbso5cbkf" path="res://Assets/FrogAnimation.png" id="1_73u2v"]
 [ext_resource type="Script" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
 [ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/FrogSound.ogg" id="3_hq86x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koa7v"]
 size = Vector2(15.296, 15.817)
 
+[sub_resource type="Animation" id="Animation_41rcq"]
+resource_name = "Move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0359159, 0.0718319, 0.108602, 0.146227),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 8, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_hp5h5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5c7f8"]
+resource_name = "CarDeath"
+length = 0.85
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.160695, 0.308573, 0.464996, 0.60433, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c20dr"]
+_data = {
+"CarDeath": SubResource("Animation_5c7f8"),
+"Move": SubResource("Animation_41rcq"),
+"RESET": SubResource("Animation_hp5h5")
+}
+
 [node name="Frog" type="Sprite2D"]
 process_mode = 1
 z_index = 1
 scale = Vector2(0.9375, 1)
-texture = ExtResource("1_5nf0l")
+texture = ExtResource("1_73u2v")
+hframes = 5
+vframes = 2
 script = ExtResource("2_q3ki3")
 
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]
@@ -25,6 +81,11 @@ collision_mask = 3
 position = Vector2(0, 5.96046e-08)
 scale = Vector2(0.917987, 0.921124)
 shape = SubResource("RectangleShape2D_koa7v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c20dr")
+}
 
 [connection signal="area_entered" from="Frog" to="." method="Area_entered"]
 [connection signal="area_exited" from="Frog" to="." method="Area_Exited"]

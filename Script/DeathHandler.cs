@@ -12,12 +12,14 @@ public partial class DeathHandler : Node
     private static PackedScene gameOverScene;
     private static Panel gameOverPanel;
     private static Sprite2D player;
+    private static AnimationPlayer deathAnimations;
     private static Vector2 playerOriginalPoz;
     public static int lifeLossLimit = 0;
 
     public DeathHandler(Sprite2D _player,TileMap _tilemap, Panel _gameOver)  
     {
         player = _player;
+        deathAnimations = (AnimationPlayer)player.GetNode("AnimationPlayer");
         map = _tilemap;
         playerOriginalPoz = player.GlobalPosition;
        // gameOverPanel = _gameOver;
@@ -56,7 +58,8 @@ public partial class DeathHandler : Node
 
     public static void PlayerCarDeath()
     {
-         LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
+        deathAnimations.Play("CarDeath"); // itt meg kell javítan a halál mûködését
+        LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
     }
     private static void LifeLoss()
     {
@@ -73,6 +76,7 @@ public partial class DeathHandler : Node
     public static void PositionReset()
     {
         player.GlobalPosition = playerOriginalPoz;
+        deathAnimations.Stop();
     }
 
     private static void setGameOverPanel()
