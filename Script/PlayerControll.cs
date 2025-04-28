@@ -148,4 +148,11 @@ public partial class PlayerControll : Sprite2D
 			IPlatform Log = (IPlatform)node;
 			this.direction = Log.GetDirection();
 	}
+
+	public void DeathAnimationEnding()
+	{
+		GetTree().Paused = false;
+		DeathHandler.LifeLoss();
+		animationPlayer.Stop();
+	}
 }

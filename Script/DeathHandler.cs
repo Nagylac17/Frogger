@@ -58,10 +58,10 @@ public partial class DeathHandler : Node
 
     public static void PlayerCarDeath()
     {
-        deathAnimations.Play("CarDeath"); // itt meg kell javítan a halál mûködését
-        LifeLoss(); //hozza kell adni a jatekos halal animacio inditasat
+        player.GetTree().Paused = true;
+        deathAnimations.Play("CarDeath"); 
     }
-    private static void LifeLoss()
+    public static void LifeLoss()
     {
         lifeLossLimit++;
         PositionReset();
@@ -76,7 +76,7 @@ public partial class DeathHandler : Node
     public static void PositionReset()
     {
         player.GlobalPosition = playerOriginalPoz;
-        deathAnimations.Stop();
+        //deathAnimations.Stop();
     }
 
     private static void setGameOverPanel()
