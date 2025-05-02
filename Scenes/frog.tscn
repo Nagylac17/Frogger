@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dggd6bjbq3rhv"]
+[gd_scene load_steps=10 format=3 uid="uid://dggd6bjbq3rhv"]
 
 [ext_resource type="Texture2D" uid="uid://dcxpfbso5cbkf" path="res://Assets/FrogAnimation.png" id="1_73u2v"]
 [ext_resource type="Script" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
@@ -29,11 +29,11 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.840159),
+"times": PackedFloat32Array(0.807463),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"deadthEndAnimationCheckTESZT"
+"method": &"DeathAnimationEnding"
 }]
 }
 
@@ -68,9 +68,40 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_2vobj"]
+resource_name = "DrowningDeath"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.48032),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"DeathAnimationEnding"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c20dr"]
 _data = {
 "CarDeath": SubResource("Animation_5c7f8"),
+"DrowningDeath": SubResource("Animation_2vobj"),
 "Move": SubResource("Animation_41rcq"),
 "RESET": SubResource("Animation_hp5h5")
 }
@@ -81,7 +112,7 @@ z_index = 1
 scale = Vector2(0.9375, 1)
 texture = ExtResource("1_73u2v")
 hframes = 5
-vframes = 2
+vframes = 3
 script = ExtResource("2_q3ki3")
 
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]

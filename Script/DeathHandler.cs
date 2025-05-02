@@ -48,12 +48,18 @@ public partial class DeathHandler : Node
             
             if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1)
             {
-                 LifeLoss();
+                PlayerDrawningDeath();
                    // GD.Print("Hiba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
                 
         }
 
+    }
+
+    public static void PlayerDrawningDeath()
+    {
+        player.GetTree().Paused = true;
+        deathAnimations.Play("DrowningDeath");
     }
 
     public static void PlayerCarDeath()
