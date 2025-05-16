@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cenuejx8dbvoh"]
+[gd_scene load_steps=8 format=3 uid="uid://cenuejx8dbvoh"]
 
 [ext_resource type="Script" path="res://Script/Spawner.cs" id="1_qrhwe"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="2_4tpuc"]
 [ext_resource type="PackedScene" uid="uid://bdpcje4uluqrd" path="res://Scenes/BlueCar.tscn" id="3_sr1ho"]
+[ext_resource type="PackedScene" uid="uid://dbatvbbxybeui" path="res://Scenes/Aligator.tscn" id="4_qru2k"]
+[ext_resource type="PackedScene" uid="uid://cqn7gtufsak0f" path="res://Scenes/Turtle.tscn" id="5_gtvvh"]
+[ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="6_7sddo"]
+[ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="7_ac3tl"]
 
 [node name="Spawner" type="Marker2D"]
 process_mode = 1
 script = ExtResource("1_qrhwe")
 Assets = {
+"Aligator": ExtResource("4_qru2k"),
 "BlueCar": ExtResource("3_sr1ho"),
-"Log": ExtResource("2_4tpuc")
+"Log": ExtResource("2_4tpuc"),
+"RedCar": ExtResource("6_7sddo"),
+"Turtle": ExtResource("5_gtvvh"),
+"WhiteCar": ExtResource("7_ac3tl")
 }
 
 [node name="Timer" type="Timer" parent="."]

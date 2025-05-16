@@ -62,6 +62,12 @@ public partial class DeathHandler : Node
         deathAnimations.Play("DrowningDeath");
     }
 
+    public static void PlayerBiteDeath()
+    {
+        player.GetTree().Paused = true;
+        deathAnimations.Play("CarDeath");
+    }
+
     public static void PlayerCarDeath()
     {
         player.GetTree().Paused = true;

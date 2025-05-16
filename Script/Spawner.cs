@@ -10,6 +10,7 @@ public partial class Spawner : Marker2D
 	Log log = new Log();
 	Car car = new Car();
 	Turtle turtle = new Turtle();
+	Aligator aligator = new Aligator();
 	bool IsThisSpawnerActive = true;
 
 	[ExportGroup("Spawned object")]
@@ -77,6 +78,11 @@ public partial class Spawner : Marker2D
 					AddTurtle(5);
 					break;
 				}
+			case "Aligator":
+				{
+					AddAligator();
+					break;
+                }
 			case "BlueCar":
 				{
 					AddBlueCar();
@@ -125,15 +131,22 @@ public partial class Spawner : Marker2D
 		{
 			case "Water":
 				{
-					if (rnd.Next(1, 3) == 1)
+					switch (rnd.Next(1, 4))
 					{
-						asset = "Turtle"; //Ide meg kell variaciot adni
-					}
-					else
-					{
-						asset = "Log";
-					}
-					
+						case 1:
+                            asset = "Turtle"; //Ide meg kell variaciot adni
+                            break;
+						case 2:
+                            asset = "Log";
+							break;
+						case 3:
+							asset = "Aligator";
+							break;
+						default:
+							asset = "Log";
+							break;
+                    }
+						
 					break;
 				}
 			case "Road":
@@ -171,6 +184,15 @@ public partial class Spawner : Marker2D
 			//spawnTimer.WaitTime = 6;
 			tileMap.AddChild(turtle);
 		}
+    }
+
+	void AddAligator()
+	{
+        aligator = (Aligator)Assets["Aligator"].Instantiate();
+        aligator.GlobalPosition = GlobalPosition;
+        aligator.Direction = GlobalPosition.X < 100 ? -1 : 1;
+        aligator.Name = "Aligator" + ChooseName();
+        tileMap.AddChild(aligator);
     }
 
     #endregion
