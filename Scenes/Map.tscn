@@ -27,7 +27,7 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_r8r6d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtd2l"]
-size = Vector2(639.5, 112)
+size = Vector2(640, 112)
 
 [node name="TileMap" type="TileMap"]
 process_mode = 1
@@ -40,7 +40,7 @@ collision_mask = 0
 collision_priority = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(320.25, 72)
+position = Vector2(320, 72)
 shape = SubResource("RectangleShape2D_rtd2l")
 
 [node name="GameInterface" parent="." instance=ExtResource("2_wraho")]

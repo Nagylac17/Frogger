@@ -40,6 +40,7 @@ sprite_frames = SubResource("SpriteFrames_s12kd")
 script = ExtResource("2_jdiya")
 
 [node name="BlueCar2" type="Area2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueCar2"]
 scale = Vector2(1.00106, 0.951039)

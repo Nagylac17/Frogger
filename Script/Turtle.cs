@@ -9,6 +9,8 @@ public partial class Turtle :  Sprite2D , IPlatform
     Area2D area;
 	public bool IsdivingTurtle = true;
     public float Direction = -1;
+    Random rnd = new Random();
+
     [Export]
     public float velocity = 0.5f;
 
@@ -41,6 +43,7 @@ public partial class Turtle :  Sprite2D , IPlatform
             animPlayer.Play("Dive");
         }
 	}
+
 
 
     public void TurnOffArea2D()

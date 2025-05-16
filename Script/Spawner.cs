@@ -11,6 +11,10 @@ public partial class Spawner : Marker2D
 	Car car = new Car();
 	Turtle turtle = new Turtle();
 	Aligator aligator = new Aligator();
+	RayCast2D rightRayCast = new RayCast2D();
+	RayCast2D leftRayCast = new RayCast2D();
+
+
 	bool IsThisSpawnerActive = true;
 
 	[ExportGroup("Spawned object")]
@@ -33,8 +37,20 @@ public partial class Spawner : Marker2D
 		SpawnCounterFill();
 		TimerSetup();
 		TileMapSetup();
+		RayCastsSetup();
+
+    }
+
+    public override void _Process(double delta)
+    {
 
 	}
+
+    private void RayCastsSetup()
+	{
+        rightRayCast = GetNode<RayCast2D>("RightRayCast2D");
+        leftRayCast = GetNode<RayCast2D>("LeftRayCast2D");
+    }
 
 	private void SpawnCounterFill()
 	{
@@ -64,40 +80,54 @@ public partial class Spawner : Marker2D
 
 	private void OnTimeout()
 	{
+        //if (rightRayCast.IsColliding())
+        //{
+        //    var valami = rightRayCast.GetCollider();
 
-		SpawnTime();
-		switch (ChooseAsset())
+        //   // GD.Print(valami.GetType());
+        //}
+        //if (leftRayCast.IsColliding())
+        //{
+        //    var valami = leftRayCast.GetCollider();
+
+        //    // GD.Print(valami.GetType());
+        //}
+        //SpawnTime();
+        if (!rightRayCast.IsColliding() && !leftRayCast.IsColliding())
 		{
-			case "Log":
-				{
-					AddLog();
-					break;
-				}
-			case "Turtle":
-				{
-					AddTurtle(5);
-					break;
-				}
-			case "Aligator":
-				{
-					AddAligator();
-					break;
-                }
-			case "BlueCar":
-				{
-					AddBlueCar();
-					break;
-				}
-			case "RedCar":
-				{
-					AddRedCar();
-					break;
-				}
-			case "WhiteCar":
-				{
-					AddWhiteCar();
-					break;
-				}
+			switch (ChooseAsset())
+			{
+				case "Log":
+					{
+						AddLog();
+						break;
+					}
+				case "Turtle":
+					{
+						AddTurtle(rnd.Next(1, 6));
+						break;
+					}
+				case "Aligator":
+					{
+						AddAligator();
+						break;
+					}
+				case "BlueCar":
+					{
+						AddBlueCar();
+						break;
+					}
+				case "RedCar":
+					{
+						AddRedCar();
+						break;
+					}
+				case "WhiteCar":
+					{
+						AddWhiteCar();
+						break;
+					}
+			}
 		}
 		
 	}
@@ -175,14 +205,16 @@ public partial class Spawner : Marker2D
 	}
 	void AddTurtle(int amount)
 	{
-		for (int i = 0; i < amount; i++)
+        var randomDiving = rnd.Next(1, 3) == 1 ? false : true;
+        for (int i = 0; i < amount; i++)
 		{
 			turtle = (Turtle)Assets["Turtle"].Instantiate();
 			var texturesize = turtle.Texture.GetWidth()/turtle.Hframes;
 			turtle.GlobalPosition = GlobalPosition + new Vector2(i * texturesize,0);
 			turtle.Direction = GlobalPosition.X < 100 ? -1 : 1;
-			//spawnTimer.WaitTime = 6;
-			tileMap.AddChild(turtle);
+			turtle.IsdivingTurtle = randomDiving;
+            //spawnTimer.WaitTime = 6;
+            tileMap.AddChild(turtle);
 		}
     }
 

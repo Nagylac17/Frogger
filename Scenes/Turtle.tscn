@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqn7gtufsak0f"]
+[gd_scene load_steps=8 format=3 uid="uid://cqn7gtufsak0f"]
 
 [ext_resource type="Texture2D" uid="uid://yun50gho7ddi" path="res://Assets/TurtleAnimation.png" id="1_p8cmc"]
 [ext_resource type="Script" path="res://Script/Turtle.cs" id="2_bk0an"]
@@ -61,6 +61,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0cm6"]
 size = Vector2(14, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gytr"]
+radius = 1.0
+
 [node name="Turtle" type="Sprite2D"]
 texture = ExtResource("1_p8cmc")
 hframes = 9
@@ -72,7 +75,16 @@ libraries = {
 }
 
 [node name="PlatformArea" type="Area2D" parent="."]
+collision_layer = 5
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformArea"]
 shape = SubResource("RectangleShape2D_k0cm6")
+
+[node name="SpawnProtectionArea" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnProtectionArea"]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_8gytr")

@@ -39,6 +39,7 @@ sprite_frames = SubResource("SpriteFrames_hykdc")
 script = ExtResource("2_g1sml")
 
 [node name="WhiteCar" type="Area2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteCar"]
 scale = Vector2(2.20107, 0.70121)

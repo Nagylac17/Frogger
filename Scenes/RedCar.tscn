@@ -42,6 +42,7 @@ frame_progress = 0.412595
 script = ExtResource("2_sw6k0")
 
 [node name="RedCar" type="Area2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedCar"]
 position = Vector2(0, -2.98023e-07)
