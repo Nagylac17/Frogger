@@ -114,3 +114,6 @@ SpawnLocation = "Road"
 
 [node name="Fly" parent="." instance=ExtResource("10_5xw0p")]
 position = Vector2(6.00001, -118)
+
+[node name="Fly2" parent="." instance=ExtResource("10_5xw0p")]
+position = Vector2(343, 135)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://lhl8d2vexdan"]
+[gd_scene load_steps=5 format=3 uid="uid://lhl8d2vexdan"]
 
 [ext_resource type="Script" path="res://Script/Fly.cs" id="1_o3qlk"]
 [ext_resource type="Texture2D" uid="uid://chwd76u2fb72y" path="res://Assets/Fly.png" id="2_1mw24"]
+[ext_resource type="PackedScene" uid="uid://c8ep305end3bo" path="res://Scenes/EarnedScore.tscn" id="2_8k0u6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6vk"]
 size = Vector2(14, 14)
@@ -9,6 +10,7 @@ size = Vector2(14, 14)
 [node name="Fly" type="Node2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_o3qlk")
+showScorePackedScene = ExtResource("2_8k0u6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1mw24")

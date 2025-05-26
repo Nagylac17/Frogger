@@ -11,9 +11,13 @@ public partial class Fly : Node2D
 	Timer spawnTimer;
 	Vector2 originalPos;
 	int Direction;
+    int scoreValue = 100 * 1; // szinthez kell kotni a pontnyereseget
 
 	Node originalParent;
 	Node2D pickedLog;
+
+    [Export]
+    PackedScene showScorePackedScene;
 
 
 
@@ -43,7 +47,11 @@ public partial class Fly : Node2D
     private void OnAreaEntered(Area2D _area)
     {
         SetFlyOriginalState();
+        EarnedScore showScore = (EarnedScore)showScorePackedScene.Instantiate();
+        showScore.score = Convert.ToString(scoreValue);
+        AddChild(showScore);
         GameInterface.AddScore(100);
+
     }
     private void SpawnOnLog()
     {

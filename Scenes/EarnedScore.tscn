@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ep305end3bo"]
+
+[ext_resource type="Script" path="res://Script/EarnedScore.cs" id="1_tav2u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7mrc"]
+font_size = 12
+font_color = Color(0.337255, 0.803922, 0.301961, 1)
+
+[node name="EarnedScore" type="Label"]
+text = "100"
+label_settings = SubResource("LabelSettings_q7mrc")
+script = ExtResource("1_tav2u")
+velocity = 70.0
+
+[node name="DeleteTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="DeleteTimer" to="." method="OnDeleteTimerTimeout"]
