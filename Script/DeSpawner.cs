@@ -10,7 +10,7 @@ public static partial class DeSpawner
 
     public static void DeSpawnAsset(Node2D _node)
     {
-        if (_node.GlobalPosition.X < -200 || _node.GlobalPosition.X > 750)
+        if (_node.GlobalPosition.X < -400 || _node.GlobalPosition.X > 950)
         {
             if (_node.Name.ToString().Contains("Log"))
             { 

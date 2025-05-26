@@ -10,7 +10,6 @@ font_color = Color(0.337255, 0.803922, 0.301961, 1)
 text = "100"
 label_settings = SubResource("LabelSettings_q7mrc")
 script = ExtResource("1_tav2u")
-velocity = 70.0
 
 [node name="DeleteTimer" type="Timer" parent="."]
 wait_time = 0.6

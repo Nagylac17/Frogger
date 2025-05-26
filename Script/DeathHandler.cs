@@ -41,17 +41,17 @@ public partial class DeathHandler : Node
 
     public static void PlayerWaterDeathCheck(List<string> area)
     {
-        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1 )
+        if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1)
         {
-           
-             player.GetTree().CreateTimer(0.3);
-            
+
+            player.GetTree().CreateTimer(0.3);
+
             if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1)
             {
                 PlayerDrawningDeath();
-                   // GD.Print("Hiba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                // GD.Print("Hiba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
-                
+
         }
 
     }

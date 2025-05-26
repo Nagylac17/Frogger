@@ -114,7 +114,7 @@ public partial class PlayerControll : Sprite2D
 	}
 	public void Area_entered(Area2D area)
 	{
-		if (area.Name == "PlatformArea") //interface-el egy platform osszegzest
+		if (area.Name == "PlatformArea") 
 		{ 
 			SetFrogVelocity(area.GetParent());
 			SetFrogDirection(area.GetParent());
@@ -130,7 +130,7 @@ public partial class PlayerControll : Sprite2D
 		IsOnePlatform = false;
 		ActiveMonitoredAreas.Remove(area.Name);
 
-	}
+    }
 
 	private void ChangeFrogTexture(string path)
 	{
@@ -139,14 +139,15 @@ public partial class PlayerControll : Sprite2D
 
 	private void SetFrogVelocity(Node node)
 	{
-			IPlatform Log = (IPlatform)node;
-			this.velocity = Log.GetVelocity();	
+			IPlatform platform = (IPlatform)node;
+			this.velocity = platform.GetVelocity();
 	}
 
 	private void SetFrogDirection(Node node)
 	{
-			IPlatform Log = (IPlatform)node;
-			this.direction = Log.GetDirection();
+			IPlatform platform = (IPlatform)node;
+			this.direction = platform.GetDirection();
+
 	}
 
 	public void DeathAnimationEnding()

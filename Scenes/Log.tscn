@@ -21,12 +21,4 @@ position = Vector2(5.96046e-07, -1.19209e-07)
 scale = Vector2(0.432705, 0.762224)
 shape = SubResource("RectangleShape2D_kwtcb")
 
-[node name="RightPosMarker" type="Marker2D" parent="."]
-position = Vector2(8, 0)
-
-[node name="LeftPosMarker" type="Marker2D" parent="."]
-position = Vector2(-8, 0)
-
-[node name="MiddlePosMarker" type="Marker2D" parent="."]
-
 [connection signal="area_entered" from="PlatformArea" to="." method="OnAreaEntered"]

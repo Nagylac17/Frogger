@@ -3,7 +3,6 @@ using System;
 
 public partial class EarnedScore : Label
 {
-	Vector2 originalPos;
 	Timer timer;
 	float velocity = 70;
 	[Export]
@@ -15,7 +14,6 @@ public partial class EarnedScore : Label
 	{
 
 		Text = score;
-		originalPos = GlobalPosition;
 		timer = GetNode<Timer>("DeleteTimer");
 		timer.Start();
 		

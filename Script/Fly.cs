@@ -46,17 +46,26 @@ public partial class Fly : Node2D
 
     private void OnAreaEntered(Area2D _area)
     {
+
+        ScorePointLabelSpwan();
         SetFlyOriginalState();
-        EarnedScore showScore = (EarnedScore)showScorePackedScene.Instantiate();
-        showScore.score = Convert.ToString(scoreValue);
-        AddChild(showScore);
         GameInterface.AddScore(100);
 
     }
+
+    private void ScorePointLabelSpwan()
+    {
+        EarnedScore showScore = (EarnedScore)showScorePackedScene.Instantiate();
+        showScore.score = Convert.ToString(scoreValue);
+        showScore.GlobalPosition = pickedLog.GlobalPosition;
+        originalParent.AddChild(showScore);
+    }
+
     private void SpawnOnLog()
     {
         if (pickedLog != null)
         {
+
             GlobalPosition = pickedLog.GlobalPosition;
             Reparent(pickedLog);
             despawnTimer.Start();

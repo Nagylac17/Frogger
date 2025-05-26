@@ -24,7 +24,7 @@ position = Vector2(1, 0)
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Frog" parent="." instance=ExtResource("2_vlvkp")]
-position = Vector2(361, 136)
+position = Vector2(328, 136)
 
 [node name="Leaf" parent="." instance=ExtResource("3_orh7q")]
 position = Vector2(89, 10)
@@ -113,7 +113,4 @@ position = Vector2(742, 152)
 SpawnLocation = "Road"
 
 [node name="Fly" parent="." instance=ExtResource("10_5xw0p")]
-position = Vector2(6.00001, -118)
-
-[node name="Fly2" parent="." instance=ExtResource("10_5xw0p")]
-position = Vector2(343, 135)
+position = Vector2(409, -86)
