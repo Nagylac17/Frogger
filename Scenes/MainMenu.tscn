@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b35ipqe1vbwa5"]
+[gd_scene load_steps=3 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_8juxq"]
-[ext_resource type="PackedScene" uid="uid://c8ep305end3bo" path="res://Scenes/EarnedScore.tscn" id="3_aexyu"]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
@@ -19,9 +18,3 @@ offset_bottom = 360.0
 mouse_filter = 2
 texture = ExtResource("2_8juxq")
 stretch_mode = 1
-
-[node name="EarnedScore" parent="." instance=ExtResource("3_aexyu")]
-offset_left = 536.0
-offset_top = 294.0
-offset_right = 564.0
-offset_bottom = 317.0
