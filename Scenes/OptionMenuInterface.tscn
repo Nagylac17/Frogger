@@ -51,6 +51,7 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MasterSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
+value = 17.0
 
 [node name="SFX" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1
@@ -130,9 +131,9 @@ offset_right = 161.0
 offset_bottom = 306.0
 text = "Aply"
 
-[connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnSFXValueChange"]
+[connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnMasterValueChange"]
 [connection signal="value_changed" from="Panel/SoundContainer/SoundSlider" to="." method="OnSFXValueChange"]
-[connection signal="value_changed" from="Panel/SoundContainer/MusicSlider" to="." method="OnSFXValueChange"]
+[connection signal="value_changed" from="Panel/SoundContainer/MusicSlider" to="." method="OnMusicValueChange"]
 [connection signal="item_selected" from="Panel/VideoContainer/ResolutionButton" to="." method="OnResolutionButtonItemSelected"]
 [connection signal="pressed" from="Back" to="." method="OnBackPressed"]
 [connection signal="pressed" from="Aply" to="." method="OnAplyPressed"]

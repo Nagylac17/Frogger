@@ -8,6 +8,7 @@ public partial class Main : Node2D
     public override void _Ready()
 	{
         pauseMenu = (Node2D)GetNode("/root/Node2D/PauseMenu");
+        GD.Print("sad");
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
