@@ -29,6 +29,9 @@ public partial class LoadGame : Node
         GD.Print(AudioServer.GetBusVolumeDb(0));
         AudioServer.SetBusVolumeDb(1,(float)CF.GetValue("Audio","SFX"));
         AudioServer.SetBusVolumeDb(2,(float)CF.GetValue("Audio","Music"));
+        AudioServer.SetBusMute(0,(bool)CF.GetValue("Audio", "MasterMuted"));
+        AudioServer.SetBusMute(1,(bool)CF.GetValue("Audio", "SFXMuted"));
+        AudioServer.SetBusMute(2,(bool)CF.GetValue("Audio", "MusicMuted"));
     }
 
 

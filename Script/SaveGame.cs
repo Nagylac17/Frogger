@@ -20,6 +20,9 @@ public partial class SaveGame : Node
         CF.SetValue("Audio", "Master", AudioServer.GetBusVolumeDb(0));
         CF.SetValue("Audio", "SFX", AudioServer.GetBusVolumeDb(1));
         CF.SetValue("Audio", "Music", AudioServer.GetBusVolumeDb(2));
+        CF.SetValue("Audio", "MasterMuted", AudioServer.IsBusMute(0));
+        CF.SetValue("Audio", "SFXMuted", AudioServer.IsBusMute(1));
+        CF.SetValue("Audio", "MusicMuted", AudioServer.IsBusMute(2));
     }
 
     public void SaveConfig()

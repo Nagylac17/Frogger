@@ -51,7 +51,6 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MasterSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
-value = 17.0
 
 [node name="SFX" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1

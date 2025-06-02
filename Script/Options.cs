@@ -1,6 +1,8 @@
 using Godot;
+using Godot.Bridge;
 using Godot.Collections;
 using System;
+using System.Linq;
 
 public partial class Options : Node2D
 {
@@ -23,14 +25,14 @@ public partial class Options : Node2D
 
 		SetResolutionDictionary();
 
-        TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
-		
-		MasterSlider = GetNode<HSlider>("Panel/SoundContainer/MasterSlider");
+        MasterSlider = GetNode<HSlider>("Panel/SoundContainer/MasterSlider");
 		SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 		MusicSlider = GetNode<HSlider>("Panel/SoundContainer/MusicSlider");
-
-        
         ResolutionOptionButton = GetNode<OptionButton>("Panel/VideoContainer/ResolutionButton");
+
+        TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
+
+		ResolutionOptionButton.;
 		MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
 		SFXSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(SFXBusNumber));
 		MusicSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MusicBusNumber));
@@ -67,6 +69,9 @@ public partial class Options : Node2D
 
 	private void AudioValueChange(int AudioBusNumber, float _value)
 	{
+        //GD.Print("Master"+MasterSlider.Value);
+        //
+        //GD.Print("Music"+MusicSlider.Value);
         if (_value == 0)
         {
             AudioServer.SetBusMute(AudioBusNumber, true);
@@ -85,7 +90,8 @@ public partial class Options : Node2D
 
     public void OnSFXValueChange(float _value)
 	{
-		AudioValueChange(SFXBusNumber, _value);
+        GD.Print("SFX" + SFXSlider.Value);
+        AudioValueChange(SFXBusNumber, _value);
 
 	}
 	public void OnMasterValueChange(float _value)
@@ -97,22 +103,21 @@ public partial class Options : Node2D
         AudioValueChange(MusicBusNumber, _value);
     }
 
-    private float ConvertPercentageToDecibel(float percentage) //Godot linear to decibal method missing int this version so this is a workaround
+    private float ConvertPercentageToDecibel(float _percentage) //Godot linear to decibal method missing int this version so this is a workaround
 	{
-		
-		float scale = 20f;
-		float decibel = scale * (float)Math.Log10(scale / percentage) * -1;
+
+		float scale = 5;
+		float decibel = scale * (float)Math.Log10(_percentage);
+
 		return decibel;
-		//return Mathf.LinearToDb(percentage);
     }
 
-	private float ConvertDecibelToPercentage(float Decibel)
+	private float ConvertDecibelToPercentage(float _decibel)
 	{
-        float scale = 20f;
-		float decibel = scale / (float)Math.Pow(10, (Decibel / scale)) * -1;
-        //float divisor = 50f;
-		 
-        return  decibel;
+        float scale = 5;
+		float percentage = (float)Math.Pow(10, _decibel / scale);
+
+        return percentage;
 
     }
 
