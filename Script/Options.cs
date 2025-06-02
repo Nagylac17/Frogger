@@ -2,6 +2,7 @@ using Godot;
 using Godot.Bridge;
 using Godot.Collections;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class Options : Node2D
@@ -9,7 +10,13 @@ public partial class Options : Node2D
 	const int MasterBusNumber = 0;
 	const int SFXBusNumber = 1;
 	const int MusicBusNumber = 2;
-    Dictionary<string, Vector2I> Resolutions = new Dictionary<string, Vector2I>();
+    List<OBJResolutions> Resolutions = new List<OBJResolutions> 
+	{
+        new OBJResolutions { Sres = "1280x720", VIres = new Vector2I(1280, 720)},
+        new OBJResolutions { Sres = "1600x900", VIres = new Vector2I(1600, 900)},
+        new OBJResolutions { Sres = "1920x1080", VIres = new Vector2I(1920, 1080)},
+        new OBJResolutions { Sres = "2560x1440", VIres = new Vector2I(2560, 1440)}
+    };
 	SaveGame saveGame = new SaveGame();
 
 
@@ -23,8 +30,6 @@ public partial class Options : Node2D
 	public override void _Ready()
 	{
 
-		SetResolutionDictionary();
-
         MasterSlider = GetNode<HSlider>("Panel/SoundContainer/MasterSlider");
 		SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 		MusicSlider = GetNode<HSlider>("Panel/SoundContainer/MusicSlider");
@@ -32,7 +37,7 @@ public partial class Options : Node2D
 
         TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
 
-		ResolutionOptionButton.;
+		ResolutionOptionButton.Select(Resolutions.IndexOf(Resolutions.Where(re => re.VIres == DisplayServer.WindowGetSize()).FirstOrDefault()));
 		MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
 		SFXSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(SFXBusNumber));
 		MusicSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MusicBusNumber));
@@ -43,14 +48,6 @@ public partial class Options : Node2D
 	public override void _Process(double delta)
 	{
 
-	}
-
-	private void SetResolutionDictionary()
-	{
-		Resolutions.Add("1280x720", new Vector2I(1280,720));
-		Resolutions.Add("1600x900", new Vector2I(1600,900));
-		Resolutions.Add("1920x1080", new Vector2I(1920,1080));
-		Resolutions.Add("2560x1440", new Vector2I(2560,1440));
 	}
 
 	private void OnBackPressed()
@@ -114,6 +111,10 @@ public partial class Options : Node2D
 
 	private float ConvertDecibelToPercentage(float _decibel)
 	{
+		if (_decibel == 0)
+		{
+			return 0;
+		}
         float scale = 5;
 		float percentage = (float)Math.Pow(10, _decibel / scale);
 
@@ -124,10 +125,15 @@ public partial class Options : Node2D
 	public void OnResolutionButtonItemSelected(int i)
 	{
 		//GD.Print(ResolutionOptionButton.Text);
-		DisplayServer.WindowSetSize(Resolutions[ResolutionOptionButton.Text]);
+		DisplayServer.WindowSetSize(Resolutions.Where(rs=>rs.Sres == ResolutionOptionButton.Text).FirstOrDefault().VIres);
 		DisplayServer.WindowSetPosition(new Vector2I(0,0));
 	}
 
+	class OBJResolutions
+	{
+		public string Sres;
+		public Vector2I VIres;
+	}
 
 
 }
