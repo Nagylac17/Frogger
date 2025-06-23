@@ -4,6 +4,8 @@ using Godot.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 public partial class Options : Node2D
 {
@@ -17,14 +19,23 @@ public partial class Options : Node2D
         new OBJResolutions { Sres = "1920x1080", VIres = new Vector2I(1920, 1080)},
         new OBJResolutions { Sres = "2560x1440", VIres = new Vector2I(2560, 1440)}
     };
+
+	List<ObjWindowMode> WindowsModes = new List<ObjWindowMode>
+	{
+		new ObjWindowMode { sMode = "Fullscreen", DsMode = DisplayServer.WindowMode.Fullscreen },
+		new ObjWindowMode { sMode = "Windowed",DsMode = DisplayServer.WindowMode.Windowed },
+
+	};
 	SaveGame saveGame = new SaveGame();
 
 
 	OptionButton ResolutionOptionButton;
+	OptionButton WindowModeOptionButton;
 	HSlider SFXSlider;
 	HSlider MasterSlider;
 	HSlider MusicSlider;
 	AudioStreamPlayer2D TestSound;
+	CheckBox BorderlessCheckBox;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,14 +45,27 @@ public partial class Options : Node2D
 		SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 		MusicSlider = GetNode<HSlider>("Panel/SoundContainer/MusicSlider");
         ResolutionOptionButton = GetNode<OptionButton>("Panel/VideoContainer/ResolutionButton");
+		WindowModeOptionButton = GetNode<OptionButton>("Panel/VideoContainer/WindowmodeButton");
 
         TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
-
-		ResolutionOptionButton.Select(Resolutions.IndexOf(Resolutions.Where(re => re.VIres == DisplayServer.WindowGetSize()).FirstOrDefault()));
+		setResButton();
+        WindowModeOptionButton.Select(WindowsModes.IndexOf(WindowsModes.Where(re => re.DsMode == DisplayServer.WindowGetMode()).FirstOrDefault()));
 		MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
 		SFXSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(SFXBusNumber));
-		MusicSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MusicBusNumber));
+		MusicSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MusicBusNumber));		 
 
+    }
+
+	private void setResButton()
+	{
+		if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
+		{
+			ResolutionOptionButton.Disabled = true;
+		}
+		else
+		{ 
+			ResolutionOptionButton.Select(Resolutions.IndexOf(Resolutions.Where(re => re.VIres == DisplayServer.WindowGetSize()).FirstOrDefault()));
+		}
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,7 +74,40 @@ public partial class Options : Node2D
 
 	}
 
-	private void OnBackPressed()
+	private void OnWindowModeButtonItemSelected(int i)
+	{
+        if (WindowsModes.Where(rs => rs.sMode == WindowModeOptionButton.Text).FirstOrDefault().DsMode == DisplayServer.WindowMode.Fullscreen)
+		{
+			SetFullscreanWindowMode();
+            GD.Print(DisplayServer.WindowGetSize());
+
+        }
+        else
+        {
+			SetWindowMode();
+        }
+        //DisplayServer.WindowSetPosition(new Vector2I(100, 100));
+
+    }
+
+	private void SetFullscreanWindowMode()
+	{
+	
+        DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
+		ResolutionOptionButton.Disabled = true;
+
+    }
+    private void SetWindowMode()
+	{
+        ResolutionOptionButton.Disabled = false;
+		DisplayServer.WindowSetSize(new Vector2I(1280, 720));
+        DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+        DisplayServer.WindowSetPosition(new Vector2I(20, 20));
+        ResolutionOptionButton.Select(Resolutions.IndexOf(Resolutions.Where(re => re.VIres == new Vector2I(1280, 720)).FirstOrDefault()));
+		
+    }
+
+    private void OnBackPressed()
 	{
 			GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
@@ -66,9 +123,7 @@ public partial class Options : Node2D
 
 	private void AudioValueChange(int AudioBusNumber, float _value)
 	{
-        //GD.Print("Master"+MasterSlider.Value);
-        //
-        //GD.Print("Music"+MusicSlider.Value);
+        
         if (_value == 0)
         {
             AudioServer.SetBusMute(AudioBusNumber, true);
@@ -87,7 +142,6 @@ public partial class Options : Node2D
 
     public void OnSFXValueChange(float _value)
 	{
-        GD.Print("SFX" + SFXSlider.Value);
         AudioValueChange(SFXBusNumber, _value);
 
 	}
@@ -124,15 +178,19 @@ public partial class Options : Node2D
 
 	public void OnResolutionButtonItemSelected(int i)
 	{
-		//GD.Print(ResolutionOptionButton.Text);
-		DisplayServer.WindowSetSize(Resolutions.Where(rs=>rs.Sres == ResolutionOptionButton.Text).FirstOrDefault().VIres);
-		DisplayServer.WindowSetPosition(new Vector2I(0,0));
+        DisplayServer.WindowSetSize(Resolutions.Where(rs=>rs.Sres == ResolutionOptionButton.Text).FirstOrDefault().VIres);
 	}
 
 	class OBJResolutions
 	{
 		public string Sres;
 		public Vector2I VIres;
+	}
+
+	class ObjWindowMode
+	{
+		public string sMode;
+		public DisplayServer.WindowMode DsMode;
 	}
 
 

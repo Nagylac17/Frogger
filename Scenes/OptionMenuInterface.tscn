@@ -82,17 +82,22 @@ offset_right = 136.0
 offset_bottom = 119.0
 alignment = 1
 
-[node name="Borderless" type="Label" parent="Panel/VideoContainer"]
+[node name="WindowModeLabel" type="Label" parent="Panel/VideoContainer"]
 layout_mode = 2
-text = "Borderless 
+text = "Window mode
 "
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Panel/VideoContainer"]
+[node name="WindowmodeButton" type="OptionButton" parent="Panel/VideoContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+alignment = 1
+item_count = 2
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
 
-[node name="Resolution" type="Label" parent="Panel/VideoContainer"]
+[node name="ResolutionLabel" type="Label" parent="Panel/VideoContainer"]
 layout_mode = 2
 text = "Resolution"
 horizontal_alignment = 1
@@ -133,6 +138,7 @@ text = "Aply"
 [connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnMasterValueChange"]
 [connection signal="value_changed" from="Panel/SoundContainer/SoundSlider" to="." method="OnSFXValueChange"]
 [connection signal="value_changed" from="Panel/SoundContainer/MusicSlider" to="." method="OnMusicValueChange"]
+[connection signal="item_selected" from="Panel/VideoContainer/WindowmodeButton" to="." method="OnWindowModeButtonItemSelected"]
 [connection signal="item_selected" from="Panel/VideoContainer/ResolutionButton" to="." method="OnResolutionButtonItemSelected"]
 [connection signal="pressed" from="Back" to="." method="OnBackPressed"]
 [connection signal="pressed" from="Aply" to="." method="OnAplyPressed"]

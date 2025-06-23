@@ -201,7 +201,6 @@ public partial class Spawner : Marker2D
         log.Direction = GlobalPosition.X < 100 ? -1 : 1;
 		log.Name = "Log" + ChooseName();
 		tileMap.AddChild(log);
-		//GD.Print(log.Name);
 	}
 	void AddTurtle(int amount)
 	{

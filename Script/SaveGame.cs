@@ -13,6 +13,7 @@ public partial class SaveGame : Node
         CF.SetValue("Video", "Width",DisplayServer.WindowGetSize().X);
         CF.SetValue("Video", "Height",DisplayServer.WindowGetSize().Y);
         CF.SetValue("Video","WindowMode",DisplayServer.WindowGetMode().ToString());
+
     }
 
     public void SetAudioConfig()
