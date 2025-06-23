@@ -20,10 +20,11 @@ public partial class GameInterface : Node2D
 	{
         score = GetChild<Label>(3);
         level = GetChild<Label>(5);
-		FrogLives[0] = GetChild<Sprite2D>(6);
+        FrogLives[0] = GetChild<Sprite2D>(6);
 		FrogLives[1] = GetChild<Sprite2D>(7);
 		FrogLives[2] = GetChild<Sprite2D>(8);
         progressBar = GetChild<ProgressBar>(9);
+        scoreAmount = 0;
         remainingTime = progressBar.GetChild<Timer>(0);
 
     }

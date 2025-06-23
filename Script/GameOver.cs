@@ -2,22 +2,49 @@ using Godot;
 using System;
 using System.Runtime.CompilerServices;
 
-public  partial class GameOver : Panel
+public partial class GameOver : Panel
 {
 
-
-    //Kell ide egy label is ami tartalmazza az elert pontot
-    //Signal kell ide legkozelebb meg kell tanulni hogy kell
     Label score;
+    Label HighScore;
+    private ConfigFile SC = new ConfigFile();
+    private string SCName = "Score.cfg";
 
     public override void _Ready()
     {
-        //NoLifeLeft();
+
         setPosition();
-        score = (Label)(GetChild(1).GetChild(1).GetChild(1));
+        SC.Load("user://" + SCName);
+
+        score = GetNode<Label>("MainContainer/ScoreLabels/ScoreAmount");
         score.Text = GameInterface.GetScore();
+
+        HighScore = GetNode<Label>("MainContainer/ScoreLabels/HighScoreAmount");
+        HighScore.Text = SetHighScore();
+
+
         this.Visible = true;
+        SaveScoreToFile();
         GetTree().Paused = true;
+    }
+
+    private void SaveScoreToFile()
+    {
+        SC.Save("user://" + SCName);
+    }
+
+    private string SetHighScore()
+    {
+        if (Convert.ToInt32(score.Text) > Convert.ToInt32(SC.GetValue("HighScore", "Score").ToString()))
+        {
+            HighScore.Text = score.Text;
+            SC.SetValue("HighScore", "Score", HighScore.Text);
+            return HighScore.Text;
+        }
+        else
+        {
+            return SC.GetValue("HighScore", "Score").ToString();
+        }
     }
 
     public void NoLifeLeft()
@@ -27,6 +54,7 @@ public  partial class GameOver : Panel
     void OnReturnToMenuPressed()
     {
         GetTree().Paused = false;
+        score.Text = "0";
         GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 

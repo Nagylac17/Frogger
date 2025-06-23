@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.IO;
 using System.Xml.Linq;
 
 public partial class GameStart : Node2D
@@ -8,7 +9,10 @@ public partial class GameStart : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		loadGame.LoadSave();
+            FileCreator.CreateCFGFile();
+            FileCreator.CreateHighScoreFile();
+
+        loadGame.LoadSave();
         GD.Print(OS.GetUserDataDir() + "/" + "settings.cfg");
     }
 

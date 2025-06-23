@@ -86,7 +86,6 @@ public partial class Options : Node2D
         {
 			SetWindowMode();
         }
-        //DisplayServer.WindowSetPosition(new Vector2I(100, 100));
 
     }
 
