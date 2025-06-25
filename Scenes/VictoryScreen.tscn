@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://chytrtrvhymmi"]
+
+[ext_resource type="Script" path="res://Script/VictoryScreen.cs" id="1_0tlyg"]
+[ext_resource type="Texture2D" uid="uid://btnb78wgs0edg" path="res://Assets/Award.png" id="1_sm4bm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pflpx"]
+bg_color = Color(0.141176, 0.235294, 0.160784, 1)
+border_width_left = 2
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel"]
+z_index = 2
+offset_left = -91.0
+offset_top = -7.0
+offset_right = 91.0
+offset_bottom = 158.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pflpx")
+script = ExtResource("1_0tlyg")
+
+[node name="VictoryScreen" type="Node2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(91, 40)
+texture = ExtResource("1_sm4bm")
+
+[node name="Score Bonus" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -3.5
+offset_right = 66.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "+1000 score"
+horizontal_alignment = 1
+
+[node name="Continue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = 51.0
+offset_right = 67.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to continue"
+horizontal_alignment = 1

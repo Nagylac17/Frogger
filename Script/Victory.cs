@@ -4,8 +4,13 @@ using System.Collections.Generic;
 
 public partial class Victory : Node
 {
-	static int completedRound = 0;
-	static List<Leaf> Leaves = new List<Leaf>();
+	static int completedRound = 5;
+    private static Node2D MainNode;
+    private static PackedScene VictoryScene;
+	private static Panel VictoryScreenNode;
+
+    static List<Leaf> Leaves = new List<Leaf>();
+
 
 	public static void AddWFrog(Leaf leaf)
 	{
@@ -18,7 +23,13 @@ public partial class Victory : Node
 
 	private static void MapWin()
 	{
-		completedRound++;
+
+        if (completedRound == 5)
+        {
+            
+            GameWin();
+        }
+        completedRound++;
 
 		foreach (var Leaf in Leaves)
 		{
@@ -28,9 +39,17 @@ public partial class Victory : Node
         Leaves.Clear();
     }
 
+	private static void GameWin()
+	{
+        MainNode = (Node2D)Leaves[0].GetParent();
+        VictoryScene = GD.Load<PackedScene>("res://Scenes/VictoryScreen.tscn");
+		VictoryScreenNode = (Panel)VictoryScene.Instantiate();
+        MainNode.AddChild(VictoryScreenNode);
+    }
+
 	public static float VelocityIncrease()
 	{
-		float velocityInc = completedRound / 2;
+		float velocityInc = (completedRound + 0.1f) / 10;
 		return velocityInc;
 	}
 
