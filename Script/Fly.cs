@@ -90,7 +90,6 @@ public partial class Fly : Node2D
         if (tempChildList.Count != 0)
         {
             pickedLog = tempChildList[rnd.Next(0, tempChildList.Count)];
-
         }
     }
 

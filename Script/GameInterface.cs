@@ -12,7 +12,7 @@ public partial class GameInterface : Node2D
 	static private int scoreAmount = 0;
 	static private int levelAmount = 1;
 	private static Sprite2D [] FrogLives = new Sprite2D[3];
-	private ProgressBar progressBar;
+	private static ProgressBar progressBar;
 	private Timer remainingTime;
 
 	// Called when the node enters the scene tree for the first time.
@@ -58,12 +58,14 @@ public partial class GameInterface : Node2D
 	{
         levelAmount += amount;
         level.Text = levelAmount.ToString();
+        progressBar.Value = progressBar.MaxValue;
     }
 
 	static public void RemoveLifeSprite()
 	{
-		FrogLives[LifeRemoveHelper()].Visible = false;		
-	}
+		FrogLives[LifeRemoveHelper()].Visible = false;
+        progressBar.Value = progressBar.MaxValue;
+    }
 	static public void AddLifeSprite()
 	{
 		FrogLives[0].Visible = true;
@@ -83,7 +85,11 @@ public partial class GameInterface : Node2D
 
 	public void OnTimerTimeout()
 	{
-		progressBar.Value = (progressBar.Value - 1); 
+		progressBar.Value = (progressBar.Value - 1);
+		if (progressBar.Value == 0)
+		{
+			DeathHandler.PlayerTimeOutDeath();
+		}
     }
 
 	public static int GetRemaningLife()

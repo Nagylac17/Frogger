@@ -49,7 +49,7 @@ public partial class Victory : Node
 
 	public static float VelocityIncrease()
 	{
-		float velocityInc = (completedRound + 0.1f) / 10;
+		float velocityInc = (completedRound + 0.02f) / 10;
 		return velocityInc;
 	}
 

@@ -55,6 +55,11 @@ public partial class DeathHandler : Node
         }
 
     }
+    public static void PlayerTimeOutDeath()
+    {
+        player.GetTree().Paused = true;
+        deathAnimations.Play("CarDeath");
+    }
 
     public static void PlayerDrawningDeath()
     {
