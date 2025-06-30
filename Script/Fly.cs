@@ -63,14 +63,16 @@ public partial class Fly : Node2D
 
     private void SpawnOnLog()
     {
-        if (pickedLog != null)
-        {
-
-            GlobalPosition = pickedLog.GlobalPosition;
-            Reparent(pickedLog);
-            despawnTimer.Start();
-            spawnTimer.Stop();
-        }
+      
+            if (pickedLog is not null)
+            {
+                GlobalPosition = pickedLog.GlobalPosition;
+         
+                Reparent(pickedLog);
+                despawnTimer.Start();
+                spawnTimer.Stop();
+            }  
+     
     }
 
     private void GetSpwanableLogs()

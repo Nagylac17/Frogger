@@ -43,6 +43,7 @@ public partial class Victory : Node
 	{
         MainNode = (Node2D)Leaves[0].GetParent();
         VictoryScene = GD.Load<PackedScene>("res://Scenes/VictoryScreen.tscn");
+		GameInterface.AddScore(1000);
 		VictoryScreenNode = (Panel)VictoryScene.Instantiate();
         MainNode.AddChild(VictoryScreenNode);
     }

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Godot\\Frogger\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\gameinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\gameinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\fly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\deathhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Fly.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Fly.cs",
               "RelativeDocumentMoniker": "Script\\Fly.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\Fly.cs",
               "RelativeToolTip": "Script\\Fly.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwEAAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAIwEYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T09:07:29.866Z",
               "EditorCaption": ""
@@ -103,21 +103,19 @@
               "RelativeToolTip": "Script\\VictoryScreen.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T22:33:58.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T22:33:58.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Victory.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Victory.cs",
               "RelativeDocumentMoniker": "Script\\Victory.cs",
-              "ToolTip": "D:\\Godot\\Frogger\\Script\\Victory.cs*",
-              "RelativeToolTip": "Script\\Victory.cs*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowDMAAAAsAAAAAAAAAA==",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Victory.cs",
+              "RelativeToolTip": "Script\\Victory.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAswCUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T21:59:42.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T21:59:42.929Z"
             },
             {
               "$type": "Document",
@@ -127,10 +125,9 @@
               "RelativeDocumentMoniker": "Script\\DeathHandler.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\DeathHandler.cs",
               "RelativeToolTip": "Script\\DeathHandler.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwFIAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAD4vzoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T10:37:27.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T10:37:27.372Z"
             },
             {
               "$type": "Document",
@@ -142,8 +139,7 @@
               "RelativeToolTip": "Script\\GameOver.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwEMAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T09:58:59.264Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T09:58:59.264Z"
             },
             {
               "$type": "Document",
@@ -215,8 +211,7 @@
               "RelativeToolTip": "Script\\Options.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAkwHYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T11:01:53.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T11:01:53.535Z"
             },
             {
               "$type": "Document",
@@ -228,8 +223,7 @@
               "RelativeToolTip": "Scenes\\GameStart.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T09:35:23.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T09:35:23.968Z"
             },
             {
               "$type": "Document",
@@ -239,7 +233,7 @@
               "RelativeDocumentMoniker": "Script\\GameInterface.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\GameInterface.cs",
               "RelativeToolTip": "Script\\GameInterface.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAgwFgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T13:52:32.372Z",
               "EditorCaption": ""
@@ -254,8 +248,7 @@
               "RelativeToolTip": "Script\\Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T08:55:49.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T08:55:49.107Z"
             },
             {
               "$type": "Document",

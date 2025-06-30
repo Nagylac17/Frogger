@@ -11,7 +11,17 @@ public partial class VictoryScreen : Panel
 
     }
 
-	private void SetPosition()
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton inputEventMouseButton)
+        { 
+            GetTree().Paused = false;
+            GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+        }
+    }
+
+
+    private void SetPosition()
 	{
         float x = (GetViewport().GetVisibleRect().Size.X - this.Size.X) / 2;
         float y = (GetViewport().GetVisibleRect().Size.Y - this.Size.Y) / 2;

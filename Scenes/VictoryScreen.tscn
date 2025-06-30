@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://btnb78wgs0edg" path="res://Assets/Award.png" id="1_sm4bm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pflpx"]
-bg_color = Color(0.141176, 0.235294, 0.160784, 1)
+bg_color = Color(0.141176, 0.360784, 0.529412, 1)
 border_width_left = 2
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.024503, 0.0550496, 0.0500388, 1)
 
 [node name="Panel" type="Panel"]
+process_mode = 3
 z_index = 2
 offset_left = -91.0
 offset_top = -7.0
