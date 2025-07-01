@@ -133,7 +133,7 @@ offset_left = 119.0
 offset_top = 275.0
 offset_right = 161.0
 offset_bottom = 306.0
-text = "Aply"
+text = "Apply"
 
 [connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnMasterValueChange"]
 [connection signal="value_changed" from="Panel/SoundContainer/SoundSlider" to="." method="OnSFXValueChange"]
