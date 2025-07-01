@@ -28,6 +28,7 @@ font_color = Color(0.0705882, 0.8, 0.109804, 1)
 
 [node name="GameOver" type="Panel"]
 self_modulate = Color(0.605833, 1, 0.45, 0.611765)
+z_index = 2
 offset_right = 325.0
 offset_bottom = 257.0
 script = ExtResource("1_6ee7k")

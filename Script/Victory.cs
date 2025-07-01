@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public partial class Victory : Node
 {
-	static int completedRound = 5;
+	static int completedRound = 1;
     private static Node2D MainNode;
     private static PackedScene VictoryScene;
 	private static Panel VictoryScreenNode;
@@ -26,7 +26,6 @@ public partial class Victory : Node
 
         if (completedRound == 5)
         {
-            
             GameWin();
         }
         completedRound++;

@@ -24,6 +24,7 @@ text = "Option
 
 [node name="Credits" type="Button" parent="BoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Credits
 "
 

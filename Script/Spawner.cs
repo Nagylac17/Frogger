@@ -95,39 +95,39 @@ public partial class Spawner : Marker2D
         //SpawnTime();
         if (!rightRayCast.IsColliding() && !leftRayCast.IsColliding())
 		{
-			//switch (ChooseAsset())
-			//{
-			//	case "Log":
-			//		{
-			//			AddLog();
-			//			break;
-			//		}
-			//	case "Turtle":
-			//		{
-			//			AddTurtle(rnd.Next(1, 6));
-			//			break;
-			//		}
-			//	case "Aligator":
-			//		{
-			//			AddAligator();
-			//			break;
-			//		}
-			//	case "BlueCar":
-			//		{
-			//			AddBlueCar();
-			//			break;
-			//		}
-			//	case "RedCar":
-			//		{
-			//			AddRedCar();
-			//			break;
-			//		}
-			//	case "WhiteCar":
-			//		{
-			//			AddWhiteCar();
-			//			break;
-			//		}
-			//}
+			switch (ChooseAsset())
+			{
+				case "Log":
+					{
+						AddLog();
+						break;
+					}
+				case "Turtle":
+					{
+						AddTurtle(rnd.Next(1, 6));
+						break;
+					}
+				case "Aligator":
+					{
+						AddAligator();
+						break;
+					}
+				case "BlueCar":
+					{
+						AddBlueCar();
+						break;
+					}
+				case "RedCar":
+					{
+						AddRedCar();
+						break;
+					}
+				case "WhiteCar":
+					{
+						AddWhiteCar();
+						break;
+					}
+			}
 		}
 		
 	}

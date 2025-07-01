@@ -20,3 +20,18 @@ offset_bottom = 360.0
 mouse_filter = 2
 texture = ExtResource("2_8juxq")
 stretch_mode = 1
+
+[node name="Version" type="Label" parent="."]
+offset_left = 53.0
+offset_top = 2.0
+offset_right = 116.0
+offset_bottom = 25.0
+text = "Version:
+"
+
+[node name="VersionNumber" type="Label" parent="."]
+offset_left = 117.0
+offset_top = 2.0
+offset_right = 157.0
+offset_bottom = 25.0
+text = "01"
