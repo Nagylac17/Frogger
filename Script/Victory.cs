@@ -24,7 +24,7 @@ public partial class Victory : Node
 	private static void MapWin()
 	{
 
-        if (completedRound == 5)
+        if (completedRound == 3)
         {
             GameWin();
         }

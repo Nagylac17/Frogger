@@ -161,7 +161,7 @@ public partial class Spawner : Marker2D
 		{
 			case "Water":
 				{
-					switch (rnd.Next(2, 4))
+					switch (rnd.Next(1, 4))
 					{
 						case 1:
                             asset = "Turtle"; //Ide meg kell variaciot adni

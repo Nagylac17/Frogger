@@ -11,7 +11,7 @@ public partial class GameStart : Node2D
 	public override void _Ready()
 	{
 			VersionLabel =  GetNode<Label>("VersionNumber");
-			VersionLabel.Text = "Alpha";
+			VersionLabel.Text = "Alpha V2";
             FileCreator.CreateCFGFile();
             FileCreator.CreateHighScoreFile();
 
