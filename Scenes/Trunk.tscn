@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3j2fmg3oihc1"]
+
+[ext_resource type="Texture2D" uid="uid://cndne5k2nyax7" path="res://Assets/Trunk.png" id="1_xqq8v"]
+[ext_resource type="Script" path="res://Script/Log.cs" id="2_gtott"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eih41"]
+size = Vector2(20, 12)
+
+[node name="Trunk" type="Sprite2D"]
+process_mode = 1
+visibility_layer = 3
+texture = ExtResource("1_xqq8v")
+script = ExtResource("2_gtott")
+
+[node name="PlatformArea" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformArea"]
+scale = Vector2(3.58526, 1)
+shape = SubResource("RectangleShape2D_eih41")
+
+[connection signal="area_entered" from="PlatformArea" to="." method="OnAreaEntered"]

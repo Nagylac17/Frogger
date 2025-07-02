@@ -58,6 +58,12 @@ public partial class GameOver : Panel
         GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 
+    void OnTryAgainPressed()
+    {
+        GetTree().Paused = false;
+        GetTree().ChangeSceneToFile("res://Scenes/Main.tscn");
+    }
+
     void OnExitGamePressed()
     {
         GetTree().Quit();

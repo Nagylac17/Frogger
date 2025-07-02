@@ -36,6 +36,10 @@ public partial class GameInterface : Node2D
 	{
 	}
 
+	static public int GetCurretLevel()
+	{
+		return Convert.ToInt32(level.Text);
+	}
 
 	static public void AddScore(int amount)
 	{

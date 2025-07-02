@@ -21,7 +21,7 @@ public partial class Spawner : Marker2D
 	[Export]
 	public Godot.Collections.Dictionary<string, PackedScene> Assets { get; set; }
 	private string[] RoadSpawnAssets = new string[3] { "BlueCar", "RedCar", "WhiteCar" };
-	private string[] WaterSpawnAssets = new string[4] { "Log", "LargeLog", "Turtle", "Aligator" };
+	private string[] WaterSpawnAssets = new string[5] { "Log", "LargeLog", "Turtle", "Aligator","Trunk" };
 
 	[Export]
 	string SpawnLocation;
@@ -75,7 +75,7 @@ public partial class Spawner : Marker2D
 
 	private void SpawnTime()
 	{
-		spawnTimer.WaitTime = rnd.Next(1, 6); // spawn ido valtoztatas
+		spawnTimer.WaitTime = rnd.Next(1, GameInterface.GetCurretLevel() < 2? 5:4); // spawn ido valtoztatas
 	}
 
 	private void OnTimeout()
@@ -100,6 +100,11 @@ public partial class Spawner : Marker2D
 				case "Log":
 					{
 						AddLog();
+						break;
+					}
+				case "Trunk":
+					{
+						AddTrunk();
 						break;
 					}
 				case "Turtle":
@@ -161,7 +166,7 @@ public partial class Spawner : Marker2D
 		{
 			case "Water":
 				{
-					switch (rnd.Next(1, 4))
+					switch (rnd.Next(1, GameInterface.GetCurretLevel() > 1 ? 4 : 5))
 					{
 						case 1:
                             asset = "Turtle"; //Ide meg kell variaciot adni
@@ -171,6 +176,9 @@ public partial class Spawner : Marker2D
 							break;
 						case 3:
 							asset = "Aligator";
+							break;
+						case 4:
+							asset = "Trunk";
 							break;
 						default:
 							asset = "Log";
@@ -197,6 +205,15 @@ public partial class Spawner : Marker2D
 	{
 		//log = (Log)Assets[0].Instantiate();
 		log = (Log)Assets["Log"].Instantiate();
+		log.GlobalPosition = GlobalPosition;
+        log.Direction = GlobalPosition.X < 100 ? -1 : 1;
+		log.Name = "Log" + ChooseName();
+		tileMap.AddChild(log);
+	}
+    void AddTrunk()
+	{
+		//log = (Log)Assets[0].Instantiate();
+		log = (Log)Assets["Trunk"].Instantiate();
 		log.GlobalPosition = GlobalPosition;
         log.Direction = GlobalPosition.X < 100 ? -1 : 1;
 		log.Name = "Log" + ChooseName();

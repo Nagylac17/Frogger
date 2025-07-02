@@ -81,9 +81,9 @@ offset_top = 349.0
 offset_right = 639.0
 offset_bottom = 353.0
 theme = SubResource("Theme_uexu1")
-max_value = 2000.0
+max_value = 60.0
 step = 1.0
-value = 2000.0
+value = 60.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="ProgressBar"]

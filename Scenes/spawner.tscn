@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cenuejx8dbvoh"]
+[gd_scene load_steps=9 format=3 uid="uid://cenuejx8dbvoh"]
 
 [ext_resource type="Script" path="res://Script/Spawner.cs" id="1_qrhwe"]
 [ext_resource type="PackedScene" uid="uid://cbvqlgi58y8gi" path="res://Scenes/Log.tscn" id="2_4tpuc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqn7gtufsak0f" path="res://Scenes/Turtle.tscn" id="5_gtvvh"]
 [ext_resource type="PackedScene" uid="uid://d3767j5elpe0j" path="res://Scenes/RedCar.tscn" id="6_7sddo"]
 [ext_resource type="PackedScene" uid="uid://cjy4mnq0p73ug" path="res://Scenes/WhiteCar.tscn" id="7_ac3tl"]
+[ext_resource type="PackedScene" uid="uid://d3j2fmg3oihc1" path="res://Scenes/Trunk.tscn" id="8_6r4nu"]
 
 [node name="Spawner" type="Marker2D"]
 process_mode = 1
@@ -16,6 +17,7 @@ Assets = {
 "BlueCar": ExtResource("3_sr1ho"),
 "Log": ExtResource("2_4tpuc"),
 "RedCar": ExtResource("6_7sddo"),
+"Trunk": ExtResource("8_6r4nu"),
 "Turtle": ExtResource("5_gtvvh"),
 "WhiteCar": ExtResource("7_ac3tl")
 }
