@@ -116,6 +116,8 @@ script = ExtResource("2_q3ki3")
 
 [node name="Frogsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hq86x")
+volume_db = 8.588
+bus = &"SFX"
 
 [node name="Frog" type="Area2D" parent="."]
 scale = Vector2(57.6146, 1)

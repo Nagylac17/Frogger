@@ -35,3 +35,11 @@ offset_top = 2.0
 offset_right = 157.0
 offset_bottom = 25.0
 text = "01"
+
+[node name="HighScore" type="Label" parent="."]
+offset_left = 406.0
+offset_top = 109.0
+offset_right = 489.0
+offset_bottom = 132.0
+text = "HighScore:
+"

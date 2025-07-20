@@ -14,6 +14,7 @@ public partial class GameInterface : Node2D
 	private static Sprite2D [] FrogLives = new Sprite2D[3];
 	private static ProgressBar progressBar;
 	private Timer remainingTime;
+	private static AudioStreamPlayer2D YeahBOITest;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -27,6 +28,7 @@ public partial class GameInterface : Node2D
 		FrogLives[1] = GetChild<Sprite2D>(7);
 		FrogLives[2] = GetChild<Sprite2D>(8);
         progressBar = GetChild<ProgressBar>(9);
+        YeahBOITest = GetNode<AudioStreamPlayer2D>("TestSoundForWin");
         remainingTime = progressBar.GetChild<Timer>(0);
 
     }
@@ -67,6 +69,7 @@ public partial class GameInterface : Node2D
 
 	static public void AddLevel(int amount)
 	{
+		YeahBOITest.Play();
         levelAmount += amount;
         level.Text = levelAmount.ToString();
 		ResetTimer();

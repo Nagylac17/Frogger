@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1iwr37wvf0fw"]
+[gd_scene load_steps=9 format=3 uid="uid://b1iwr37wvf0fw"]
 
 [ext_resource type="Script" path="res://Script/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_vlvkp"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_orh7q"]
 [ext_resource type="PackedScene" uid="uid://cenuejx8dbvoh" path="res://Scenes/Spawner.tscn" id="5_47ohd"]
+[ext_resource type="AudioStream" uid="uid://dfebmo4den3ke" path="res://Assets/MainGameMusic.wav" id="8_4s8c6"]
 [ext_resource type="PackedScene" uid="uid://6lsgs5hm51ac" path="res://Scenes/PauseMenu.tscn" id="9_qdm2b"]
 [ext_resource type="PackedScene" uid="uid://lhl8d2vexdan" path="res://Scenes/Fly.tscn" id="10_5xw0p"]
 
@@ -114,3 +115,8 @@ SpawnLocation = "Road"
 
 [node name="Fly" parent="." instance=ExtResource("10_5xw0p")]
 position = Vector2(409, -86)
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4s8c6")
+autoplay = true
+bus = &"Music"

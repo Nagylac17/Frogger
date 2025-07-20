@@ -51,6 +51,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MasterSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
+min_value = -70.0
+max_value = 0.0
+value = -70.0
 
 [node name="SFX" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1
@@ -62,6 +65,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="SoundSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
+min_value = -70.0
+max_value = 0.0
+value = -70.0
 
 [node name="Music" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1
@@ -73,6 +79,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MusicSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
+min_value = -70.0
+max_value = 0.0
+value = -70.0
 
 [node name="VideoContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
