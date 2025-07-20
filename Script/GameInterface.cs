@@ -60,17 +60,22 @@ public partial class GameInterface : Node2D
 		}
     }
 
+	static public void ResetTimer()
+	{
+        progressBar.Value = progressBar.MaxValue;
+    }
+
 	static public void AddLevel(int amount)
 	{
         levelAmount += amount;
         level.Text = levelAmount.ToString();
-        progressBar.Value = progressBar.MaxValue;
+		ResetTimer();
     }
 
 	static public void RemoveLifeSprite()
 	{
 		FrogLives[LifeRemoveHelper()].Visible = false;
-        progressBar.Value = progressBar.MaxValue;
+        ResetTimer();
     }
 	static public void AddLifeSprite()
 	{

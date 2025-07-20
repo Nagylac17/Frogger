@@ -15,7 +15,9 @@ public partial class Victory : Node
 	public static void AddWFrog(Leaf leaf)
 	{
 		Leaves.Add(leaf);
-		if (Leaves.Count == 6)
+		GameInterface.ResetTimer();
+
+        if (Leaves.Count == 6)
 		{
 			MapWin();
 		}

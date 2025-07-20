@@ -126,6 +126,7 @@ public partial class Options : Node2D
         if (_value == 0)
         {
             AudioServer.SetBusMute(AudioBusNumber, true);
+            AudioServer.SetBusVolumeDb(AudioBusNumber, 0);
             return;
         }
 
@@ -138,20 +139,24 @@ public partial class Options : Node2D
         AudioServer.SetBusVolumeDb(AudioBusNumber, decibal);
         TestSound.Play();
     }
+    public void OnMasterValueChange(float _value)
+    {
+        AudioValueChange(MasterBusNumber, _value);
+           
+	}
 
     public void OnSFXValueChange(float _value)
 	{
         AudioValueChange(SFXBusNumber, _value);
+		
 
 	}
-	public void OnMasterValueChange(float _value)
-	{
-        AudioValueChange(MasterBusNumber, _value);
-    }
+	
 	public void OnMusicValueChange(float _value)
 	{
         AudioValueChange(MusicBusNumber, _value);
-    }
+		
+	}
 
     private float ConvertPercentageToDecibel(float _percentage) //Godot linear to decibal method missing int this version so this is a workaround
 	{

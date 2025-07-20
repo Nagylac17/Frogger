@@ -24,7 +24,7 @@ position = Vector2(1, 0)
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Frog" parent="." instance=ExtResource("2_vlvkp")]
-position = Vector2(328, 328)
+position = Vector2(328, 136)
 
 [node name="Leaf" parent="." instance=ExtResource("3_orh7q")]
 position = Vector2(89, 10)

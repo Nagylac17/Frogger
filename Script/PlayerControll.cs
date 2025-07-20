@@ -75,7 +75,7 @@ public partial class PlayerControll : Sprite2D
 			BaluCounter++;
 		if (BaluCounter > 5)
 		{ 
-		    DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); //## talan azt meg lehetne csinalni hogy a ezt a check-et a viz nezi es az mindig a legvegen nezi
+		   //DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); //## talan azt meg lehetne csinalni hogy a ezt a check-et a viz nezi es az mindig a legvegen nezi
 			BaluCounter = 0;
 		}
 
