@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dyny8v4byi4yr"
-path="res://.godot/imported/WaterSplash.wav-f89126c1831c693b3da9e441801a543d.sample"
+path="res://.godot/imported/WaterSplash.wav-6b5fff9f11a4b01af79eda94d1101cf7.sample"
 
 [deps]
 
-source_file="res://Assets/WaterSplash.wav"
-dest_files=["res://.godot/imported/WaterSplash.wav-f89126c1831c693b3da9e441801a543d.sample"]
+source_file="res://Assets/Sound/WaterSplash.wav"
+dest_files=["res://.godot/imported/WaterSplash.wav-6b5fff9f11a4b01af79eda94d1101cf7.sample"]
 
 [params]
 

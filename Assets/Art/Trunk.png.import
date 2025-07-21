@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chftflop7566p"
-path="res://.godot/imported/SmalLog.png-3b6301c1d5941f4f758ec52f70518136.ctex"
+uid="uid://cndne5k2nyax7"
+path="res://.godot/imported/Trunk.png-6a13981fdedd866f011854ac055f291e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SmalLog.png"
-dest_files=["res://.godot/imported/SmalLog.png-3b6301c1d5941f4f758ec52f70518136.ctex"]
+source_file="res://Assets/Art/Trunk.png"
+dest_files=["res://.godot/imported/Trunk.png-6a13981fdedd866f011854ac055f291e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1007y8usrj0w"
-path="res://.godot/imported/FrogUp.png-3a463ec569672ec8a734679e299a928f.ctex"
+uid="uid://jvewc3tbct7o"
+path="res://.godot/imported/MenuBackGround.png-d308ad382ca9a3e7d5a01a0b653d8cf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FrogUp.png"
-dest_files=["res://.godot/imported/FrogUp.png-3a463ec569672ec8a734679e299a928f.ctex"]
+source_file="res://Assets/Art/MenuBackGround.png"
+dest_files=["res://.godot/imported/MenuBackGround.png-d308ad382ca9a3e7d5a01a0b653d8cf8.ctex"]
 
 [params]
 

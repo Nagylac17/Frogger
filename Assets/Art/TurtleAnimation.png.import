@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7jwnirspyu33"
-path="res://.godot/imported/PinkFrog.png-e05629b78cb8e5ab61cbc42e03e913e1.ctex"
+uid="uid://yun50gho7ddi"
+path="res://.godot/imported/TurtleAnimation.png-945c370f293185e0549ceb6945404c2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PinkFrog.png"
-dest_files=["res://.godot/imported/PinkFrog.png-e05629b78cb8e5ab61cbc42e03e913e1.ctex"]
+source_file="res://Assets/Art/TurtleAnimation.png"
+dest_files=["res://.godot/imported/TurtleAnimation.png-945c370f293185e0549ceb6945404c2a.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj8r66hmatn84"]
 
 [ext_resource type="Script" path="res://Script/Options.cs" id="1_j3s81"]
-[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_fp1g5"]
-[ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/FrogSound.ogg" id="3_lo5au"]
+[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/Art/MenuBackGround.png" id="2_fp1g5"]
+[ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/Sound/FrogSound.ogg" id="3_lo5au"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oq453"]
 font_size = 10
@@ -51,9 +51,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MasterSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
-min_value = -70.0
+min_value = -30.0
 max_value = 0.0
-value = -70.0
+value = -25.0
 
 [node name="SFX" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1
@@ -65,9 +65,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="SoundSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
-min_value = -70.0
+min_value = -30.0
 max_value = 0.0
-value = -70.0
+value = -25.0
 
 [node name="Music" type="Label" parent="Panel/SoundContainer"]
 layout_direction = 1
@@ -79,9 +79,9 @@ label_settings = SubResource("LabelSettings_oq453")
 
 [node name="MusicSlider" type="HSlider" parent="Panel/SoundContainer"]
 layout_mode = 2
-min_value = -70.0
+min_value = -30.0
 max_value = 0.0
-value = -70.0
+value = -25.0
 
 [node name="VideoContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0

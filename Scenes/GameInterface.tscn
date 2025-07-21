@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://55e3rlqediw5"]
 
-[ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/FrogUp.png" id="1_4im7d"]
 [ext_resource type="Script" path="res://Script/GameInterface.cs" id="1_eg1qt"]
-[ext_resource type="Texture2D" uid="uid://d25rahy7vv5h1" path="res://Assets/Testbar.png" id="3_byboj"]
-[ext_resource type="Texture2D" uid="uid://d3eobvkgu3o2k" path="res://Assets/TestbarBG.png" id="3_upj3y"]
-[ext_resource type="AudioStream" uid="uid://63ml0c0f2usn" path="res://Assets/yeahboy.mp3" id="5_62vvi"]
+[ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/Art/FrogUp.png" id="2_ncplt"]
+[ext_resource type="Texture2D" uid="uid://d3eobvkgu3o2k" path="res://Assets/Art/TestbarBG.png" id="3_nrdvl"]
+[ext_resource type="Texture2D" uid="uid://d25rahy7vv5h1" path="res://Assets/Art/Testbar.png" id="4_f6lh0"]
+[ext_resource type="AudioStream" uid="uid://63ml0c0f2usn" path="res://Assets/Sound/yeahboy.mp3" id="5_62vvi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4cmub"]
-texture = ExtResource("3_upj3y")
+texture = ExtResource("3_nrdvl")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7ol3"]
-texture = ExtResource("3_byboj")
+texture = ExtResource("4_f6lh0")
 
 [sub_resource type="Theme" id="Theme_uexu1"]
 ProgressBar/styles/background = SubResource("StyleBoxTexture_4cmub")
@@ -66,15 +66,15 @@ text = "1"
 
 [node name="FrogLive1" type="Sprite2D" parent="."]
 position = Vector2(56, 348)
-texture = ExtResource("1_4im7d")
+texture = ExtResource("2_ncplt")
 
 [node name="FrogLive2" type="Sprite2D" parent="."]
 position = Vector2(71, 348)
-texture = ExtResource("1_4im7d")
+texture = ExtResource("2_ncplt")
 
 [node name="FrogLive3" type="Sprite2D" parent="."]
 position = Vector2(86, 348)
-texture = ExtResource("1_4im7d")
+texture = ExtResource("2_ncplt")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 590.0

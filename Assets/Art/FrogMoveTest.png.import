@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dudypivk45atb"
-path="res://.godot/imported/BigCar.png-ea8ac54f3ff936247c46081e7d7cda1b.ctex"
+uid="uid://c1pm76hch0wus"
+path="res://.godot/imported/FrogMoveTest.png-3d5a9c133607545be5dae74cfce404d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BigCar.png"
-dest_files=["res://.godot/imported/BigCar.png-ea8ac54f3ff936247c46081e7d7cda1b.ctex"]
+source_file="res://Assets/Art/FrogMoveTest.png"
+dest_files=["res://.godot/imported/FrogMoveTest.png-3d5a9c133607545be5dae74cfce404d0.ctex"]
 
 [params]
 

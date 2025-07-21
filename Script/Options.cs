@@ -50,9 +50,10 @@ public partial class Options : Node2D
         TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
 		setResButton();
         WindowModeOptionButton.Select(WindowsModes.IndexOf(WindowsModes.Where(re => re.DsMode == DisplayServer.WindowGetMode()).FirstOrDefault()));
-		MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
-		SFXSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(SFXBusNumber));
-		MusicSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MusicBusNumber));		 
+		//MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
+		MasterSlider.Value = AudioServer.GetBusVolumeDb(MasterBusNumber);
+		SFXSlider.Value = AudioServer.GetBusVolumeDb(SFXBusNumber);
+		MusicSlider.Value = AudioServer.GetBusVolumeDb(MusicBusNumber);		 
 
     }
 
@@ -120,13 +121,13 @@ public partial class Options : Node2D
 
     }
 
-	private void AudioValueChange(int AudioBusNumber, float _value)
+	private void AudioValueChange(int AudioBusNumber, float decibal)
 	{
         
-        if (_value == -70)
+        if (decibal == -30)
         {
             AudioServer.SetBusMute(AudioBusNumber, true);
-            AudioServer.SetBusVolumeDb(AudioBusNumber, -70);
+            AudioServer.SetBusVolumeDb(AudioBusNumber, -30);
             return;
         }
 
@@ -134,8 +135,6 @@ public partial class Options : Node2D
         {
             AudioServer.SetBusMute(AudioBusNumber, false);
         }
-
-		float decibal = _value;// ConvertPercentageToDecibel(_value);
         AudioServer.SetBusVolumeDb(AudioBusNumber, decibal);
         TestSound.Play();
     }
@@ -157,28 +156,6 @@ public partial class Options : Node2D
         AudioValueChange(MusicBusNumber, _value);
 		
 	}
-
-    private float ConvertPercentageToDecibel(float _percentage) //Godot linear to decibal method missing int this version so this is a workaround
-	{
-
-		float scale = 20;
-		float decibel = scale * (float)Math.Log10(_percentage);
-
-		return decibel - 120;
-    }
-
-	private float ConvertDecibelToPercentage(float _decibel)
-	{
-		if (_decibel == -70)
-		{
-			return -70;
-		}
-        float scale = 5;
-		float percentage = (float)Math.Pow(10, _decibel / scale);
-
-        return _decibel;
-
-    }
 
 	public void OnResolutionButtonItemSelected(int i)
 	{

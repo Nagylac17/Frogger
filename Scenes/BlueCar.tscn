@@ -1,18 +1,18 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdpcje4uluqrd"]
 
-[ext_resource type="Texture2D" uid="uid://y4tm4mjd7pwt" path="res://Assets/BlueCar.png" id="1_myms1"]
+[ext_resource type="Texture2D" uid="uid://y4tm4mjd7pwt" path="res://Assets/Art/BlueCar.png" id="1_cvu3q"]
 [ext_resource type="Script" path="res://Script/Car.cs" id="2_jdiya"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgdu6"]
-atlas = ExtResource("1_myms1")
+atlas = ExtResource("1_cvu3q")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wscc"]
-atlas = ExtResource("1_myms1")
+atlas = ExtResource("1_cvu3q")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq8nw"]
-atlas = ExtResource("1_myms1")
+atlas = ExtResource("1_cvu3q")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s12kd"]

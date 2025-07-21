@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by82aw1o5f47r"
-path="res://.godot/imported/Leaf.png-cc59d97f4467e22a0b8a447570019fc5.ctex"
+uid="uid://d1007y8usrj0w"
+path="res://.godot/imported/FrogUp.png-55fada683b575360bda802c380f03b18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Leaf.png"
-dest_files=["res://.godot/imported/Leaf.png-cc59d97f4467e22a0b8a447570019fc5.ctex"]
+source_file="res://Assets/Art/FrogUp.png"
+dest_files=["res://.godot/imported/FrogUp.png-55fada683b575360bda802c380f03b18.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqn7gtufsak0f"]
 
-[ext_resource type="Texture2D" uid="uid://yun50gho7ddi" path="res://Assets/TurtleAnimation.png" id="1_p8cmc"]
+[ext_resource type="Texture2D" uid="uid://yun50gho7ddi" path="res://Assets/Art/TurtleAnimation.png" id="1_p8cmc"]
 [ext_resource type="Script" path="res://Script/Turtle.cs" id="2_bk0an"]
 
 [sub_resource type="Animation" id="Animation_bjlgh"]

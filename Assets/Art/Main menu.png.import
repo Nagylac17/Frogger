@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcxpfbso5cbkf"
-path="res://.godot/imported/FrogAnimation.png-e45fa2cde9afb0049d3a3bb80c8eef5b.ctex"
+uid="uid://bauarv2q3igo4"
+path="res://.godot/imported/Main menu.png-b05bfffb2f98f936dd69e8e933cc0b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FrogAnimation.png"
-dest_files=["res://.godot/imported/FrogAnimation.png-e45fa2cde9afb0049d3a3bb80c8eef5b.ctex"]
+source_file="res://Assets/Art/Main menu.png"
+dest_files=["res://.godot/imported/Main menu.png-b05bfffb2f98f936dd69e8e933cc0b0f.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cjy4mnq0p73ug"]
 
-[ext_resource type="Texture2D" uid="uid://dudypivk45atb" path="res://Assets/BigCar.png" id="1_nnq7h"]
+[ext_resource type="Texture2D" uid="uid://dudypivk45atb" path="res://Assets/Art/BigCar.png" id="1_nnq7h"]
 [ext_resource type="Script" path="res://Script/Car.cs" id="2_g1sml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53qrj"]

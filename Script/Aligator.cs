@@ -1,6 +1,7 @@
 using Frogger.Script;
 using Godot;
 using System;
+using static Godot.TextServer;
 
 public partial class Aligator : Sprite2D, IPlatform
 {
@@ -8,7 +9,7 @@ public partial class Aligator : Sprite2D, IPlatform
     AnimationPlayer animPlayer;
     Area2D biteArea;
     public bool IsAligatorBite = false;
-    public float Direction = -1;
+    public float direction = -1;
     Random rnd = new Random();
 
     [Export]
@@ -20,8 +21,8 @@ public partial class Aligator : Sprite2D, IPlatform
         animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         SetAligatorAnimation();
 
-        velocity = (velocity + Victory.VelocityIncrease()) * Direction;
-        if (Direction == -1)
+        velocity = EnemyVelocityManager.SetEnemyVelocity(direction);
+        if (direction == -1)
         {
             RotationDegrees = 180;
             FlipV = true;
@@ -33,7 +34,7 @@ public partial class Aligator : Sprite2D, IPlatform
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
 	{
-        GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+        GlobalPosition = EnemyVelocityManager.MoveEnemy(GlobalPosition, velocity);
         DeSpawner.DeSpawnAsset(this);
     }
 
@@ -67,7 +68,7 @@ public partial class Aligator : Sprite2D, IPlatform
 
     public float GetDirection()
     {
-        return Direction;
+        return direction;
     }
     public float GetVelocity()
     {

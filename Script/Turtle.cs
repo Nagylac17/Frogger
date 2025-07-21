@@ -8,7 +8,7 @@ public partial class Turtle :  Sprite2D , IPlatform
     AnimationPlayer animPlayer;
     Area2D area;
 	public bool IsdivingTurtle = true;
-    public float Direction = -1;
+    public float direction = -1;
     Random rnd = new Random();
 
     [Export]
@@ -21,18 +21,16 @@ public partial class Turtle :  Sprite2D , IPlatform
         animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		SetTurtleDive();
 
-        velocity = (velocity + Victory.VelocityIncrease()) * Direction;
-        if (Direction == -1)
-        {
-            RotationDegrees = 180;
-        }
+        velocity = EnemyVelocityManager.SetEnemyVelocity(direction);
+        RotationDegrees = EnemyVelocityManager.SetEnemyRotation(direction);
+
 
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+        GlobalPosition = EnemyVelocityManager.MoveEnemy(GlobalPosition,velocity);
         DeSpawner.DeSpawnAsset(this);
     }
 
@@ -60,7 +58,7 @@ public partial class Turtle :  Sprite2D , IPlatform
 
     public float GetDirection()
     {
-        return Direction;
+        return direction;
     }
     public float GetVelocity()
     {

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnje2dhdwpbx"
-path="res://.godot/imported/FrogDown.png-76e16816593eaefe2baa30118739a647.ctex"
+uid="uid://d3eobvkgu3o2k"
+path="res://.godot/imported/TestbarBG.png-57b3f69fd0b1668af49e273e6ae449c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FrogDown.png"
-dest_files=["res://.godot/imported/FrogDown.png-76e16816593eaefe2baa30118739a647.ctex"]
+source_file="res://Assets/Art/TestbarBG.png"
+dest_files=["res://.godot/imported/TestbarBG.png-57b3f69fd0b1668af49e273e6ae449c5.ctex"]
 
 [params]
 

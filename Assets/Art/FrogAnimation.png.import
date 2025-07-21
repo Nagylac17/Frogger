@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chwd76u2fb72y"
-path="res://.godot/imported/Fly.png-d8696f182d0a9e819a74e4f26f3b5569.ctex"
+uid="uid://dcxpfbso5cbkf"
+path="res://.godot/imported/FrogAnimation.png-77ac5bda69ab8543e1b5873cfdbf5b61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fly.png"
-dest_files=["res://.godot/imported/Fly.png-d8696f182d0a9e819a74e4f26f3b5569.ctex"]
+source_file="res://Assets/Art/FrogAnimation.png"
+dest_files=["res://.godot/imported/FrogAnimation.png-77ac5bda69ab8543e1b5873cfdbf5b61.ctex"]
 
 [params]
 

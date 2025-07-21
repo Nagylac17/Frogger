@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y4tm4mjd7pwt"
-path="res://.godot/imported/BlueCar.png-2348ff5d29f99ed7b6cc1b3ceb8c1cf7.ctex"
+uid="uid://dp5hqamgmh2w2"
+path="res://.godot/imported/WinFrog.png-037f8eea20a24bf2881db2d9993ac8b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueCar.png"
-dest_files=["res://.godot/imported/BlueCar.png-2348ff5d29f99ed7b6cc1b3ceb8c1cf7.ctex"]
+source_file="res://Assets/Art/WinFrog.png"
+dest_files=["res://.godot/imported/WinFrog.png-037f8eea20a24bf2881db2d9993ac8b3.ctex"]
 
 [params]
 

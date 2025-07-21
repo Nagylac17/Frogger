@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mj6wscmgpk64"
-path="res://.godot/imported/RedCar.png-303b71d597823ea7023b05c4a0cbdc50.ctex"
+uid="uid://d25rahy7vv5h1"
+path="res://.godot/imported/Testbar.png-01dcc7c38f17abf3ed6c110bd6e72bf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RedCar.png"
-dest_files=["res://.godot/imported/RedCar.png-303b71d597823ea7023b05c4a0cbdc50.ctex"]
+source_file="res://Assets/Art/Testbar.png"
+dest_files=["res://.godot/imported/Testbar.png-01dcc7c38f17abf3ed6c110bd6e72bf8.ctex"]
 
 [params]
 

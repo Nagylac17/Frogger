@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
-[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/MenuBackGround.png" id="2_8juxq"]
+[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/Art/MenuBackGround.png" id="2_8juxq"]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3

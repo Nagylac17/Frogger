@@ -203,19 +203,17 @@ public partial class Spawner : Marker2D
     #region Water
     void AddLog()
 	{
-		//log = (Log)Assets[0].Instantiate();
 		log = (Log)Assets["Log"].Instantiate();
 		log.GlobalPosition = GlobalPosition;
-        log.Direction = GlobalPosition.X < 100 ? -1 : 1;
+        log.direction = GlobalPosition.X < 100 ? -1 : 1;
 		log.Name = "Log" + ChooseName();
 		tileMap.AddChild(log);
 	}
     void AddTrunk()
 	{
-		//log = (Log)Assets[0].Instantiate();
 		log = (Log)Assets["Trunk"].Instantiate();
 		log.GlobalPosition = GlobalPosition;
-        log.Direction = GlobalPosition.X < 100 ? -1 : 1;
+        log.direction = GlobalPosition.X < 100 ? -1 : 1;
 		log.Name = "Log" + ChooseName();
 		tileMap.AddChild(log);
 	}
@@ -227,9 +225,8 @@ public partial class Spawner : Marker2D
 			turtle = (Turtle)Assets["Turtle"].Instantiate();
 			var texturesize = turtle.Texture.GetWidth()/turtle.Hframes;
 			turtle.GlobalPosition = GlobalPosition + new Vector2(i * texturesize,0);
-			turtle.Direction = GlobalPosition.X < 100 ? -1 : 1;
+			turtle.direction = GlobalPosition.X < 100 ? -1 : 1;
 			turtle.IsdivingTurtle = randomDiving;
-            //spawnTimer.WaitTime = 6;
             tileMap.AddChild(turtle);
 		}
     }
@@ -238,7 +235,7 @@ public partial class Spawner : Marker2D
 	{
         aligator = (Aligator)Assets["Aligator"].Instantiate();
         aligator.GlobalPosition = GlobalPosition;
-        aligator.Direction = GlobalPosition.X < 100 ? -1 : 1;
+        aligator.direction = GlobalPosition.X < 100 ? -1 : 1;
         aligator.Name = "Aligator" + ChooseName();
         tileMap.AddChild(aligator);
     }
@@ -247,36 +244,30 @@ public partial class Spawner : Marker2D
     #region Road
     void AddBlueCar()
 	{
-		//log = (Log)Assets[0].Instantiate();
 		car = (Car)Assets["BlueCar"].Instantiate();
 		car.GlobalPosition = this.GlobalPosition;
 		car.velocity = 0.3f;
-		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		car.direction = this.GlobalPosition.X < 100 ? -1 : 1;
 		tileMap.AddChild(car);
 	}
     void AddRedCar()
 	{
-		//log = (Log)Assets[0].Instantiate();
 		car = (Car)Assets["RedCar"].Instantiate();
 		car.GlobalPosition = this.GlobalPosition;
 		car.velocity = 0.5f;
-		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		car.direction = this.GlobalPosition.X < 100 ? -1 : 1;
 		tileMap.AddChild(car);
 	}
     void AddWhiteCar()
 	{
-		//log = (Log)Assets[0].Instantiate();
 		car = (Car)Assets["WhiteCar"].Instantiate();
 		car.GlobalPosition = this.GlobalPosition;
 		car.velocity = 0.1f;
-		car.Direction = this.GlobalPosition.X < 100 ? -1 : 1;
+		car.direction = this.GlobalPosition.X < 100 ? -1 : 1;
 		tileMap.AddChild(car);
 	}
     #endregion
 
     #endregion
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	//public override void _Process(double delta)
-	//{
-	//}
+
 }

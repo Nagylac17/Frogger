@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yun50gho7ddi"
-path="res://.godot/imported/TurtleAnimation.png-c3fce9eaa391ea37c178e28f694b3375.ctex"
+uid="uid://cudoqkiin2vw3"
+path="res://.godot/imported/FrogLeft.png-0cd2a22204c6b5a35bcd41ea39b7f729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TurtleAnimation.png"
-dest_files=["res://.godot/imported/TurtleAnimation.png-c3fce9eaa391ea37c178e28f694b3375.ctex"]
+source_file="res://Assets/Art/FrogLeft.png"
+dest_files=["res://.godot/imported/FrogLeft.png-0cd2a22204c6b5a35bcd41ea39b7f729.ctex"]
 
 [params]
 

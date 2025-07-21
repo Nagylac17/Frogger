@@ -1,28 +1,26 @@
 using Frogger.Script;
 using Godot;
 using System;
+using System.Collections.Generic;
+using static Godot.TextServer;
 
 public partial class Log : Sprite2D, IPlatform
 {
-    public float Direction = -1;
+    public float direction = -1;
     public float velocity;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        velocity = (0.5f+Victory.VelocityIncrease()) * Direction;
-        if (Direction == -1)
-        {
-            RotationDegrees = 180;
-        }
+        velocity = EnemyVelocityManager.SetEnemyVelocity(direction);
+        RotationDegrees = EnemyVelocityManager.SetEnemyRotation(direction);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
-
-       DeSpawner.DeSpawnAsset(this);
+        GlobalPosition = EnemyVelocityManager.MoveEnemy(GlobalPosition, velocity);
+        DeSpawner.DeSpawnAsset(this);
     }
 
     public float GetVelocity()
@@ -31,15 +29,7 @@ public partial class Log : Sprite2D, IPlatform
     }
     public float GetDirection()
     {
-        return Direction;
+        return direction;
     }
-
-    //private void Despawn()
-    //{
-    //    if(GlobalPosition.X < -200 || GlobalPosition.X > 750)
-    //    {
-    //        this.QueueFree();
-    //    }
-    //}
 
 }

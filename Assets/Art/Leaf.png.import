@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp5hqamgmh2w2"
-path="res://.godot/imported/WinFrog.png-51103eb338df53556682bcf8601ff669.ctex"
+uid="uid://by82aw1o5f47r"
+path="res://.godot/imported/Leaf.png-7f51b1d06e36f8c92a674bbbd1ac81f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WinFrog.png"
-dest_files=["res://.godot/imported/WinFrog.png-51103eb338df53556682bcf8601ff669.ctex"]
+source_file="res://Assets/Art/Leaf.png"
+dest_files=["res://.godot/imported/Leaf.png-7f51b1d06e36f8c92a674bbbd1ac81f9.ctex"]
 
 [params]
 

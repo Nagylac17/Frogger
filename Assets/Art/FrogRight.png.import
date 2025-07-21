@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgm324485mtpk"
-path="res://.godot/imported/FrogRoadDeathAnimation.png-48e437febfb92d89e57436c3f95f4848.ctex"
+uid="uid://c3v1ltm8d2n1c"
+path="res://.godot/imported/FrogRight.png-b34b51191bb348fcff74eb228c672b3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FrogRoadDeathAnimation.png"
-dest_files=["res://.godot/imported/FrogRoadDeathAnimation.png-48e437febfb92d89e57436c3f95f4848.ctex"]
+source_file="res://Assets/Art/FrogRight.png"
+dest_files=["res://.godot/imported/FrogRight.png-b34b51191bb348fcff74eb228c672b3d.ctex"]
 
 [params]
 
