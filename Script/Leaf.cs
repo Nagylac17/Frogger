@@ -18,8 +18,9 @@ public partial class Leaf : Sprite2D
 	{
 		if (Wfrog.Visible)
 		{
-			DeathHandler.PositionReset();
-		}
+			//DeathHandler.PositionReset();
+            DeathHandler.PlayerCarDeath();
+        }
 		else
 		{
 			Wfrog.Visible = true;
