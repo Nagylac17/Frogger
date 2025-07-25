@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Script/Options.cs" id="1_j3s81"]
 [ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/Art/MenuBackGround.png" id="2_fp1g5"]
 [ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/Sound/FrogSound.ogg" id="3_lo5au"]
-[ext_resource type="Theme" uid="uid://c536ui3mvuty8" path="res://Assets/ControlTheme.tres" id="3_mpebs"]
+[ext_resource type="Theme" uid="uid://c536ui3mvuty8" path="res://Themes/ControlTheme.tres" id="3_mpebs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oq453"]
 font_size = 10
@@ -26,19 +26,20 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 109.0
-offset_top = 46.0
-offset_right = 557.0
-offset_bottom = 315.0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 618.0
+offset_bottom = 345.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("3_mpebs")
 
 [node name="SoundContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 12.0
-offset_right = 422.0
-offset_bottom = 122.0
+offset_left = 386.0
+offset_top = 34.0
+offset_right = 536.0
+offset_bottom = 144.0
 scale = Vector2(1.10492, 1.01306)
 
 [node name="Master" type="Label" parent="Panel/SoundContainer"]
@@ -89,10 +90,10 @@ value = -25.0
 
 [node name="VideoContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 6.0
-offset_right = 136.0
-offset_bottom = 119.0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 153.0
+offset_bottom = 143.0
 alignment = 1
 
 [node name="WindowModeLabel" type="Label" parent="Panel/VideoContainer"]
@@ -134,18 +135,18 @@ stream = ExtResource("3_lo5au")
 bus = &"SFX"
 
 [node name="Back" type="Button" parent="."]
-offset_left = 493.0
-offset_top = 271.0
-offset_right = 538.0
-offset_bottom = 302.0
+offset_left = 526.0
+offset_top = 279.0
+offset_right = 571.0
+offset_bottom = 310.0
 text = "Back
 "
 
-[node name="Aply" type="Button" parent="."]
-offset_left = 119.0
-offset_top = 275.0
-offset_right = 161.0
-offset_bottom = 306.0
+[node name="Apply" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 279.0
+offset_right = 119.0
+offset_bottom = 310.0
 text = "Apply"
 
 [connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnMasterValueChange"]
@@ -154,4 +155,4 @@ text = "Apply"
 [connection signal="item_selected" from="Panel/VideoContainer/WindowmodeButton" to="." method="OnWindowModeButtonItemSelected"]
 [connection signal="item_selected" from="Panel/VideoContainer/ResolutionButton" to="." method="OnResolutionButtonItemSelected"]
 [connection signal="pressed" from="Back" to="." method="OnBackPressed"]
-[connection signal="pressed" from="Aply" to="." method="OnAplyPressed"]
+[connection signal="pressed" from="Apply" to="." method="OnAplyPressed"]

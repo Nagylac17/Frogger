@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c536ui3mvuty8"]
+
+[ext_resource type="Texture2D" uid="uid://b1dsre83hcs2h" path="res://Assets/Art/SoundButton.png" id="1_iwthy"]
+[ext_resource type="Texture2D" uid="uid://bpk7dayj8mdf7" path="res://Assets/Art/SimpleMenuContainer beta.png" id="2_asa2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_445oa"]
+bg_color = Color(0, 0.521569, 0.866667, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83jrk"]
+bg_color = Color(0, 0.666667, 0.866667, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhqfj"]
+texture = ExtResource("2_asa2j")
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_iwthy")
+HSlider/icons/grabber_disabled = ExtResource("1_iwthy")
+HSlider/icons/grabber_highlight = ExtResource("1_iwthy")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_445oa")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_83jrk")
+Panel/styles/panel = SubResource("StyleBoxTexture_mhqfj")
