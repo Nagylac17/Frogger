@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\playercontroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\deathhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\deathhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\deathhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\deathhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -159,13 +159,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Leaf.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Leaf.cs",
               "RelativeDocumentMoniker": "Script\\Leaf.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\Leaf.cs",
               "RelativeToolTip": "Script\\Leaf.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-25T22:38:21.228Z",
               "EditorCaption": ""
@@ -224,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DeathHandler.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\DeathHandler.cs",
               "RelativeDocumentMoniker": "Script\\DeathHandler.cs",
@@ -256,7 +256,7 @@
               "RelativeDocumentMoniker": "Script\\PlayerControll.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\PlayerControll.cs",
               "RelativeToolTip": "Script\\PlayerControll.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAuwE0AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAvwIYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T15:25:15.049Z",
               "EditorCaption": ""
