@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
-[ext_resource type="Texture2D" uid="uid://jvewc3tbct7o" path="res://Assets/Art/MenuBackGround.png" id="2_8juxq"]
+[ext_resource type="Texture2D" uid="uid://h0k0y56ovvij" path="res://Assets/Main menu testele.png" id="3_oryrf"]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
@@ -18,7 +18,7 @@ y_sort_enabled = true
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
-texture = ExtResource("2_8juxq")
+texture = ExtResource("3_oryrf")
 stretch_mode = 1
 
 [node name="Version" type="Label" parent="."]
