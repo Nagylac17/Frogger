@@ -24,4 +24,6 @@ HSlider/icons/grabber_disabled = ExtResource("1_iwthy")
 HSlider/icons/grabber_highlight = ExtResource("1_iwthy")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_445oa")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_83jrk")
+OptionButton/fonts/font = ExtResource("3_rrql8")
+OptionButton/icons/arrow = null
 Panel/styles/panel = SubResource("StyleBoxTexture_mhqfj")
