@@ -78,7 +78,7 @@ horizontal_alignment = 1
 
 [node name="ScoreAmount" type="Label" parent="MainContainer/ScoreLabels"]
 layout_mode = 2
-text = "123156135135153
+text = "1231561351351536666
 "
 label_settings = SubResource("LabelSettings_twvc3")
 horizontal_alignment = 1

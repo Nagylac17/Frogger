@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c536ui3mvuty8"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c536ui3mvuty8"]
 
 [ext_resource type="Texture2D" uid="uid://b1dsre83hcs2h" path="res://Assets/Art/SoundButton.png" id="1_iwthy"]
 [ext_resource type="Texture2D" uid="uid://bpk7dayj8mdf7" path="res://Assets/Art/SimpleMenuContainer beta.png" id="2_asa2j"]
+[ext_resource type="FontFile" uid="uid://dpdkokt7c5lh0" path="res://Assets/Font/Hydrogen Whiskey.otf" id="3_rrql8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_445oa"]
 bg_color = Color(0, 0.521569, 0.866667, 1)
@@ -17,6 +18,7 @@ corner_radius_bottom_left = 4
 texture = ExtResource("2_asa2j")
 
 [resource]
+default_font = ExtResource("3_rrql8")
 HSlider/icons/grabber = ExtResource("1_iwthy")
 HSlider/icons/grabber_disabled = ExtResource("1_iwthy")
 HSlider/icons/grabber_highlight = ExtResource("1_iwthy")
