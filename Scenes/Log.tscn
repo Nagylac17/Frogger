@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbvqlgi58y8gi"]
 
-[ext_resource type="Texture2D" uid="uid://chftflop7566p" path="res://Assets/Art/SmalLog.png" id="1_dn2we"]
+[ext_resource type="Texture2D" uid="uid://chftflop7566p" path="res://Assets/Art/Gameplay/SmalLog.png" id="1_agiy8"]
 [ext_resource type="Script" path="res://Script/Log.cs" id="2_sg2qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwtcb"]
@@ -9,7 +9,7 @@ size = Vector2(64.7092, 15.7434)
 [node name="Log" type="Sprite2D"]
 process_mode = 1
 visibility_layer = 3
-texture = ExtResource("1_dn2we")
+texture = ExtResource("1_agiy8")
 script = ExtResource("2_sg2qk")
 
 [node name="PlatformArea" type="Area2D" parent="."]

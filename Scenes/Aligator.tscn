@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dbatvbbxybeui"]
 
-[ext_resource type="Texture2D" uid="uid://wtdxjp18opog" path="res://Assets/Art/AligatorAnimated.png" id="1_hqdp8"]
+[ext_resource type="Texture2D" uid="uid://wtdxjp18opog" path="res://Assets/Art/Gameplay/AligatorAnimated.png" id="1_hbu1b"]
 [ext_resource type="Script" path="res://Script/Aligator.cs" id="2_yr4a5"]
 
 [sub_resource type="Animation" id="Animation_3t2mg"]
@@ -82,7 +82,7 @@ size = Vector2(64, 12)
 size = Vector2(12.5, 12)
 
 [node name="Aligator" type="Sprite2D"]
-texture = ExtResource("1_hqdp8")
+texture = ExtResource("1_hbu1b")
 hframes = 7
 vframes = 2
 script = ExtResource("2_yr4a5")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chytrtrvhymmi"]
 
 [ext_resource type="Script" path="res://Script/VictoryScreen.cs" id="1_0tlyg"]
-[ext_resource type="Texture2D" uid="uid://btnb78wgs0edg" path="res://Assets/Art/Award.png" id="1_sm4bm"]
+[ext_resource type="Texture2D" uid="uid://btnb78wgs0edg" path="res://Assets/Art/Gameplay/Award.png" id="1_sm4bm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pflpx"]
 bg_color = Color(0.141176, 0.360784, 0.529412, 1)

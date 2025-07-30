@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7581x8tfbl0s"]
+[gd_scene load_steps=5 format=3 uid="uid://c7581x8tfbl0s"]
 
 [ext_resource type="Script" path="res://Script/MainMenuInterface.cs" id="1_josoe"]
 [ext_resource type="Theme" uid="uid://c536ui3mvuty8" path="res://Themes/ControlTheme.tres" id="2_yhyra"]
+[ext_resource type="Texture2D" uid="uid://d065e2sasdnwe" path="res://Assets/Art/Menu/FroggerMenubar.png" id="3_gqy48"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kl41u"]
+texture = ExtResource("3_gqy48")
 
 [node name="MainMenuInterface" type="Node2D"]
 process_mode = 3
@@ -9,8 +13,8 @@ y_sort_enabled = true
 script = ExtResource("1_josoe")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 59.0
+offset_bottom = 94.0
 vertical = true
 
 [node name="Play" type="Button" parent="BoxContainer"]
@@ -37,6 +41,13 @@ layout_mode = 2
 theme = ExtResource("2_yhyra")
 text = "Exit
 "
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -136.0
+offset_top = -54.0
+offset_right = 217.0
+offset_bottom = 209.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_kl41u")
 
 [connection signal="button_up" from="BoxContainer/Play" to="." method="PlayButtonUp"]
 [connection signal="pressed" from="BoxContainer/Options" to="." method="OnOptionsPressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://lhl8d2vexdan"]
 
 [ext_resource type="Script" path="res://Script/Fly.cs" id="1_o3qlk"]
-[ext_resource type="Texture2D" uid="uid://chwd76u2fb72y" path="res://Assets/Art/Fly.png" id="2_1mw24"]
+[ext_resource type="Texture2D" uid="uid://chwd76u2fb72y" path="res://Assets/Art/Gameplay/Fly.png" id="2_1mw24"]
 [ext_resource type="PackedScene" uid="uid://c8ep305end3bo" path="res://Scenes/EarnedScore.tscn" id="2_8k0u6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6vk"]

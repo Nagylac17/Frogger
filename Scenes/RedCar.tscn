@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3767j5elpe0j"]
 
-[ext_resource type="Texture2D" uid="uid://mj6wscmgpk64" path="res://Assets/Art/RedCar.png" id="1_6qvh8"]
+[ext_resource type="Texture2D" uid="uid://mj6wscmgpk64" path="res://Assets/Art/Gameplay/RedCar.png" id="1_6qvh8"]
 [ext_resource type="Script" path="res://Script/Car.cs" id="2_sw6k0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jdtb2"]

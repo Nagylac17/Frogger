@@ -1,8 +1,36 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c536ui3mvuty8"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://c536ui3mvuty8"]
 
-[ext_resource type="Texture2D" uid="uid://b1dsre83hcs2h" path="res://Assets/Art/SoundButton.png" id="1_iwthy"]
-[ext_resource type="Texture2D" uid="uid://bpk7dayj8mdf7" path="res://Assets/Art/SimpleMenuContainer beta.png" id="2_asa2j"]
+[ext_resource type="Texture2D" uid="uid://bv6fr30vb8it4" path="res://Assets/Art/Button/ButtonDisabled.png" id="1_ibydh"]
+[ext_resource type="Texture2D" uid="uid://dibl343tsier0" path="res://Assets/Art/Button/Button.png" id="1_tyyy5"]
+[ext_resource type="Texture2D" uid="uid://bgwy1dfcemv5w" path="res://Assets/Art/Button/ButtonPressed.png" id="1_y4egy"]
+[ext_resource type="Texture2D" uid="uid://b1dsre83hcs2h" path="res://Assets/Art/Gameplay/SoundButton.png" id="2_rjomy"]
 [ext_resource type="FontFile" uid="uid://dpdkokt7c5lh0" path="res://Assets/Font/Hydrogen Whiskey.otf" id="3_rrql8"]
+[ext_resource type="Texture2D" uid="uid://c4ufr2fc0je3a" path="res://Assets/Art/Button/Arrow.png" id="4_cjmf3"]
+[ext_resource type="Texture2D" uid="uid://bpk7dayj8mdf7" path="res://Assets/Art/Menu/SimpleMenuContainer beta.png" id="4_scd8g"]
+[ext_resource type="Texture2D" uid="uid://bpotckudlmpf0" path="res://Assets/Art/Button/PopupMenuMain.png" id="5_dsivp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ix051"]
+texture = ExtResource("1_ibydh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bc1f7"]
+texture = ExtResource("1_y4egy")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3a1cf"]
+texture = ExtResource("1_y4egy")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6au2o"]
+texture = ExtResource("1_tyyy5")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31bjj"]
+texture = ExtResource("1_tyyy5")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_445oa"]
 bg_color = Color(0, 0.521569, 0.866667, 1)
@@ -15,15 +43,41 @@ corner_radius_top_left = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhqfj"]
-texture = ExtResource("2_asa2j")
+texture = ExtResource("4_scd8g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbhv5"]
+texture = ExtResource("5_dsivp")
+modulate_color = Color(0, 0, 0, 0.254902)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ep0vt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxljl"]
+texture = ExtResource("5_dsivp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2sibg"]
 
 [resource]
 default_font = ExtResource("3_rrql8")
-HSlider/icons/grabber = ExtResource("1_iwthy")
-HSlider/icons/grabber_disabled = ExtResource("1_iwthy")
-HSlider/icons/grabber_highlight = ExtResource("1_iwthy")
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_ix051")
+Button/styles/focus = SubResource("StyleBoxTexture_bc1f7")
+Button/styles/hover = SubResource("StyleBoxTexture_3a1cf")
+Button/styles/normal = SubResource("StyleBoxTexture_6au2o")
+Button/styles/pressed = SubResource("StyleBoxTexture_31bjj")
+HSlider/icons/grabber = ExtResource("2_rjomy")
+HSlider/icons/grabber_disabled = ExtResource("2_rjomy")
+HSlider/icons/grabber_highlight = ExtResource("2_rjomy")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_445oa")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_83jrk")
 OptionButton/fonts/font = ExtResource("3_rrql8")
-OptionButton/icons/arrow = null
+OptionButton/icons/arrow = ExtResource("4_cjmf3")
 Panel/styles/panel = SubResource("StyleBoxTexture_mhqfj")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_cbhv5")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxTexture_ep0vt")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_lxljl")
+PopupMenu/styles/separator = SubResource("StyleBoxEmpty_2sibg")
