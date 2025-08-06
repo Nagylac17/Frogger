@@ -16,7 +16,7 @@ public partial class GameStart : Node2D
 	{
 			
 			VersionLabel =  GetNode<Label>("VersionNumber");
-			HighScore =  GetNode<Label>("HighScore");
+			//HighScore =  GetNode<Label>("Score");
 			VersionLabel.Text = "Alpha V6";
             FileCreator.CreateCFGFile();
             FileCreator.CreateHighScoreFile();
@@ -24,7 +24,7 @@ public partial class GameStart : Node2D
         loadGame.LoadSave();
         GD.Print(OS.GetUserDataDir() + "/" + "settings.cfg");
         SC.Load("user://" + SCName);
-        HighScore.Text = "High Score:" + SC.GetValue("HighScore", "Score").ToString();
+        //HighScore.Text = "High Score:" + SC.GetValue("HighScore", "Score").ToString();
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

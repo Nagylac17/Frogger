@@ -19,7 +19,7 @@ public partial class Turtle :  Sprite2D , IPlatform
 	{
         area = GetNode<Area2D>("PlatformArea");
         animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		SetTurtleDive();
+		SetTurtleAnimation();
 
         velocity = EnemyVelocityManager.SetEnemyVelocity(direction);
         RotationDegrees = EnemyVelocityManager.SetEnemyRotation(direction);
@@ -34,11 +34,15 @@ public partial class Turtle :  Sprite2D , IPlatform
         DeSpawner.DeSpawnAsset(this);
     }
 
-	private void SetTurtleDive()
+	private void SetTurtleAnimation()
 	{
-		if (IsdivingTurtle)
-		{
+        if (IsdivingTurtle)
+        {
             animPlayer.Play("Dive");
+        }
+        else
+        {
+            animPlayer.Play("Swim");
         }
 	}
 

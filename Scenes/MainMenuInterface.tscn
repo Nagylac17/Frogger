@@ -43,6 +43,7 @@ text = "Exit
 "
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 offset_left = -136.0
 offset_top = -54.0
 offset_right = 217.0
