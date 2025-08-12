@@ -1,8 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://b35ipqe1vbwa5"]
+[gd_scene load_steps=12 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
 [ext_resource type="Texture2D" uid="uid://h0k0y56ovvij" path="res://Assets/Main menu testele.png" id="3_oryrf"]
+[ext_resource type="Texture2D" uid="uid://mpl3ui85fj5k" path="res://Assets/Art/Menu/AnimatedFrog.png" id="4_u2gpo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgpb"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(0, 0, 92, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lh0q"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(92, 0, 92, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd6pq"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(184, 0, 92, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krkgs"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(276, 0, 92, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf7rk"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(368, 0, 92, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nue6r"]
+atlas = ExtResource("4_u2gpo")
+region = Rect2(460, 0, 92, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nqrh"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_wjgpb")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_8lh0q")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_nd6pq")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_krkgs")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_xf7rk")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_nue6r")
+}],
+"loop": true,
+"name": &"Blink",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
@@ -48,3 +99,10 @@ grow_vertical = 2
 
 [node name="MainMenuInterface" parent="BoxContainer" instance=ExtResource("1_02o3x")]
 position = Vector2(260, 100)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(46, 313)
+sprite_frames = SubResource("SpriteFrames_3nqrh")
+animation = &"Blink"
+autoplay = "Blink"
+frame_progress = 0.178751
