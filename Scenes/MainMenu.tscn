@@ -6,11 +6,8 @@
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_hkye0")
-
-[node name="MainMenuInterface" parent="." instance=ExtResource("1_02o3x")]
 z_index = 1
-position = Vector2(290, 100)
+script = ExtResource("1_hkye0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_as_relative = false
@@ -35,3 +32,19 @@ offset_top = 2.0
 offset_right = 157.0
 offset_bottom = 25.0
 text = "01"
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuInterface" parent="BoxContainer" instance=ExtResource("1_02o3x")]
+position = Vector2(260, 100)
