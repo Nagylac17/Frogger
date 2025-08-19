@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b35ipqe1vbwa5"]
+[gd_scene load_steps=24 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
 [ext_resource type="Texture2D" uid="uid://h0k0y56ovvij" path="res://Assets/Main menu testele.png" id="3_oryrf"]
 [ext_resource type="Texture2D" uid="uid://mpl3ui85fj5k" path="res://Assets/Art/Menu/AnimatedFrog.png" id="4_u2gpo"]
 [ext_resource type="Texture2D" uid="uid://hycvpb7dtbtl" path="res://Assets/Art/Menu/AnimatedLog.png" id="5_04uiv"]
+[ext_resource type="Texture2D" uid="uid://7a88wupwa5vk" path="res://Assets/Art/Menu/AnimetedGrass.png" id="6_0cypl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjgpb"]
 atlas = ExtResource("4_u2gpo")
@@ -78,6 +79,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynkhi"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(0, 0, 461, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abhqq"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(461, 0, 461, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhwj2"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(922, 0, 461, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6t5f"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(1383, 0, 461, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fade"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(1844, 0, 461, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_016dg"]
+atlas = ExtResource("6_0cypl")
+region = Rect2(2305, 0, 461, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_luvck"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_ynkhi")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_abhqq")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_vhwj2")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_x6t5f")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_7fade")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_016dg")
+}],
+"loop": true,
+"name": &"GrassAnimation",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 z_index = 1
@@ -136,3 +187,10 @@ sprite_frames = SubResource("SpriteFrames_0vg6d")
 animation = &"Move"
 autoplay = "Move"
 frame_progress = 0.0571783
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(410, 281)
+sprite_frames = SubResource("SpriteFrames_luvck")
+animation = &"GrassAnimation"
+autoplay = "GrassAnimation"
+frame_progress = 0.240352
