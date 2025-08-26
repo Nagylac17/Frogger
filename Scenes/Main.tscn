@@ -17,7 +17,7 @@ script = ExtResource("1_6j4yi")
 [node name="PauseMenu" parent="." instance=ExtResource("9_qdm2b")]
 process_priority = 1
 visible = false
-z_index = 1
+z_index = 2
 position = Vector2(265, 88)
 
 [node name="TileMap" parent="." instance=ExtResource("1_35uto")]

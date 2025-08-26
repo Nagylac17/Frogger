@@ -23,7 +23,7 @@ public partial class MainMenuInterface : Node2D
     }
     private void OnCreditsPressed()
 	{
-        
+        GetTree().ChangeSceneToFile("res://Scenes/Credits.tscn");
     }
     private void OnExitPressed()
     {

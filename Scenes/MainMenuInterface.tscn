@@ -70,7 +70,6 @@ text = "Option
 [node name="Credits" type="Button" parent="BoxContainer/GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_yhyra")
-disabled = true
 text = "Credits
 "
 

@@ -14,7 +14,7 @@ public partial class Main : Node2D
 	public override void _Process(double delta)
 	{
 
-        if (Input.IsActionJustPressed("pause"))
+        if (Input.IsActionJustPressed("pause") && GameInterface.GetRemaningLife() > 0)
         {
             pauseMenu.Visible = !pauseMenu.Visible;
             GetTree().Paused = pauseMenu.Visible;
