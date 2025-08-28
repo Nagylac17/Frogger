@@ -11,6 +11,7 @@ offset_right = 116.0
 offset_bottom = 111.0
 
 [node name="BoxContainer" type="BoxContainer" parent="Panel"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 15.0
 offset_right = 109.0
