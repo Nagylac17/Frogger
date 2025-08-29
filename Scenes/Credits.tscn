@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://xpun5rl67hmg"]
+[gd_scene load_steps=5 format=3 uid="uid://xpun5rl67hmg"]
 
 [ext_resource type="Script" path="res://Script/Credit.cs" id="1_2icke"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]
+
+[sub_resource type="FontFile" id="FontFile_ireus"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="Theme_pdeba"]
+default_font = SubResource("FontFile_ireus")
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 8
@@ -24,16 +37,20 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -22.5
-offset_top = 230.0
+offset_top = 229.5
 offset_right = 22.5
-offset_bottom = 250.0
+offset_bottom = 410.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mlq7r")
 
-[node name="Credit" type="Label" parent="PanelContainer"]
+[node name="Credit" type="RichTextLabel" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Valami"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = SubResource("Theme_pdeba")
+bbcode_enabled = true
+text = "4589468468
+4564894"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 script = ExtResource("1_2icke")

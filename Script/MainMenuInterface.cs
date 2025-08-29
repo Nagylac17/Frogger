@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.IO;
 
 public partial class MainMenuInterface : Node2D
 {
@@ -13,6 +14,7 @@ public partial class MainMenuInterface : Node2D
         SC.Load("user://" + SCName);
         HighScore =  GetNode<Label>("Score");
         HighScore.Text =  SC.GetValue("HighScore", "Score").ToString();
+
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

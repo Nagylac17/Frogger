@@ -1,14 +1,15 @@
 using Godot;
 using System;
 
-public partial class Credit : Label
+public partial class Credit : RichTextLabel
 {
 
 	[Export]
-	float creditsSpeed = 0.7f;	
-	public override void _Ready()
+	float creditsSpeed = 0.6f;
+    private string filename = "res://Assets/Text/CreditsText.txt";
+    public override void _Ready()
 	{
-		//this.GlobalPosition = new Vector2();
+        Text = LoadFromFile();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,8 +19,17 @@ public partial class Credit : Label
         if (Input.IsActionJustPressed("pause"))
         {
             GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+
         }
 
     }
-	  
+
+    public string LoadFromFile()
+    {
+
+        using var file = Godot.FileAccess.Open(filename, Godot.FileAccess.ModeFlags.Read);
+        string content = file.GetAsText();
+        return content;
+    }
+
 }
