@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\mainmenuinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\mainmenuinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\scenes\\gamestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:scenes\\gamestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\victoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\victoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\scenes\\gamestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:scenes\\gamestart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\mainmenuinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\mainmenuinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -108,7 +108,7 @@
               "RelativeDocumentMoniker": "Script\\Credit.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Script\\Credit.cs",
               "RelativeToolTip": "Script\\Credit.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-28T12:55:51.239Z",
               "EditorCaption": ""
@@ -123,25 +123,23 @@
               "RelativeToolTip": "Script\\VictoryScreen.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T22:33:58.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-25T22:33:58.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GameStart.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Scenes\\GameStart.cs",
               "RelativeDocumentMoniker": "Scenes\\GameStart.cs",
               "ToolTip": "D:\\Godot\\Frogger\\Scenes\\GameStart.cs",
               "RelativeToolTip": "Scenes\\GameStart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T09:35:23.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T09:35:23.968Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainMenuInterface.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\MainMenuInterface.cs",
               "RelativeDocumentMoniker": "Script\\MainMenuInterface.cs",
@@ -149,8 +147,7 @@
               "RelativeToolTip": "Script\\MainMenuInterface.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T17:13:17.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-20T17:13:17.477Z"
             },
             {
               "$type": "Document",
