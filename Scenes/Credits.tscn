@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://xpun5rl67hmg"]
+[gd_scene load_steps=10 format=3 uid="uid://xpun5rl67hmg"]
 
 [ext_resource type="Script" path="res://Script/Credit.cs" id="1_2icke"]
+[ext_resource type="Texture2D" uid="uid://dix6avtckpovl" path="res://Assets/Art/Credits/Some_image.width-1600.4c73ba1-2260056268.jpg" id="2_37bhc"]
 [ext_resource type="Texture2D" uid="uid://doqp2tm0hbj3c" path="res://Assets/Art/Credits/pexels-lexo-salazar-188863-2092041.jpg" id="2_m5tq1"]
+[ext_resource type="Texture2D" uid="uid://dwja5c5tem2ts" path="res://Assets/Art/Credits/frog-1530803_1920-3401488789.jpg" id="4_y1uc3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]
 
@@ -35,8 +37,24 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_p88vm"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrogImage:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.254902), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idecw"]
 _data = {
+"FadeIn": SubResource("Animation_p88vm"),
 "FadeOut": SubResource("Animation_ypvd3"),
 "RESET": SubResource("Animation_2jivt")
 }
@@ -55,6 +73,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0646965, 0.0646965, 0.0646965, 1)
 script = ExtResource("1_2icke")
+Pictures = {
+"1": ExtResource("2_37bhc"),
+"2": ExtResource("2_m5tq1"),
+"3": ExtResource("4_y1uc3")
+}
 
 [node name="CreditContainer" type="PanelContainer" parent="."]
 layout_mode = 1

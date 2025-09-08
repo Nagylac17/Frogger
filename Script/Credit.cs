@@ -1,16 +1,22 @@
 using Godot;
+using Godot.Collections;
 using System;
+using System.IO;
 
 public partial class Credit : ColorRect
 {
 
 	[Export]
 	float creditsSpeed = 5f;
+
+    [Export]
+    public Godot.Collections.Dictionary<string, CompressedTexture2D> Pictures { get; set; }
+
     private string filename = "res://Assets/Text/CreditsMainText.txt";
     bool isIgen = false;
 
     RichTextLabel creditList;
-    Sprite2D forgIgames;
+    Sprite2D frogImages;
     string tempTestText;
 
     public override void _Ready()
@@ -40,7 +46,7 @@ public partial class Credit : ColorRect
 
     private void OnImageTimerTimeout()
     {
-
+        frogImages.Texture = Pictures["1"];
         isIgen = true;
         FadeOutTest();
     }
@@ -49,7 +55,7 @@ public partial class Credit : ColorRect
     {
         for (float i = 0; i < 1; i =  i + 0.1f)
         {
-            forgIgames.SelfModulate = new Color(1, 1, 1, i);
+            frogImages.SelfModulate = new Color(1, 1, 1, i);
         }
     }
 
@@ -64,7 +70,7 @@ public partial class Credit : ColorRect
     private void NodesInit()
     {
         creditList = GetNode<RichTextLabel>("CreditContainer/Credit");
-        forgIgames = GetNode<Sprite2D>("FrogImage");
+        frogImages = GetNode<Sprite2D>("FrogImage");
     }
 
 }
