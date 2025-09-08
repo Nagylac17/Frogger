@@ -1,63 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://xpun5rl67hmg"]
+[gd_scene load_steps=4 format=3 uid="uid://xpun5rl67hmg"]
 
 [ext_resource type="Script" path="res://Script/Credit.cs" id="1_2icke"]
-[ext_resource type="Texture2D" uid="uid://dix6avtckpovl" path="res://Assets/Art/Credits/Some_image.width-1600.4c73ba1-2260056268.jpg" id="2_37bhc"]
-[ext_resource type="Texture2D" uid="uid://doqp2tm0hbj3c" path="res://Assets/Art/Credits/pexels-lexo-salazar-188863-2092041.jpg" id="2_m5tq1"]
-[ext_resource type="Texture2D" uid="uid://dwja5c5tem2ts" path="res://Assets/Art/Credits/frog-1530803_1920-3401488789.jpg" id="4_y1uc3"]
+[ext_resource type="AudioStream" uid="uid://dmlxlw31aptuv" path="res://Assets/Sound/frog.mp3" id="2_r68ub"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]
-
-[sub_resource type="Animation" id="Animation_ypvd3"]
-resource_name = "FadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FrogImage:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 0.254902), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2jivt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FrogImage:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_p88vm"]
-resource_name = "FadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FrogImage:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.254902), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_idecw"]
-_data = {
-"FadeIn": SubResource("Animation_p88vm"),
-"FadeOut": SubResource("Animation_ypvd3"),
-"RESET": SubResource("Animation_2jivt")
-}
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 8
@@ -73,11 +19,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0646965, 0.0646965, 0.0646965, 1)
 script = ExtResource("1_2icke")
-Pictures = {
-"1": ExtResource("2_37bhc"),
-"2": ExtResource("2_m5tq1"),
-"3": ExtResource("4_y1uc3")
-}
 
 [node name="CreditContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -107,19 +48,19 @@ d46sa8d89sad89sad4sa89
 fit_content = true
 scroll_active = false
 
-[node name="FrogImage" type="Sprite2D" parent="."]
-position = Vector2(99, 207)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_m5tq1")
-
-[node name="ImageTimer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 6.3
 one_shot = true
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_idecw")
-}
+[node name="MusicTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
 
-[connection signal="timeout" from="ImageTimer" to="." method="OnImageTimerTimeout"]
+[node name="FrogMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_r68ub")
+bus = &"Music"
+
+[connection signal="timeout" from="TextTimer" to="." method="OnTextTimerTimeout"]
+[connection signal="timeout" from="MusicTimer" to="." method="OnMusicTimerTimeout"]

@@ -7,36 +7,32 @@ public partial class Credit : ColorRect
 {
 
 	[Export]
-	float creditsSpeed = 5f;
-
-    [Export]
-    public Godot.Collections.Dictionary<string, CompressedTexture2D> Pictures { get; set; }
+	float creditsSpeed = 0.8f;
 
     private string filename = "res://Assets/Text/CreditsMainText.txt";
-    bool isIgen = false;
+    string tempTestText;
 
     RichTextLabel creditList;
-    Sprite2D frogImages;
-    string tempTestText;
+    AudioStreamPlayer2D creditMusicStreamer;
 
     public override void _Ready()
 	{
         NodesInit();        
         tempTestText = LoadFromFile();
         creditList.Text = tempTestText;
+        for (int i = 0; i < 15; i++)
+        {
         creditList.Text += tempTestText;
-        creditList.Text += tempTestText;
-        creditList.Text += tempTestText;
-        creditList.Text += tempTestText;
+
+        }
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (isIgen)
-        {
+ 
             creditList.GlobalPosition = new Vector2 (creditList.GlobalPosition.X, creditList.GlobalPosition.Y - creditsSpeed);  
-        }
+
         if (Input.IsActionJustPressed("pause"))
         {
             GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
@@ -44,20 +40,17 @@ public partial class Credit : ColorRect
 
     }
 
-    private void OnImageTimerTimeout()
+    private void OnTextTimerTimeout()
     {
-        frogImages.Texture = Pictures["1"];
-        isIgen = true;
-        FadeOutTest();
+
+        creditsSpeed = 5f;
+
+    }
+    private void OnMusicTimerTimeout()
+    {
+        creditMusicStreamer.Play();
     }
 
-    private void FadeOutTest()
-    {
-        for (float i = 0; i < 1; i =  i + 0.1f)
-        {
-            frogImages.SelfModulate = new Color(1, 1, 1, i);
-        }
-    }
 
     public string LoadFromFile()
     {
@@ -70,7 +63,7 @@ public partial class Credit : ColorRect
     private void NodesInit()
     {
         creditList = GetNode<RichTextLabel>("CreditContainer/Credit");
-        frogImages = GetNode<Sprite2D>("FrogImage");
+        creditMusicStreamer = GetNode<AudioStreamPlayer2D>("FrogMusic");
     }
 
 }
