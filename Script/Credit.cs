@@ -9,23 +9,31 @@ public partial class Credit : ColorRect
 	[Export]
 	float creditsSpeed = 0.8f;
 
-    private string filename = "res://Assets/Text/CreditsMainText.txt";
-    string tempTestText;
+    private string mainTextFileName = "res://Assets/Text/CreditsMainText.txt";
+    private string specialFileName = "res://Assets/Text/CreditsSpecialText.txt";
+    string mainText;
+    string specialText;
+    string paidText = "Pay 5 euros to have your name appear!";
+    int tempSzamlalo = 0;
 
     RichTextLabel creditList;
     AudioStreamPlayer2D creditMusicStreamer;
 
     public override void _Ready()
 	{
+        Input.MouseMode = Input.MouseModeEnum.Hidden;
         NodesInit();        
-        tempTestText = LoadFromFile();
-        creditList.Text = tempTestText;
-        for (int i = 0; i < 15; i++)
-        {
-        creditList.Text += tempTestText;
+        mainText = LoadFromFile(mainTextFileName);
+        specialText = LoadFromFile(specialFileName);
+        creditList.Text = mainText + specialText;
 
+        for (int i = 0; i < 5; i++)
+        {
+            creditList.Text += "[center]Again[/center]" + specialText;
         }
-	}
+        //creditList.Text += "GTA Radio - FROG";
+
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -38,6 +46,11 @@ public partial class Credit : ColorRect
             GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
         }
 
+    }
+    private void OnFrogMusicFinished()
+    {
+        Input.MouseMode = Input.MouseModeEnum.Visible;
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 
     private void OnTextTimerTimeout()
@@ -52,10 +65,10 @@ public partial class Credit : ColorRect
     }
 
 
-    public string LoadFromFile()
+    public string LoadFromFile(string _fileName)
     {
 
-        using var file = Godot.FileAccess.Open(filename, Godot.FileAccess.ModeFlags.Read);
+        using var file = Godot.FileAccess.Open(_fileName, Godot.FileAccess.ModeFlags.Read);
         string content = file.GetAsText();
         return content;
     }

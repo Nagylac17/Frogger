@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0646965, 0.0646965, 0.0646965, 1)
 script = ExtResource("1_2icke")
+creditsSpeed = 0.6
 
 [node name="CreditContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -49,12 +50,12 @@ fit_content = true
 scroll_active = false
 
 [node name="TextTimer" type="Timer" parent="."]
-wait_time = 6.3
+wait_time = 15.0
 one_shot = true
 autostart = true
 
 [node name="MusicTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 13.0
 one_shot = true
 autostart = true
 
@@ -64,3 +65,4 @@ bus = &"Music"
 
 [connection signal="timeout" from="TextTimer" to="." method="OnTextTimerTimeout"]
 [connection signal="timeout" from="MusicTimer" to="." method="OnMusicTimerTimeout"]
+[connection signal="finished" from="FrogMusic" to="." method="OnFrogMusicFinished"]

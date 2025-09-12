@@ -1,17 +1,607 @@
+[center]
+Ákos Csürke
+
+Adam Harrington
+
+Alicia K. McDonald
+
+Andy Davidson
+
+Edward Norton
+
+Brad Pitt
+
+Helena Bonham Carter
+
+Meat Loaf
+
+Jared Leto
+
+Zach Grenier
+
+Holt McCallany
+
+David Andrews
+
+Eion Bailey
+
+Christina Cabot
+
+Troy Ruptash
+
+Richard J. Ledes
+
+Norbert Weisser
+
+George Maguire
+
+Michael Kaplan
+
+David Fincher
+
+Jim Uhls
+
+Chuck Palahniuk
+
+Chris Kettle
+
+Gareth Jones
+
+Ian Baverstock
+
+James May
+
+John Slater
+
+Jon Brown
+
+Jon Sykes
+
+Jon Deering
+
+Jon McRae
+
+Kathy Welch
+
+Mark Symons
+
+Paul Iglinski
+
+Peter Major
+
+Rick Swan
+
+Robert Blackburn
+
+Russell Shaw
+
+Sally Iglinski
+
+Sharon Dowling
+
+Steve Hoon
+
+Steve Sharman
+
+Terry Hodgkinson
+
+Tim Wright
+
+Tony Skeoch
+
+Tommy Gustafsson
+
+Aurél Kovács
+
+Attila Jáger
+
 Bálint Balázs
-János Birinyi
-Buzai Ádám
-Patrik Cégény
+
 Balázs Csuka
-Patrik Sári
-László Tóth
-Nagy Benjamin
-Krisztina Nagy
-Mihály Nagy
-Pál Hrutka
+
+Ben L. Hurst
+
+Benny J. Glick
+
+Bill Pulte
+
+Black Isle Studios
+
+Brandon Adler
+
+Brandon Gerson
+
+Brian Fargo
+
+Brian Mitsoda
+
+Chris Avellone
+
+Chris Jones
+
+Chris Metzen
+
+Chris Parker
+
+Chris Hadfield
+
+Evan Hadfield
+
+Chris Remo
+
+Chris Steed
+
+Cynthia Sikes Yorkin
+
+Csúb
+
+Dávid Tacsi
+
+Dan Connors
+
+Dan Gerson
+
+David Brevik
+
+David Fennoy
+
+David Gaider
+
+David Maldo
+
+David P. Reubens
+
+David Strachan
+
+David Tamayo
+
+David Yoon
+
+Dean Buzzwell
+
+Denis Villeneuve
+
+Fumihiko Takada
+
+Gary Allen
+
+Gary Whitta
+
+Gareth L. Smith
+
+Gábor Bence Hegyi
+
+Damon Lindelof
+
+Tom Perrotta
+
+Mimi Leder
+
+Jason L. Reitman
+
+Bertie Ahern
+
+Amy Brenneman
+
+Justin Theroux
+
+Carrie Coon
+
+Christopher Eccleston
+
+Margaret Qualley
+
+Ann Dowd
+
+Liv Tyler
+
+Chris Zylka
+
+Michael Gaston
+
+Michael Imperioli
+
+Scott Glenn
+
+Janel Moloney
+
+Kevin Carroll
+
+Regina King
+
+Paterson Joseph
+
+Steven Williams
+
+Carrie Coon
+
+Josh Hamilton
+
+Reed Diamond
+
+Fola Evans-Akingbola
+
+Michael Spiller
+
+Matt Reeves
+
+Tom Shankland
+
+Peter Berg
+
+Larysa Kondracki
+
+Dan Sackheim
+
+Sarah Streicher
+
+Sarah Suco
+
+Damon Lindelof
+
+Jason Reitman
+
+Tom Perrotta
+
+Elliot Glazer
+
+Sherry Thomas
+
+Paul Grillo
+
+Stephanie Ratner
+
+Sue Naegle
+
+Ruth Merena
+
+Danny Cohen
+
+Gavin Hammon
+
 Gergely Horváth
 
+Grey DeLisle
+
+Harrison Ford
+
+Hans Zimmer
+
+Hiroyuki Kawaoka
+
+Jake Rodkin
+
+Jason Anderson
+
+Jason L. Scales
+
+Jeffrey Vogel
+
+Jerry Seinfeld
+
+Jim Cummings
+
+John D. Wallace
+
+John Goodman
+
+John Nelson
+
+John Knoll
+
+Joseph B. Reff
+
+Josh Sawyer
+
+Jared Emerson-Johnson
+
+Jared Leto
+
+Jeff Mangum
+
+Ken St. Andre
+
+Kentaro Miura
+
+Kevin Bruner
+
+Kenny M. Galewood
+
+Kimberly Johnson
+
+Krisztina Nagy
+
+Lance Henriksen
+
+László Császár Viktor
+
+László Tóth
+
+Leonard Boyarsky
+
+Lynne Ching
+
+Mackenzie Davis
+
+Maya Weitzman
+
+Matthew Broderick
+
+Michael Green
+
+Michael Lynch
+
+Michael McKean
+
+Michael Morhaime
+
+Michael P. Ragen
+
+Michael Richards
+
+Mihály Nagy
+
+Mike Orkin
+
+Mike Stemmle
+
+Max Schaefer
+
+Naoya Okamoto
+
+Nagy Benjamin
+
+Nick Herman
+
+Patrick Warburton
+
+Patrick Wyatt
+
+Quentin Tarantino
+
+Lawrence Bender
+
+Samuel L. Jackson
+
+John Travolta
+
+Uma Thurman
+
+Bruce Willis
+
+Ving Rhames
+
+Harvey Keitel
+
+Tim Roth
+
+Amanda Plummer
+
+Maria de Medeiros
+
+Tommy Wiseau
+
+Greg Sestero
+
+Juliette Danielle
+
+Philip Haldiman
+
+Carolyn Minnott
+
+Rick Harwin
+
+Greg Ellery
+
+Dan Janjigian
+
+Kyle Vogt
+
+Lisa Varga
+
+Kristen Kuehnert
+
+Joshua Z. Weinstein
+
+David Dolezal
+
+John McLaughlin
+
+Richard M. Domanico
+
+Mike Holmes
+
+Tommy Wiseau Productions
+
+Raphael Bob-Waksberg
+
+Lisa Hanawalt
+
+Will Arnett
+
+Aaron Paul
+
+Alison Brie
+
+Paul F. Tompkins
+
+Kristen Schaal
+
+Adam Conover
+
+Lauren Lapkus
+
+Margo Martindale
+
+Brad Neely
+
+Ruthie Tompson
+
+Javier Grillo-Marxuach
+
+Kaitlyn Robrock
+
+Diane Nguyen
+
+Bob-Waksberg
+
+Lisa Hanawalt
+
+Matt LeBretton
+
+Michael Eisner
+
+Tara Strong
+
+Patton Oswalt
+
+Michael Jackson
+
+Seth Green
+
+Jessica Chastain
+
+Danny Pudi
+
+Ethan K. Cohen
+
+John C. Reilly
+
+Paul J. Tompkins
+
+Jodie Foster
+
+Naomi Yang
+
+Ruthie Tompson
+
+Diana Montgomery
+
+Mark Belcher
+
+H. Jon Benjamin
+
+Redwood Productions
+
+Graham Place
+
+Danny D. Lee
+
+Michael E. Tucciarone
+
+Evan McGarvey
+
+Rick H. H.
+
+Eric Stoltz
+
+Rosanna Arquette
+
+Christopher Walken
+
+Paul Calderon
+
+Peter Greene
+
+Maria Bello
+
+Julia Sweeney
+
+Angela Jones
+
+Phil LaMarr
+
+Bing Raims
+
+Steve Buscemi
+
+Kathy Griffin
+
+David L. Snyder
+
+Richard Gladstein
+
+Frederick Elmes
+
+Sally Menke
+
+Lawrence Bender
+
+Mia Kirshner
+
+Burt Reynolds
+
+Zoe Bell
+
+Rashida Jones
+
+Pierre Shorette
+
+Penny Arcades
+
+Renee Zellweger
+
+Rip Torn
+
+Rob Pardo
+
+Roger Deakins
+
+Roger Jackson
+
+Ryan Gosling
+
+Sam S. Miller
+
+Sarah S. Lefter
+
+Shinji Aramaki
+
+Shinobu Saito
+
+Shinobu Tsukiyama
+
+Sylvia Hoeks
+
+Steven H. Hovick
+
+Takeshi Funaki
+
+Taki "Senshi" Saito
+
+Tiboru Mezei
 
 
+Tom French
 
 
+Troy Baker
+
+William "Bill" Roper
+
+Yasuyo Suzuki
+
+Tim Robbins
+
+Morgan Freeman
+
+Bob Gunton
+
+William Sadler
+
+Clancy Brown
+
+Gil Bellows
+
+James Whitmore
+
+Neil Giuntoli
+
+David Proval
+
+Stephen Tobolowsky
+
+Cherami Leigh
+
+Tara Platt
+[/center]
