@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://b35ipqe1vbwa5"]
+[gd_scene load_steps=36 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
 [ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
-[ext_resource type="Texture2D" uid="uid://h0k0y56ovvij" path="res://Assets/Main menu testele.png" id="3_oryrf"]
 [ext_resource type="Texture2D" uid="uid://mpl3ui85fj5k" path="res://Assets/Art/Menu/AnimatedFrog.png" id="4_u2gpo"]
 [ext_resource type="Texture2D" uid="uid://hycvpb7dtbtl" path="res://Assets/Art/Menu/AnimatedLog.png" id="5_04uiv"]
 [ext_resource type="Texture2D" uid="uid://7a88wupwa5vk" path="res://Assets/Art/Menu/AnimetedGrass.png" id="6_0cypl"]
+[ext_resource type="Texture2D" uid="uid://b6l20n5cfue0a" path="res://Assets/Art/Menu/AnimatedWater.png" id="7_efbwi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjgpb"]
 atlas = ExtResource("4_u2gpo")
@@ -68,10 +68,10 @@ region = Rect2(106, 0, 106, 101)
 [sub_resource type="SpriteFrames" id="SpriteFrames_0vg6d"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_jt508")
 }, {
-"duration": 3.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_eo1sg")
 }],
 "loop": true,
@@ -129,19 +129,95 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bojh7"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3iqv"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_narmq"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61irq"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24tax"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nd44"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3giy2"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrauw"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_510yo"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(5120, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt3im"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(5760, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4yaf"]
+atlas = ExtResource("7_efbwi")
+region = Rect2(6400, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mk22v"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_bojh7")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_j3iqv")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_narmq")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_61irq")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_24tax")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_5nd44")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_3giy2")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_lrauw")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_510yo")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_dt3im")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_v4yaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 z_index = 1
 script = ExtResource("1_hkye0")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-offset_right = 640.0
-offset_bottom = 360.0
-mouse_filter = 2
-texture = ExtResource("3_oryrf")
-stretch_mode = 1
 
 [node name="Version" type="Label" parent="."]
 offset_left = 53.0
@@ -182,15 +258,23 @@ autoplay = "Blink"
 frame_progress = 0.178751
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(117, 144)
 sprite_frames = SubResource("SpriteFrames_0vg6d")
 animation = &"Move"
 autoplay = "Move"
-frame_progress = 0.0571783
+frame_progress = 0.824144
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(410, 281)
 sprite_frames = SubResource("SpriteFrames_luvck")
 animation = &"GrassAnimation"
 autoplay = "GrassAnimation"
 frame_progress = 0.240352
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_mk22v")
+autoplay = "default"
+frame_progress = 0.999472
