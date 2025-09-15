@@ -601,6 +601,4 @@ David Proval
 
 Stephen Tobolowsky
 
-123
-12
 [/center]

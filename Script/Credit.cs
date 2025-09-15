@@ -32,7 +32,7 @@ public partial class Credit : ColorRect
         {
             creditList.Text += "[center]Again[/center]" + specialText;
         }
-        //creditList.Text += "GTA Radio - FROG";
+        creditList.Text += "[center]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[color=Yellow][b]Credits Music[/b][/color]\n\nGTA Radio - FROG[/center]";
 
     }
 
@@ -53,7 +53,7 @@ public partial class Credit : ColorRect
     }
     private void OnFrogMusicFinished()
     {
-        Input.MouseMode = Input.MouseModeEnum.Visible;
+        //Input.MouseMode = Input.MouseModeEnum.Visible;
         isCreditsMoving = false;
         //GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
