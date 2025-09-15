@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnsrueeed6ewu"
-path="res://.godot/imported/frog-1530803_1920-3401488789.jpg-5c6c51c7cc4fee0636a7f297b1c36979.ctex"
+uid="uid://1scat2p8vwqr"
+path="res://.godot/imported/Some_image.width-1600.4c73ba1-2260056268.jpg-2a55dbfefca2e8523fc7a31018946503.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Readme Images/frog-1530803_1920-3401488789.jpg"
-dest_files=["res://.godot/imported/frog-1530803_1920-3401488789.jpg-5c6c51c7cc4fee0636a7f297b1c36979.ctex"]
+source_file="res://Images/Some_image.width-1600.4c73ba1-2260056268.jpg"
+dest_files=["res://.godot/imported/Some_image.width-1600.4c73ba1-2260056268.jpg-2a55dbfefca2e8523fc7a31018946503.ctex"]
 
 [params]
 

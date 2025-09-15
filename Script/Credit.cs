@@ -18,6 +18,7 @@ public partial class Credit : ColorRect
 
     RichTextLabel creditList;
     AudioStreamPlayer2D creditMusicStreamer;
+    bool isCreditsMoving = true;
 
     public override void _Ready()
 	{
@@ -38,11 +39,14 @@ public partial class Credit : ColorRect
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
- 
+        if(isCreditsMoving)
+        { 
             creditList.GlobalPosition = new Vector2 (creditList.GlobalPosition.X, creditList.GlobalPosition.Y - creditsSpeed);  
+        }
 
         if (Input.IsActionJustPressed("pause"))
         {
+            Input.MouseMode = Input.MouseModeEnum.Visible;
             GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
         }
 
@@ -50,7 +54,8 @@ public partial class Credit : ColorRect
     private void OnFrogMusicFinished()
     {
         Input.MouseMode = Input.MouseModeEnum.Visible;
-        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+        isCreditsMoving = false;
+        //GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 
     private void OnTextTimerTimeout()
