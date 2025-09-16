@@ -149,8 +149,11 @@ offset_right = 119.0
 offset_bottom = 310.0
 text = "Apply"
 
+[connection signal="drag_ended" from="Panel/SoundContainer/MasterSlider" to="." method="OnDragEnded"]
 [connection signal="value_changed" from="Panel/SoundContainer/MasterSlider" to="." method="OnMasterValueChange"]
+[connection signal="drag_ended" from="Panel/SoundContainer/SoundSlider" to="." method="OnDragEnded"]
 [connection signal="value_changed" from="Panel/SoundContainer/SoundSlider" to="." method="OnSFXValueChange"]
+[connection signal="drag_ended" from="Panel/SoundContainer/MusicSlider" to="." method="OnDragEnded"]
 [connection signal="value_changed" from="Panel/SoundContainer/MusicSlider" to="." method="OnMusicValueChange"]
 [connection signal="item_selected" from="Panel/VideoContainer/WindowmodeButton" to="." method="OnWindowModeButtonItemSelected"]
 [connection signal="item_selected" from="Panel/VideoContainer/ResolutionButton" to="." method="OnResolutionButtonItemSelected"]

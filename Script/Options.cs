@@ -3,6 +3,7 @@ using Godot.Bridge;
 using Godot.Collections;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,6 @@ public partial class Options : Node2D
         TestSound = GetNode<AudioStreamPlayer2D>("TestSound");
 		setResButton();
         WindowModeOptionButton.Select(WindowsModes.IndexOf(WindowsModes.Where(re => re.DsMode == DisplayServer.WindowGetMode()).FirstOrDefault()));
-		//MasterSlider.Value = ConvertDecibelToPercentage(AudioServer.GetBusVolumeDb(MasterBusNumber));
 		MasterSlider.Value = AudioServer.GetBusVolumeDb(MasterBusNumber);
 		SFXSlider.Value = AudioServer.GetBusVolumeDb(SFXBusNumber);
 		MusicSlider.Value = AudioServer.GetBusVolumeDb(MusicBusNumber);		 
@@ -75,7 +75,12 @@ public partial class Options : Node2D
 
 	}
 
-	private void OnWindowModeButtonItemSelected(int i)
+	private void OnDragEnded(bool IsEnded = true)
+	{
+        TestSound.Play();
+    }
+
+    private void OnWindowModeButtonItemSelected(int i)
 	{
         if (WindowsModes.Where(rs => rs.sMode == WindowModeOptionButton.Text).FirstOrDefault().DsMode == DisplayServer.WindowMode.Fullscreen)
 		{
@@ -87,7 +92,6 @@ public partial class Options : Node2D
         {
 			SetWindowMode();
         }
-
     }
 
 	private void SetFullscreanWindowMode()
@@ -136,13 +140,11 @@ public partial class Options : Node2D
             AudioServer.SetBusMute(AudioBusNumber, false);
         }
         AudioServer.SetBusVolumeDb(AudioBusNumber, decibal);
-        TestSound.Play();
     }
     public void OnMasterValueChange(float _value)
     {
         AudioValueChange(MasterBusNumber, _value);
-           
-	}
+    }
 
     public void OnSFXValueChange(float _value)
 	{

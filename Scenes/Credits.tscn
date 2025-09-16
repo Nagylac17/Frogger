@@ -59,10 +59,14 @@ wait_time = 13.0
 one_shot = true
 autostart = true
 
+[node name="EndTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [node name="FrogMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_r68ub")
 bus = &"Music"
 
 [connection signal="timeout" from="TextTimer" to="." method="OnTextTimerTimeout"]
 [connection signal="timeout" from="MusicTimer" to="." method="OnMusicTimerTimeout"]
+[connection signal="timeout" from="EndTimer" to="." method="OnEndTimerTimeout"]
 [connection signal="finished" from="FrogMusic" to="." method="OnFrogMusicFinished"]

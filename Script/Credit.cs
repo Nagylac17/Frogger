@@ -13,12 +13,11 @@ public partial class Credit : ColorRect
     private string specialFileName = "res://Assets/Text/CreditsSpecialText.txt";
     string mainText;
     string specialText;
-    string paidText = "Pay 5 euros to have your name appear!";
-    int tempSzamlalo = 0;
+    bool isCreditsMoving = true;
 
     RichTextLabel creditList;
     AudioStreamPlayer2D creditMusicStreamer;
-    bool isCreditsMoving = true;
+    Timer endTimer;
 
     public override void _Ready()
 	{
@@ -53,9 +52,8 @@ public partial class Credit : ColorRect
     }
     private void OnFrogMusicFinished()
     {
-        //Input.MouseMode = Input.MouseModeEnum.Visible;
         isCreditsMoving = false;
-        //GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+        endTimer.Start();
     }
 
     private void OnTextTimerTimeout()
@@ -63,6 +61,12 @@ public partial class Credit : ColorRect
 
         creditsSpeed = 5f;
 
+    }
+
+    private void OnEndTimerTimeout()
+    {
+        Input.MouseMode = Input.MouseModeEnum.Visible;
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
     private void OnMusicTimerTimeout()
     {
@@ -80,6 +84,7 @@ public partial class Credit : ColorRect
 
     private void NodesInit()
     {
+        endTimer = GetNode<Timer>("EndTimer");
         creditList = GetNode<RichTextLabel>("CreditContainer/Credit");
         creditMusicStreamer = GetNode<AudioStreamPlayer2D>("FrogMusic");
     }
