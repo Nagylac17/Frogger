@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 
 public partial class DeathHandler : Node
@@ -16,6 +17,10 @@ public partial class DeathHandler : Node
     private static Vector2 playerOriginalPoz;
     public static int lifeLossLimit = 0;
 
+    private PackedScene soundManagerScene;
+    private static SoundManager soundManager;
+
+    
     public DeathHandler(Sprite2D _player,TileMap _tilemap, Panel _gameOver)  
     {
         player = _player;
@@ -26,6 +31,9 @@ public partial class DeathHandler : Node
         gameOverScene = GD.Load<PackedScene>("res://Scenes/GameOver.tscn");
         MainNode = (Node2D)_player.GetParent();
         //pauseMenu = (Node2D)GetNode("/root/Node2D/PauseMenu");
+        soundManagerScene = GD.Load<PackedScene>("res://Scenes/SoundManager.tscn");
+        soundManager = (SoundManager)soundManagerScene.Instantiate();
+        soundManager.AddToMain(MainNode);
 
     }
 
@@ -63,8 +71,9 @@ public partial class DeathHandler : Node
 
     public static void PlayerDrawningDeath()
     {
-        //player.GetTree().Paused = true;
-        //deathAnimations.Play("DrowningDeath");
+        soundManager.PlaySound("Water");
+        player.GetTree().Paused = true;
+        deathAnimations.Play("DrowningDeath");
     }
 
     public static void PlayerBiteDeath()
