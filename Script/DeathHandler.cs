@@ -31,9 +31,9 @@ public partial class DeathHandler : Node
         gameOverScene = GD.Load<PackedScene>("res://Scenes/GameOver.tscn");
         MainNode = (Node2D)_player.GetParent();
         //pauseMenu = (Node2D)GetNode("/root/Node2D/PauseMenu");
-        soundManagerScene = GD.Load<PackedScene>("res://Scenes/SoundManager.tscn");
-        soundManager = (SoundManager)soundManagerScene.Instantiate();
-        soundManager.AddToMain(MainNode);
+
+        soundManager = (SoundManager)MainNode.GetNode("SoundManager");
+;
 
     }
 
