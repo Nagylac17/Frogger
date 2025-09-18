@@ -65,6 +65,7 @@ public partial class DeathHandler : Node
     }
     public static void PlayerTimeOutDeath()
     {
+        soundManager.PlaySound("Main");
         player.GetTree().Paused = true;
         deathAnimations.Play("CarDeath");
     }
@@ -78,12 +79,14 @@ public partial class DeathHandler : Node
 
     public static void PlayerBiteDeath()
     {
+        soundManager.PlaySound("Main");
         player.GetTree().Paused = true;
         deathAnimations.Play("CarDeath");
     }
 
     public static void PlayerCarDeath()
     {
+        soundManager.PlaySound("Main");
         player.GetTree().Paused = true;
         deathAnimations.Play("CarDeath"); 
     }
