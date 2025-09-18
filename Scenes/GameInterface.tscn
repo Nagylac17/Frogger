@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://55e3rlqediw5"]
 
-[ext_resource type="Script" path="res://Script/GameInterface.cs" id="1_eg1qt"]
+[ext_resource type="Script" uid="uid://drk2tntup6t42" path="res://Script/GameInterface.cs" id="1_eg1qt"]
 [ext_resource type="Texture2D" uid="uid://d1007y8usrj0w" path="res://Assets/Art/Player/FrogUp.png" id="2_u7pc7"]
 [ext_resource type="Texture2D" uid="uid://d3eobvkgu3o2k" path="res://Assets/Art/Menu/TestbarBG.png" id="3_8tgja"]
 [ext_resource type="Texture2D" uid="uid://d25rahy7vv5h1" path="res://Assets/Art/Menu/Testbar.png" id="4_3enwh"]

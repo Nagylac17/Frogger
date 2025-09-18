@@ -60,19 +60,15 @@ public partial class PlayerControll : Sprite2D
 			Move(Vector2.Right);
 		}
 
-
-		if (IsOnePlatform && (GlobalPosition.X < 630 && GlobalPosition.X > 5 )) // tilemap two end
-		{
-			this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
-		}
-
-      
-
-
     }
     public override void _PhysicsProcess(double delta)
     {
-			BaluCounter++;
+        if (IsOnePlatform && (GlobalPosition.X < 630 && GlobalPosition.X > 5)) // tilemap two end
+        {
+            this.GlobalPosition = new Vector2(GlobalPosition.X - velocity, GlobalPosition.Y);
+        }
+
+        BaluCounter++;
 		if (BaluCounter > 5)
 		{ 
 			DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); //## talan azt meg lehetne csinalni hogy a ezt a check-et a viz nezi es az mindig a legvegen nezi

@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://b35ipqe1vbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://c7581x8tfbl0s" path="res://Scenes/MainMenuInterface.tscn" id="1_02o3x"]
-[ext_resource type="Script" path="res://Scenes/GameStart.cs" id="1_hkye0"]
+[ext_resource type="Script" uid="uid://1mr76bg0gm1h" path="res://Scenes/GameStart.cs" id="1_hkye0"]
 [ext_resource type="Texture2D" uid="uid://mpl3ui85fj5k" path="res://Assets/Art/Menu/AnimatedFrog.png" id="4_u2gpo"]
 [ext_resource type="Texture2D" uid="uid://hycvpb7dtbtl" path="res://Assets/Art/Menu/AnimatedLog.png" id="5_04uiv"]
 [ext_resource type="Texture2D" uid="uid://7a88wupwa5vk" path="res://Assets/Art/Menu/AnimetedGrass.png" id="6_0cypl"]

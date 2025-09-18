@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dggd6bjbq3rhv"]
 
 [ext_resource type="Texture2D" uid="uid://dcxpfbso5cbkf" path="res://Assets/Art/Player/FrogAnimation.png" id="1_73u2v"]
-[ext_resource type="Script" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
+[ext_resource type="Script" uid="uid://cuduaiphtre4t" path="res://Script/PlayerControll.cs" id="2_q3ki3"]
 [ext_resource type="AudioStream" uid="uid://dbf7lsdw5fyqt" path="res://Assets/Sound/FrogSound.ogg" id="3_hq86x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_odo4c"]
@@ -99,10 +99,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c20dr"]
 _data = {
-"CarDeath": SubResource("Animation_5c7f8"),
-"DrowningDeath": SubResource("Animation_2vobj"),
-"Move": SubResource("Animation_41rcq"),
-"RESET": SubResource("Animation_hp5h5")
+&"CarDeath": SubResource("Animation_5c7f8"),
+&"DrowningDeath": SubResource("Animation_2vobj"),
+&"Move": SubResource("Animation_41rcq"),
+&"RESET": SubResource("Animation_hp5h5")
 }
 
 [node name="Frog" type="Sprite2D"]

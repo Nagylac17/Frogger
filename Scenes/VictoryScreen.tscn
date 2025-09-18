@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chytrtrvhymmi"]
 
-[ext_resource type="Script" path="res://Script/VictoryScreen.cs" id="1_0tlyg"]
+[ext_resource type="Script" uid="uid://o5ixvj5fvudj" path="res://Script/VictoryScreen.cs" id="1_0tlyg"]
 [ext_resource type="Texture2D" uid="uid://btnb78wgs0edg" path="res://Assets/Art/Gameplay/Award.png" id="1_sm4bm"]
 
 [node name="Panel" type="Panel"]

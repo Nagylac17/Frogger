@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fysrt3o8kava"]
 
-[ext_resource type="Script" path="res://Script/SoundManager.cs" id="1_y35st"]
+[ext_resource type="Script" uid="uid://2t26dpdbx5ic" path="res://Script/SoundManager.cs" id="1_y35st"]
 [ext_resource type="AudioStream" uid="uid://dyny8v4byi4yr" path="res://Assets/Sound/WaterSplash.wav" id="2_vtamd"]
 [ext_resource type="AudioStream" uid="uid://dioey30smmodl" path="res://Assets/Sound/MainDeathSound.wav" id="3_3nusw"]
 

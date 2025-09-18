@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xpun5rl67hmg"]
 
-[ext_resource type="Script" path="res://Script/Credit.cs" id="1_2icke"]
+[ext_resource type="Script" uid="uid://3anpr7g4yg1o" path="res://Script/Credit.cs" id="1_2icke"]
 [ext_resource type="AudioStream" uid="uid://dmlxlw31aptuv" path="res://Assets/Sound/frog.mp3" id="2_r68ub"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]

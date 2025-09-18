@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8ep305end3bo"]
 
-[ext_resource type="Script" path="res://Script/EarnedScore.cs" id="1_tav2u"]
+[ext_resource type="Script" uid="uid://c8o8qey67hi5e" path="res://Script/EarnedScore.cs" id="1_tav2u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q7mrc"]
 font_size = 12

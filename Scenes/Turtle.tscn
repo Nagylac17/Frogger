@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cqn7gtufsak0f"]
 
 [ext_resource type="Texture2D" uid="uid://yun50gho7ddi" path="res://Assets/Art/Gameplay/TurtleAnimation.png" id="1_p8cmc"]
-[ext_resource type="Script" path="res://Script/Turtle.cs" id="2_bk0an"]
+[ext_resource type="Script" uid="uid://bm5qd8d0k5yen" path="res://Script/Turtle.cs" id="2_bk0an"]
 
 [sub_resource type="Animation" id="Animation_bjlgh"]
 resource_name = "Dive"
@@ -70,9 +70,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_trup4"]
 _data = {
-"Dive": SubResource("Animation_bjlgh"),
-"RESET": SubResource("Animation_1ci8i"),
-"Swim": SubResource("Animation_f5j1c")
+&"Dive": SubResource("Animation_bjlgh"),
+&"RESET": SubResource("Animation_1ci8i"),
+&"Swim": SubResource("Animation_f5j1c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0cm6"]

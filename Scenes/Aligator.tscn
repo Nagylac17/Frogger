@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dbatvbbxybeui"]
 
 [ext_resource type="Texture2D" uid="uid://wtdxjp18opog" path="res://Assets/Art/Gameplay/AligatorAnimated.png" id="1_hbu1b"]
-[ext_resource type="Script" path="res://Script/Aligator.cs" id="2_yr4a5"]
+[ext_resource type="Script" uid="uid://bxt2iwq8ugbey" path="res://Script/Aligator.cs" id="2_yr4a5"]
 
 [sub_resource type="Animation" id="Animation_3t2mg"]
 resource_name = "DangerousSwim"
@@ -70,9 +70,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eipat"]
 _data = {
-"DangerousSwim": SubResource("Animation_3t2mg"),
-"FriendlySwim": SubResource("Animation_thqeg"),
-"RESET": SubResource("Animation_th05c")
+&"DangerousSwim": SubResource("Animation_3t2mg"),
+&"FriendlySwim": SubResource("Animation_thqeg"),
+&"RESET": SubResource("Animation_th05c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpror"]

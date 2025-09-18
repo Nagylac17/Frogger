@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1iwr37wvf0fw"]
 
-[ext_resource type="Script" path="res://Script/Main.cs" id="1_6j4yi"]
+[ext_resource type="Script" uid="uid://cp26362xr5wcu" path="res://Script/Main.cs" id="1_6j4yi"]
 [ext_resource type="PackedScene" uid="uid://cuu1s87seo0c2" path="res://Scenes/Map.tscn" id="1_35uto"]
 [ext_resource type="PackedScene" uid="uid://dggd6bjbq3rhv" path="res://Scenes/Frog.tscn" id="2_vlvkp"]
 [ext_resource type="PackedScene" uid="uid://cwuhckxygy8pi" path="res://Scenes/Leaf.tscn" id="3_orh7q"]
@@ -23,7 +23,7 @@ position = Vector2(265, 88)
 
 [node name="TileMap" parent="." instance=ExtResource("1_35uto")]
 position = Vector2(1, 0)
-layer_1/tile_data = PackedInt32Array()
+layer_1/name = "Layer1"
 
 [node name="Frog" parent="." instance=ExtResource("2_vlvkp")]
 position = Vector2(328, 312)

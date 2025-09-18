@@ -9,8 +9,8 @@ public partial class Credit : ColorRect
 	[Export]
 	float creditsSpeed = 0.8f;
 
-    private string mainTextFileName = "res://Assets/Text/CreditsMainText.txt";
-    private string specialFileName = "res://Assets/Text/CreditsSpecialText.txt";
+    private string mainTextFileName = "Assets/Text/CreditsMainText.txt";
+    private string specialFileName = "Assets/Text/CreditsSpecialText.txt";
     string mainText;
     string specialText;
     bool isCreditsMoving = true;

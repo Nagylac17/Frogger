@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3j2fmg3oihc1"]
 
 [ext_resource type="Texture2D" uid="uid://cndne5k2nyax7" path="res://Assets/Art/Gameplay/Trunk.png" id="1_1qcji"]
-[ext_resource type="Script" path="res://Script/Log.cs" id="2_gtott"]
+[ext_resource type="Script" uid="uid://cwudoa0add8pp" path="res://Script/Log.cs" id="2_gtott"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eih41"]
 size = Vector2(20, 12)
