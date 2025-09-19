@@ -80,20 +80,20 @@ public partial class Spawner : Marker2D
 
 	private void OnTimeout()
 	{
-        //if (rightRayCast.IsColliding())
-        //{
-        //    var valami = rightRayCast.GetCollider();
+		//if (rightRayCast.IsColliding())
+		//{
+		//	var valami = rightRayCast.GetCollider();
 
-        //   // GD.Print(valami.GetType());
-        //}
-        //if (leftRayCast.IsColliding())
-        //{
-        //    var valami = leftRayCast.GetCollider();
+		//	GD.Print(valami.GetType());
+		//}
+		//if (leftRayCast.IsColliding())
+		//{
+		//	var valami = leftRayCast.GetCollider();
 
-        //    // GD.Print(valami.GetType());
-        //}
-        //SpawnTime();
-        if (!rightRayCast.IsColliding() && !leftRayCast.IsColliding())
+		//	GD.Print(valami.GetType());
+		//}
+		//SpawnTime();
+		if (!rightRayCast.IsColliding() && !leftRayCast.IsColliding())
 		{
 			switch (ChooseAsset())
 			{
