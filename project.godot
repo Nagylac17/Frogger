@@ -15,14 +15,12 @@ run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 run/max_fps=120
 boot_splash/show_image=false
+config/icon="uid://bw3gl0qvrd7i0"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/window_width_override=1280
-window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 

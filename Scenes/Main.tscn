@@ -13,6 +13,7 @@
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 position = Vector2(-1, 0)
+scale = Vector2(1.8, 1.8)
 script = ExtResource("1_6j4yi")
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_qdm2b")]

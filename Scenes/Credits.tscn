@@ -5,23 +5,24 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.8, 1.8)
+
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -180.0
-offset_right = 320.0
-offset_bottom = 180.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0646965, 0.0646965, 0.0646965, 1)
 script = ExtResource("1_2icke")
 creditsSpeed = 0.6
 
-[node name="CreditContainer" type="PanelContainer" parent="."]
+[node name="CreditContainer" type="PanelContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.305
@@ -35,7 +36,7 @@ offset_bottom = -64.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mlq7r")
 
-[node name="Credit" type="RichTextLabel" parent="CreditContainer"]
+[node name="Credit" type="RichTextLabel" parent="ColorRect/CreditContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "4589468468
@@ -49,24 +50,24 @@ d46sa8d89sad89sad4sa89
 fit_content = true
 scroll_active = false
 
-[node name="TextTimer" type="Timer" parent="."]
+[node name="TextTimer" type="Timer" parent="ColorRect"]
 wait_time = 15.0
 one_shot = true
 autostart = true
 
-[node name="MusicTimer" type="Timer" parent="."]
+[node name="MusicTimer" type="Timer" parent="ColorRect"]
 wait_time = 13.0
 one_shot = true
 autostart = true
 
-[node name="EndTimer" type="Timer" parent="."]
+[node name="EndTimer" type="Timer" parent="ColorRect"]
 wait_time = 5.0
 
-[node name="FrogMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="FrogMusic" type="AudioStreamPlayer2D" parent="ColorRect"]
 stream = ExtResource("2_r68ub")
 bus = &"Music"
 
-[connection signal="timeout" from="TextTimer" to="." method="OnTextTimerTimeout"]
-[connection signal="timeout" from="MusicTimer" to="." method="OnMusicTimerTimeout"]
-[connection signal="timeout" from="EndTimer" to="." method="OnEndTimerTimeout"]
-[connection signal="finished" from="FrogMusic" to="." method="OnFrogMusicFinished"]
+[connection signal="timeout" from="ColorRect/TextTimer" to="ColorRect" method="OnTextTimerTimeout"]
+[connection signal="timeout" from="ColorRect/MusicTimer" to="ColorRect" method="OnMusicTimerTimeout"]
+[connection signal="timeout" from="ColorRect/EndTimer" to="ColorRect" method="OnEndTimerTimeout"]
+[connection signal="finished" from="ColorRect/FrogMusic" to="ColorRect" method="OnFrogMusicFinished"]
