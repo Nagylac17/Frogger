@@ -217,7 +217,6 @@ animations = [{
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 z_index = 1
-scale = Vector2(1.8, 1.8)
 script = ExtResource("1_hkye0")
 
 [node name="Version" type="Label" parent="."]

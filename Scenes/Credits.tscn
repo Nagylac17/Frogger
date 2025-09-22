@@ -6,7 +6,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlq7r"]
 
 [node name="Node2D" type="Node2D"]
-scale = Vector2(1.8, 1.8)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
