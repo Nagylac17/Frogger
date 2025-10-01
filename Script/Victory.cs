@@ -9,7 +9,7 @@ public partial class Victory : Node
     private static PackedScene VictoryScene;
 	private static Panel VictoryScreenNode;
 
-    static List<Leaf> Leaves = new List<Leaf>();
+    static public List<Leaf> Leaves = new List<Leaf>();
 
 
 	public static void AddWFrog(Leaf leaf)

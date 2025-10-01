@@ -23,6 +23,7 @@ public partial class PauseMenu : Node2D
 	private void OnReturnTomainMenuPressed()
 	{
         GetTree().Paused = false;
+		Victory.Leaves.Clear();
         GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 	private void OnExitPressed()

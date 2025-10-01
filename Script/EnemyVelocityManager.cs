@@ -28,6 +28,10 @@ namespace Frogger.Script
         {
             return new Vector2(_globalPosition.X - _velocity + Victory.VelocityIncrease(), _globalPosition.Y);
         }
+        public static Vector2 MoveWaterEnemy(Vector2 _globalPosition,float _velocity)
+        {
+            return new Vector2(_globalPosition.X - _velocity, _globalPosition.Y);
+        }
 
 
     }

@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\Godot\\Frogger\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\victory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|d:\\godot\\frogger\\script\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A472F55A-5094-4855-9B0A-898A842B1B1A}|Frogger.csproj|solutionrelative:script\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,19 +59,83 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Spawner.cs",
-              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Spawner.cs",
-              "RelativeDocumentMoniker": "Script\\Spawner.cs",
-              "ToolTip": "D:\\Godot\\Frogger\\Script\\Spawner.cs",
-              "RelativeToolTip": "Script\\Spawner.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAADwv1sAAAAAAAAAAAAAAA==",
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Script\\PauseMenu.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\PauseMenu.cs",
+              "RelativeToolTip": "Script\\PauseMenu.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T10:40:16.255Z",
+              "WhenOpened": "2025-09-22T19:15:11.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Victory.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Victory.cs",
+              "RelativeDocumentMoniker": "Script\\Victory.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Victory.cs",
+              "RelativeToolTip": "Script\\Victory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:11:19.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Leaf.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Leaf.cs",
+              "RelativeDocumentMoniker": "Script\\Leaf.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Leaf.cs",
+              "RelativeToolTip": "Script\\Leaf.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:11:15.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Main.cs",
+              "RelativeDocumentMoniker": "Script\\Main.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Main.cs",
+              "RelativeToolTip": "Script\\Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:11:10.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Options.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Options.cs",
+              "RelativeDocumentMoniker": "Script\\Options.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Options.cs",
+              "RelativeToolTip": "Script\\Options.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAswKMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T11:18:18.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Spawner.cs",
+              "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Spawner.cs",
+              "RelativeDocumentMoniker": "Script\\Spawner.cs",
+              "ToolTip": "D:\\Godot\\Frogger\\Script\\Spawner.cs",
+              "RelativeToolTip": "Script\\Spawner.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAADwv+EAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T10:40:16.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SoundManager.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\SoundManager.cs",
               "RelativeDocumentMoniker": "Script\\SoundManager.cs",
@@ -63,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Turtle.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Turtle.cs",
               "RelativeDocumentMoniker": "Script\\Turtle.cs",
@@ -75,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Aligator.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Aligator.cs",
               "RelativeDocumentMoniker": "Script\\Aligator.cs",
@@ -87,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Log.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\Log.cs",
               "RelativeDocumentMoniker": "Script\\Log.cs",
@@ -99,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "PlayerControll.cs",
               "DocumentMoniker": "D:\\Godot\\Frogger\\Script\\PlayerControll.cs",
               "RelativeDocumentMoniker": "Script\\PlayerControll.cs",

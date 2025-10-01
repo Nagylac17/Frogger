@@ -19,7 +19,7 @@ public partial class Log : Sprite2D, IPlatform
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-        GlobalPosition = EnemyVelocityManager.MoveEnemy(GlobalPosition, velocity);
+        GlobalPosition = EnemyVelocityManager.MoveWaterEnemy(GlobalPosition, velocity);
         DeSpawner.DeSpawnAsset(this);
     }
 
