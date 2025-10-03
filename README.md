@@ -6,5 +6,5 @@
 
 
 This is a practice project for the godot game engine. It tries to replicate the famous frogger game.
-<img src="Images/1.png" width="250" />
+<img src="Images/Banner.png" width="250" />
 
