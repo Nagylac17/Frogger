@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/Made with-Aseprite-e8e8e8"/>
 </div>
 
-###About
+*************
 
 <div align = "center">
 
