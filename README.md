@@ -24,7 +24,7 @@ This project made for learning the godot game engine.<br>
  </tr>
  <tr>
  <td><img src = "Images/letter-a.png" width="50"/></td>
-<td>-Down</td>
+<td>-Left</td>
   </tr>
   <tr>
  <td><img src = "Images/letter-s.png" width="50" /></td>
@@ -39,4 +39,7 @@ This project made for learning the godot game engine.<br>
 <td>-Pause/Exit</td>
 </tr>
 </table>
+
+## License
+Everything is free to use except  the music and sound. I did not make them, I do not own any of it.
 
