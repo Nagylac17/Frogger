@@ -10,6 +10,7 @@
 
 <div align = "left">
 
-This is a practice project for the godot game engine. It tries to replicate the famous frogger game.
+Based on the classic forgger.
+This project made for learning the godot engine.
  </div>
 
