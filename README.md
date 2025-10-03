@@ -3,8 +3,8 @@
 
 
 ****************
-<p style="text-align:center">
+<div align="center">
 
 This is a practice project for the godot game engine. It tries to replicate the famous frogger game.
- </p>
+ </div>
 
