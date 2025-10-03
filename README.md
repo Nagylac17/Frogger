@@ -9,16 +9,34 @@
 
 *************
 
-<div align = "left">
+<div align = "center">
 
-Based on the classic forgger.
-This project made for learning the godot game engine.
-Controll:
-W-Up
-A-Left
-S-Down
-D-Right
-Esc-Pause/Exit
+Based on the classic forgger.<br>
+This project made for learning the godot game engine.<br>
+</div>
 
- </div>
+## Controls
+
+<table Style = border: none">
+<tr>
+<td><img src = "Images/letter-w.png" width="50" /></td>
+<td>-Up</td>
+ </tr>
+ <tr>
+ <td><img src = "Images/letter-a.png" width="50"/></td>
+<td>-Down</td>
+  </tr>
+  <tr>
+ <td><img src = "Images/letter-s.png" width="50" /></td>
+<td>-Down</td>
+   </tr>
+   <tr>
+ <td><img src = "Images/letter-d.png" width="50" /></td>
+<td>-Right</td>
+    </tr>
+    <tr>
+ <td><img src = "Images/escape-sign.png" width="50" /></td>
+<td>-Pause/Exit</td>
+</tr>
+</table>
 
