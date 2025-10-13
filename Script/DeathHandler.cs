@@ -27,10 +27,8 @@ public partial class DeathHandler : Node
         deathAnimations = (AnimationPlayer)player.GetNode("AnimationPlayer");
         map = _tilemap;
         playerOriginalPoz = player.GlobalPosition;
-       // gameOverPanel = _gameOver;
         gameOverScene = GD.Load<PackedScene>("res://Scenes/GameOver.tscn");
         MainNode = (Node2D)_player.GetParent();
-        //pauseMenu = (Node2D)GetNode("/root/Node2D/PauseMenu");
 
         soundManager = (SoundManager)MainNode.GetNode("SoundManager");
 ;
@@ -57,7 +55,6 @@ public partial class DeathHandler : Node
             if (area.Any(x => x == "Water") && area.Count == 1 && lifeLossLimit < 1)
             {
                 PlayerDrawningDeath();
-                // GD.Print("Hiba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
 
         }
@@ -105,7 +102,6 @@ public partial class DeathHandler : Node
     public static void PositionReset()
     {
         player.GlobalPosition = playerOriginalPoz;
-        //deathAnimations.Stop();
     }
 
     private static void setGameOverPanel()

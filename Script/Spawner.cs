@@ -30,7 +30,7 @@ public partial class Spawner : Marker2D
 	TileMap tileMap;
 	Timer spawnTimer;
 	int[] spawnCounter = new int[500];
-	List<int> UsedSpawnNameNumber = new List<int>(); // Csak LOG objekteket tartalmaz majd ezt kell megcsinalni, hogy minden mast is kezeljen ha kell
+	List<int> UsedSpawnNameNumber = new List<int>(); 
 													 // Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -80,19 +80,7 @@ public partial class Spawner : Marker2D
 
 	private void OnTimeout()
 	{
-		//if (rightRayCast.IsColliding())
-		//{
-		//	var valami = rightRayCast.GetCollider();
 
-		//	GD.Print(valami.GetType());
-		//}
-		//if (leftRayCast.IsColliding())
-		//{
-		//	var valami = leftRayCast.GetCollider();
-
-		//	GD.Print(valami.GetType());
-		//}
-		//SpawnTime();
 		if (!rightRayCast.IsColliding() && !leftRayCast.IsColliding())
 		{
 			switch (ChooseAsset())
@@ -169,7 +157,7 @@ public partial class Spawner : Marker2D
 					switch (rnd.Next(1, GameInterface.GetCurretLevel() > 1 ? 4 : 5))
 					{
 						case 1:
-                            asset = "Turtle"; //Ide meg kell variaciot adni
+                            asset = "Turtle";
                             break;
 						case 2:
                             asset = "Log";
@@ -189,7 +177,7 @@ public partial class Spawner : Marker2D
 				}
 			case "Road":
 				{
-					asset = RoadSpawnAssets[rnd.Next(0, 3)]; // Itt kell megadni melyik tombbol szedje az adatokat
+					asset = RoadSpawnAssets[rnd.Next(0, 3)];
 					break;
 				}
 

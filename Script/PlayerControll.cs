@@ -14,8 +14,8 @@ public partial class PlayerControll : Sprite2D
 	Panel gameOverPanel;
 	AnimationPlayer animationPlayer;
 	public List<string> ActiveMonitoredAreas = new List<string>();
-	private float direction;//Ez itt lehet publicra kell
-    private float velocity; //Ez itt lehet publicra kell
+	private float direction;
+    private float velocity; 
 	private bool IsOnePlatform = false;
 	int BaluCounter = 0; // Area Enter/Exit bug fix  Need some time to fire enter event after exit if you enter new safe area
 
@@ -27,7 +27,6 @@ public partial class PlayerControll : Sprite2D
 		map = (TileMap)GetNode("/root/Node2D/TileMap");
 		animationPlayer = (AnimationPlayer)player.GetNode("AnimationPlayer");
         frogRibbit = GetChild<AudioStreamPlayer2D>(0);
-       // gameOverPanel = (Panel)GetNode("/root/Node2D/GameOver");
         deathHandler = new DeathHandler(player, map, gameOverPanel);
         velocity = 0;
 		
@@ -71,13 +70,13 @@ public partial class PlayerControll : Sprite2D
         BaluCounter++;
 		if (BaluCounter > 5)
 		{ 
-			DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); //## talan azt meg lehetne csinalni hogy a ezt a check-et a viz nezi es az mindig a legvegen nezi
+			DeathHandler.PlayerWaterDeathCheck(ActiveMonitoredAreas); 
 			BaluCounter = 0;
 		}
 
     }
 
-    Vector2I TargetTile(Vector2 direction, Vector2I current_tile) //Talan itt lehet a gond
+    Vector2I TargetTile(Vector2 direction, Vector2I current_tile) 
 	{
 		Vector2I targetTile = new Vector2I(
 			(current_tile.X + (int)velocity) + (int)direction.X,
@@ -100,13 +99,12 @@ public partial class PlayerControll : Sprite2D
 		deathHandler.GetCurrentTile(tile_data);
 		DeathHandler.lifeLossLimit = 0; // Prevent life loss in every frame
 
-        //if ((bool)tile_data.GetCustomData("walkable") == false && (bool)tile_data.GetCustomData("drowning") == false && walkablePath == false)
-        //{return;}
+
         GlobalPosition = map.MapToLocal(target_tile);
 		animationPlayer.Play("Move");
 
         frogRibbit.Play();
-		//deathHandler.PlayerDeathCheck(areaTest);		
+	
 	}
 	public void Area_entered(Area2D area)
 	{

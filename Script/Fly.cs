@@ -11,7 +11,7 @@ public partial class Fly : Node2D
 	Timer spawnTimer;
 	Vector2 originalPos;
 	int Direction;
-    int scoreValue = 100 * 1; // szinthez kell kotni a pontnyereseget
+    int scoreValue = 100 * 1; 
 
 	Node originalParent;
 	Node2D pickedLog;
@@ -28,7 +28,6 @@ public partial class Fly : Node2D
 		originalParent = GetParent();
 		despawnTimer = GetNode<Timer>("DeSpawnTimer");
 		spawnTimer = GetNode<Timer>("SpawnTimer");
-        //SFXSlider = GetNode<HSlider>("Panel/SoundContainer/SoundSlider");
 
     }
 

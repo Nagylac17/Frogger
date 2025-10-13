@@ -219,21 +219,6 @@ process_mode = 3
 z_index = 1
 script = ExtResource("1_hkye0")
 
-[node name="Version" type="Label" parent="."]
-offset_left = 53.0
-offset_top = 2.0
-offset_right = 116.0
-offset_bottom = 25.0
-text = "Version:
-"
-
-[node name="VersionNumber" type="Label" parent="."]
-offset_left = 117.0
-offset_top = 2.0
-offset_right = 157.0
-offset_bottom = 25.0
-text = "01"
-
 [node name="BoxContainer" type="BoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -250,14 +235,15 @@ grow_vertical = 2
 [node name="MainMenuInterface" parent="BoxContainer" instance=ExtResource("1_02o3x")]
 position = Vector2(260, 100)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedFrog" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(46, 313)
 sprite_frames = SubResource("SpriteFrames_3nqrh")
 animation = &"Blink"
 autoplay = "Blink"
 frame_progress = 0.178751
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedLogs" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(117, 144)
 sprite_frames = SubResource("SpriteFrames_0vg6d")
@@ -265,7 +251,7 @@ animation = &"Move"
 autoplay = "Move"
 frame_progress = 0.824144
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedGrass" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(410, 281)
 sprite_frames = SubResource("SpriteFrames_luvck")
@@ -273,7 +259,8 @@ animation = &"GrassAnimation"
 autoplay = "GrassAnimation"
 frame_progress = 0.240352
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedWater" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(320, 180)
 sprite_frames = SubResource("SpriteFrames_mk22v")
 autoplay = "default"
