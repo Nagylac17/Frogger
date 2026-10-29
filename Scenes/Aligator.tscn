@@ -89,7 +89,7 @@ script = ExtResource("2_yr4a5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_eipat")
+&"": SubResource("AnimationLibrary_eipat")
 }
 
 [node name="PlatformArea" type="Area2D" parent="."]

@@ -36,6 +36,7 @@ animations = [{
 
 [node name="WhiteCar" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_hykdc")
+frame_progress = 0.99261
 script = ExtResource("2_g1sml")
 
 [node name="WhiteCar" type="Area2D" parent="."]

@@ -17,7 +17,7 @@ public partial class PlayerControll : Sprite2D
 	private float direction;
     private float velocity; 
 	private bool IsOnePlatform = false;
-	int BaluCounter = 0; // Area Enter/Exit bug fix  Need some time to fire enter event after exit if you enter new safe area
+	int BaluCounter = 0;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -97,7 +97,7 @@ public partial class PlayerControll : Sprite2D
 
 
 		deathHandler.GetCurrentTile(tile_data);
-		DeathHandler.lifeLossLimit = 0; // Prevent life loss in every frame
+		DeathHandler.lifeLossLimit = 0;
 
 
         GlobalPosition = map.MapToLocal(target_tile);

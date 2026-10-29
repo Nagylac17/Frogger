@@ -241,7 +241,7 @@ position = Vector2(46, 313)
 sprite_frames = SubResource("SpriteFrames_3nqrh")
 animation = &"Blink"
 autoplay = "Blink"
-frame_progress = 0.178751
+frame_progress = 0.507264
 
 [node name="AnimatedLogs" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -249,7 +249,7 @@ position = Vector2(117, 144)
 sprite_frames = SubResource("SpriteFrames_0vg6d")
 animation = &"Move"
 autoplay = "Move"
-frame_progress = 0.824144
+frame_progress = 0.449832
 
 [node name="AnimatedGrass" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -257,11 +257,11 @@ position = Vector2(410, 281)
 sprite_frames = SubResource("SpriteFrames_luvck")
 animation = &"GrassAnimation"
 autoplay = "GrassAnimation"
-frame_progress = 0.240352
+frame_progress = 0.525536
 
 [node name="AnimatedWater" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(320, 180)
 sprite_frames = SubResource("SpriteFrames_mk22v")
 autoplay = "default"
-frame_progress = 0.999472
+frame_progress = 0.244906

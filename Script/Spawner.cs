@@ -75,7 +75,7 @@ public partial class Spawner : Marker2D
 
 	private void SpawnTime()
 	{
-		spawnTimer.WaitTime = rnd.Next(1, GameInterface.GetCurretLevel() < 2? 5:4); // spawn ido valtoztatas
+		spawnTimer.WaitTime = rnd.Next(1, GameInterface.GetCurretLevel() < 2? 5:4); 
 	}
 
 	private void OnTimeout()

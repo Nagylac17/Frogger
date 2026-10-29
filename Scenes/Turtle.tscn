@@ -89,7 +89,7 @@ script = ExtResource("2_bk0an")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_trup4")
+&"": SubResource("AnimationLibrary_trup4")
 }
 
 [node name="PlatformArea" type="Area2D" parent="."]
@@ -97,6 +97,7 @@ collision_layer = 5
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformArea"]
+visible = false
 shape = SubResource("RectangleShape2D_k0cm6")
 
 [node name="SpawnProtectionArea" type="Area2D" parent="."]
@@ -104,5 +105,6 @@ collision_layer = 5
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnProtectionArea"]
+visible = false
 position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_8gytr")
